@@ -2,8 +2,8 @@ The contributors of this project are:
 
 Etienne Caronan
 
-Stefan
+Stefan Cross
 
-Afgan Talpur
+Mir Afgan Talpur
 
 Rolando Aguillano 
