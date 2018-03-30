@@ -4,13 +4,21 @@
     <list default="true" id="f43355bf-f74e-405d-9b51-8a3c874f0956" name="Default" comment="">
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/etienne.xml" />
       <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/Model/Base.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Model/Battle_Simulation.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Model/Glen.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Model/Heroes.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Model/Krogg.java" />
       <change beforePath="" afterPath="$PROJECT_DIR$/Model/Linda.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/FinalProject.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/FinalProject/README.md" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Base.java" afterPath="$PROJECT_DIR$/Model/Base.java" />
+      <change beforePath="$PROJECT_DIR$/Base.java" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -148,7 +156,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="723" />
     <option name="y" value="25" />
     <option name="width" value="634" />
@@ -312,7 +320,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="25" width="1368" height="744" extended-state="6" />
+    <frame x="-1" y="25" width="1368" height="744" extended-state="7" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
