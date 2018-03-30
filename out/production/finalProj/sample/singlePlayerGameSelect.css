@@ -1,0 +1,41 @@
+#anchor {
+    -fx-background-color: #353535 ;
+}
+
+#menubar {
+    -fx-background-color: darkgrey ;
+}
+
+#FileMenu {
+    -fx-background-color: darkgrey ;
+}
+
+#newGame {
+    -fx-background-color: darkgrey ;
+}
+
+#openGame {
+    -fx-background-color: darkgrey ;
+}
+
+#saveGame {
+    -fx-background-color: darkgrey ;
+}
+
+#separator {
+    -fx-background-color: darkgrey ;
+}
+
+#exitGame {
+    -fx-background-color: darkgrey ;
+}
+
+#NewGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+
+#ContinueGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}

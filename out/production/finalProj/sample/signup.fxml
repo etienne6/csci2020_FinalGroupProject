@@ -40,7 +40,7 @@
             <Label layoutX="207.0" layoutY="267.0" text="Password" textFill="#bababa" />
             <TextField id="Username" fx:id="Username" layoutX="291.0" layoutY="230.0" promptText="Krogg" stylesheets="@signup.css" />
             <PasswordField id="Password" fx:id="Password" layoutX="291.0" layoutY="262.0" prefHeight="26.0" prefWidth="149.0" promptText="******" stylesheets="@signup.css" />
-            <Button id="submitButton" fx:id="SubmitButton" alignment="CENTER" layoutX="291.0" layoutY="336.0" mnemonicParsing="false" stylesheets="@signup.css" text="Submit" textAlignment="CENTER">
+            <Button id="submitButton" fx:id="SubmitButton" onAction="#ModeSelect" alignment="CENTER" layoutX="291.0" layoutY="336.0" mnemonicParsing="false" stylesheets="@signup.css" text="Submit" textAlignment="CENTER">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
