@@ -34,11 +34,11 @@
                         <Image url="@../media/krogg%20logo.png" />
                     </image>
                 </ImageView>
-                <Button id="CoopButton" fx:id="CoopButton" alignment="CENTER" layoutX="271.0" layoutY="296.0" mnemonicParsing="false" onAction="#Coop" prefWidth="100.0" stylesheets="@multiPlayerGameSelect.css" text="Continue Game" textAlignment="CENTER">
+                <Button id="CoopButton" fx:id="CoopButton" alignment="CENTER" layoutX="271.0" layoutY="296.0" mnemonicParsing="false" onAction="#Coop" prefWidth="100.0" stylesheets="@multiPlayerGameSelect.css" text="Co-Op" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button id="VersusButton" fx:id="VersusButton" alignment="CENTER" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#Versus" prefWidth="100.0" stylesheets="@multiPlayerGameSelect.css" text="New Game" textAlignment="CENTER">
+                <Button id="VersusButton" fx:id="VersusButton" alignment="CENTER" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#Versus" prefWidth="100.0" stylesheets="@multiPlayerGameSelect.css" text="Versus" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
