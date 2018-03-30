@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -29,6 +28,12 @@ public class loginController {
         Parent root = FXMLLoader.load(getClass().getResource("greeting.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Welcome");
+        primaryStage.setScene(new Scene(root, 640, 400));
+    }
+    public void ModeSelect() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void Exit(){

@@ -9,7 +9,7 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
-public class signupController {
+public class selectMode {
     public TextField Username;
     public PasswordField Password;
     public Button SubmitButton;
@@ -21,25 +21,16 @@ public class signupController {
 
     public void New(){
     }
-
     public void Save(){
     }
-
     public void Open(){
     }
-    public void ModeSelect() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Select Mode");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
-    public void Back() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("greeting.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Welcome");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
+    public void SinglePlayer(){
 
+    }
+    public void MultiPlayer() {
+
+    }
     public void Exit(){
         System.exit(0);
     }
