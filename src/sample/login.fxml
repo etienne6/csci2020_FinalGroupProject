@@ -49,6 +49,22 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
+             <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../media/soundIcon.png" />
+                 </image>
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+             </ImageView>
+             <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../media/soundIconOff.png" />
+                 </image>
+                 <cursor>
+                     <Cursor fx:constant="HAND" />
+                 </cursor>
+             </ImageView>
          </children>
     </AnchorPane>
   </children>

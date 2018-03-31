@@ -7,9 +7,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 
@@ -22,6 +25,9 @@ public class Controller {
     public MenuItem openGame;
     public MenuItem saveGame;
     public MenuItem exitGame;
+    public ImageView soundButton;
+    public ImageView soundButtonOff;
+    public int soundCount = 1;
 
 
     public void LogInScreen() throws Exception {
@@ -39,12 +45,25 @@ public class Controller {
     }
 
     public void New(){
-    }
+       }
 
     public void Save(){
     }
 
     public void Open(){
+    }
+
+    public void Sound() {
+        boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
+        if (!playing) {
+            Main.mediaPlayer.play();
+            soundButton.setOpacity(100.0);
+            soundButtonOff.setOpacity(0.0);
+        } else {
+            Main.mediaPlayer.pause();
+            soundButton.setOpacity(0.0);
+            soundButtonOff.setOpacity(100.0);
+        }
     }
 
     public void Exit(){
