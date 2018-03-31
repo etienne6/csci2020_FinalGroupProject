@@ -12,8 +12,13 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.model.Base;
+import sample.model.Battle_Simulation;
+import sample.model.Krogg;
 
 import java.io.File;
+
+import static sample.model.Battle_Simulation.chooseHero;
 
 public class characterChooser {
     public TextField Username;
@@ -37,6 +42,7 @@ public class characterChooser {
             soundButton.setOpacity(100.0);
             soundButtonOff.setOpacity(0.0);
         }
+        Battle_Simulation.run();
     }
 
     public void New() throws Exception{
@@ -56,14 +62,16 @@ public class characterChooser {
     }
 
     public void pickKrogg() {
-
+        Base.Player userPlayer = chooseHero("Krogg");
     }
-    public void pickLinda() {
 
+    public void pickLinda() {
+        Base.Player userPlayer = chooseHero("Linda");
     }
     public void pickGlen() {
-
+        Base.Player userPlayer = chooseHero("Glen");
     }
+
     public void usePotion() {}
     public void useAttack() {}
 
