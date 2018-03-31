@@ -45,29 +45,28 @@ public class characterChooser {
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void Save(){
-        SaveGame.SaveGame();
-    }
-    public void Open(){
-        OpenGame.OpenGame();
-    }
+    public void Save(){ SaveGame.SaveGame();}
+    public void Open(){ OpenGame.OpenGame();}
+
     public void Back() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void NewGame()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
-        primaryStage.setScene(new Scene(root, 640, 400));
+
+    public void pickKrogg() {
 
     }
-
-    public void ContinueGame() {
+    public void pickLinda() {
 
     }
+    public void pickGlen() {
+
+    }
+    public void usePotion() {}
+    public void useAttack() {}
+
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (!playing) {

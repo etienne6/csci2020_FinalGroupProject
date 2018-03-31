@@ -49,12 +49,11 @@
     -fx-text-fill: #353535;
 }
 
-#NewGameButton {
+#AttackButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }
-
-#ContinueGameButton {
+#PotionButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }

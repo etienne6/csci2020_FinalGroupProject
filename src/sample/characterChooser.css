@@ -44,12 +44,23 @@
     -fx-background-color: darkgrey ;
 }
 
-#NewGameButton {
+#KroggButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }
-
-#ContinueGameButton {
+#LindaButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#GlenButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#AttackButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#PotionButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }

@@ -31,12 +31,12 @@
         </MenuBar>
         <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
             <children>
-                <Button id="ContinueGameButton" fx:id="ContinueGameButton" alignment="CENTER" disable="true" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#ContinueGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Potion" textAlignment="CENTER">
+                <Button id="PotionButton" fx:id="PotionButton" alignment="CENTER" disable="true" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#usePotion" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Potion" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button id="NewGameButton" fx:id="NewGameButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Attack" textAlignment="CENTER">
+                <Button id="AttackButton" fx:id="AttackButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#useAttack" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Attack" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -64,7 +64,7 @@
                 </ImageView>
                 <Pane id="Pane" fx:id="Pane" layoutY="38.0" prefHeight="270.0" prefWidth="640.0" stylesheets="@characterChooser.css">
                     <children>
-                        <Button id="NewGameButton" fx:id="NewGameButton1" alignment="CENTER" layoutX="271.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
+                        <Button id="KroggButton" fx:id="KroggButton" alignment="CENTER" layoutX="271.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickKrogg" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -72,7 +72,7 @@
                                 <Font size="15.0" />
                             </font>
                         </Button>
-                  <Button id="NewGameButton" fx:id="NewGameButton11" alignment="CENTER" layoutX="47.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
+                  <Button id="LindaButton" fx:id="LindaButton" alignment="CENTER" layoutX="47.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickLinda" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -80,7 +80,7 @@
                         <Font size="15.0" />
                      </font>
                   </Button>
-                  <Button id="NewGameButton" fx:id="NewGameButton111" alignment="CENTER" layoutX="502.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
+                  <Button id="GlenButton" fx:id="GlenButton" alignment="CENTER" layoutX="502.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickGlen" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

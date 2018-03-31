@@ -32,16 +32,16 @@
         </MenuBar>
         <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@singlePlayerGameSelect.css" VBox.vgrow="ALWAYS">
             <children>
-                <Button id="ContinueGameButton" fx:id="ContinueGameButton" alignment="CENTER" disable="true" layoutX="173.0" layoutY="321.0" mnemonicParsing="false" onAction="#ContinueGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@singlePlayerGameSelect.css" text="Potion" textAlignment="CENTER">
+                <Button id="PotionButton" fx:id="PotionButton" alignment="CENTER" disable="true" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#usePotion" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Potion" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button id="NewGameButton" fx:id="NewGameButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="321.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@singlePlayerGameSelect.css" text="Attack" textAlignment="CENTER">
+                <Button id="AttackButton" fx:id="AttackButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#useAttack" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Attack" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
-               </Button>
+                </Button>
                 <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
                     <cursor>
                         <Cursor fx:constant="HAND" />

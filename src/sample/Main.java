@@ -50,25 +50,3 @@ public class Main extends Application {
     }
 }
 
-class Music {
-   static void playSong(String songName, int duration,String Mute) {
-        Media song = new Media(new File(songName).toURI().toString());
-        Main.mediaPlayer = new MediaPlayer(song);
-
-        Main.mediaPlayer.setOnEndOfMedia(new Runnable() {
-            public void run() {
-                Main.mediaPlayer.seek(Duration.ZERO);
-                Timeline timeline = new Timeline(
-                        new KeyFrame(Duration.seconds(duration),
-                                new KeyValue(Main.mediaPlayer.volumeProperty(), 0)));
-                timeline.play();
-            }
-        });
-        if (Mute=="MUTE"){
-            Main.mediaPlayer.play();
-            Main.mediaPlayer.pause();
-        } else {
-            Main.mediaPlayer.play();
-        }
-    }
-}
