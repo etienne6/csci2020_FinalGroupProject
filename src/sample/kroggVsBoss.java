@@ -26,16 +26,36 @@ public class kroggVsBoss {
     public TextField yourMove;
     public TextField moveAnnouncer;
     public TextField damageAnnouncer;
+
+    Boss1 boss1 = new Boss1();
     public TextField Boss1HP;
+    float boss1HP = boss1.getHP();
     public TextField Boss1Speed;
+    float boss1Speed = boss1.getSpeed();
     public TextField Boss1Dodge;
+    float boss1Dodge = boss1.getDodge();
     public TextField Boss1Attack;
+    float boss1Attack = boss1.getAttack();
     public TextField Boss1Defense;
+    float boss1Defense = boss1.getDefense();
+
+    Krogg krogg = new Krogg();
     public TextField KroggHP;
+    float kroggHP = krogg.getHP();
     public TextField KroggSpeed;
+    float kroggSpeed = krogg.getSpeed();
     public TextField KroggDodge;
+    float kroggDodge = krogg.getDodge();
     public TextField KroggAttack;
+    float kroggAttack = krogg.getAttack();
     public TextField KroggDefense;
+    float kroggDefense = krogg.getDefense();
+
+
+
+
+    float totalKroggToBoss1Damage = kroggAttack-boss1Defense;
+
     int turnNumber = 0;
 
     public void initialize(){
@@ -64,39 +84,45 @@ public class kroggVsBoss {
     public void Open(){ OpenGame.OpenGame();}
 
     public void usePotion() {}
-    public void useAttack() {}
+    public void useAttack() {
+        boss1HP = boss1HP - totalKroggToBoss1Damage;
+        Boss1HP.setText(String.valueOf(boss1HP));
+        // NEED TO IMPLEMENT A TIMER TO ERASE MESSAGE AFTER 5 SECONDS OR SO
+        // moveAnnouncer.setText("");
+        // damageAnnouncer.setText("");
+        moveAnnouncer.setText("Krogg attacks boss!");
+        String attackAnnouncement = ("It does " + totalKroggToBoss1Damage + " points of damage!");
+        damageAnnouncer.setText(attackAnnouncement);
+        turnNumber++;
+        turn();
+    }
 
     public void turn(){
         if ((turnNumber%2)==0){
             yourMove.setText("Your Move!");
             AttackButton.setDisable(false);
             PotionButton.setDisable(false);
-            turnNumber++;
         } else {
             yourMove.setText("Boss's Move!");
             AttackButton.setDisable(true);
             PotionButton.setDisable(true);
-            turnNumber++;
         }
     }
 
     public void runBoss1(){
-
-        Boss1 boss1 = new Boss1();
-        Boss1HP.setText(String.valueOf(boss1.getHP()));
-        Boss1Speed.setText(String.valueOf(boss1.getSpeed()));
-        Boss1Dodge.setText(String.valueOf(boss1.getDodge()));
-        Boss1Attack.setText(String.valueOf(boss1.getAttack()));
-        Boss1Defense.setText(String.valueOf(boss1.getDefense()));
+        Boss1HP.setText(String.valueOf(boss1HP));
+        Boss1Speed.setText(String.valueOf(boss1Speed));
+        Boss1Dodge.setText(String.valueOf(boss1Dodge));
+        Boss1Attack.setText(String.valueOf(boss1Attack));
+        Boss1Defense.setText(String.valueOf(boss1Defense));
     }
 
     public void runKrogg(){
-        Krogg krogg = new Krogg();
-        KroggHP.setText(String.valueOf(krogg.getHP()));
-        KroggSpeed.setText(String.valueOf(krogg.getSpeed()));
-        KroggDodge.setText(String.valueOf(krogg.getDodge()));
-        KroggAttack.setText(String.valueOf(krogg.getAttack()));
-        KroggDefense.setText(String.valueOf(krogg.getDefense()));
+        KroggHP.setText(String.valueOf(kroggHP));
+        KroggSpeed.setText(String.valueOf(kroggSpeed));
+        KroggDodge.setText(String.valueOf(kroggDodge));
+        KroggAttack.setText(String.valueOf(kroggAttack));
+        KroggDefense.setText(String.valueOf(kroggDefense));
     }
 
     public void Sound() {

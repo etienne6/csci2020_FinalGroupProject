@@ -60,6 +60,16 @@
                 </ImageView>
                 <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@kroggVsBoss.css">
                     <children>
+                  <TextField id="moveAnnouncer" fx:id="damageAnnouncer" editable="false" layoutX="158.0" layoutY="147.0" prefHeight="25.0" prefWidth="400.0" stylesheets="@kroggVsBoss.css">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="moveAnnouncer" fx:id="moveAnnouncer" editable="false" layoutX="158.0" layoutY="108.0" prefHeight="25.0" prefWidth="400.0" stylesheets="@kroggVsBoss.css">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
                         <ImageView fitHeight="202.0" fitWidth="400.0" layoutX="416.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../media/krogg.png" />
@@ -101,16 +111,6 @@
                             </font>
                         </Label>
                   <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="256.0" layoutY="71.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@kroggVsBoss.css">
-                     <font>
-                        <Font name="Algerian" size="15.0" />
-                     </font>
-                  </TextField>
-                  <TextField id="moveAnnouncer" fx:id="moveAnnouncer" editable="false" layoutX="256.0" layoutY="111.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@kroggVsBoss.css">
-                     <font>
-                        <Font name="Algerian" size="15.0" />
-                     </font>
-                  </TextField>
-                  <TextField id="moveAnnouncer" fx:id="damageAnnouncer" editable="false" layoutX="256.0" layoutY="152.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@kroggVsBoss.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font>
