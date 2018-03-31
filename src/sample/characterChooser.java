@@ -46,6 +46,7 @@ public class characterChooser {
         primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void Save(){
+        SaveGame.SaveGame();
     }
     public void Open(){
         OpenGame.OpenGame();

@@ -23,7 +23,7 @@
                     <items>
                         <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
                         <MenuItem fx:id="openGame" mnemonicParsing="false" onAction="#Open" text="Open Game" />
-                        <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
+                        <MenuItem fx:id="saveGame" disable="false" mnemonicParsing="false" onAction="#Save" text="Save Game" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#Exit" text="Exit" />
                     </items>
