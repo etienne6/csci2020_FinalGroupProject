@@ -9,18 +9,12 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.model.*;
 
-import java.io.File;
-
-import static sample.model.Battle_Simulation.chooseHero;
-
-public class characterChooser {
-    public TextField Username;
-    public PasswordField Password;
+public class kroggVsBoss {
+    public Button AttackButton;
+    public Button PotionButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -29,24 +23,20 @@ public class characterChooser {
     public ImageView soundButton;
     public ImageView soundButtonOff;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
-    public TextField LindaType;
-    public TextField LindaHP;
-    public TextField LindaSpeed;
-    public TextField LindaDodge;
-    public TextField LindaAttack;
-    public TextField LindaDefense;
-    public TextField KroggType;
+    public TextField yourMove;
+    public TextField moveAnnouncer;
+    public TextField damageAnnouncer;
+    public TextField Boss1HP;
+    public TextField Boss1Speed;
+    public TextField Boss1Dodge;
+    public TextField Boss1Attack;
+    public TextField Boss1Defense;
     public TextField KroggHP;
     public TextField KroggSpeed;
     public TextField KroggDodge;
     public TextField KroggAttack;
     public TextField KroggDefense;
-    public TextField GlenType;
-    public TextField GlenHP;
-    public TextField GlenSpeed;
-    public TextField GlenDodge;
-    public TextField GlenAttack;
-    public TextField GlenDefense;
+    int turnNumber = 0;
 
     public void initialize(){
         if (!playing) {
@@ -57,11 +47,12 @@ public class characterChooser {
             soundButtonOff.setOpacity(0.0);
         }
         Battle_Simulation.run();
-        runLinda();
+        runBoss1();
         runKrogg();
-        runGlen();
+        turn();
 
-    }
+
+   }
 
     public void New() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
@@ -72,46 +63,35 @@ public class characterChooser {
     public void Save(){ SaveGame.SaveGame();}
     public void Open(){ OpenGame.OpenGame();}
 
-    public void Back() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
-
-    public void pickKrogg() throws Exception{
-        Base.Player userPlayer = chooseHero("Krogg");
-        Parent root = FXMLLoader.load(getClass().getResource("kroggVsBoss.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Battle");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
-
-    public void pickLinda() {
-        Base.Player userPlayer = chooseHero("Linda");
-    }
-
-    public void pickGlen() {
-        Base.Player userPlayer = chooseHero("Glen");
-    }
-
     public void usePotion() {}
     public void useAttack() {}
 
-    public void runLinda(){
-        Linda linda = new Linda();
-        LindaType.setText(linda.getType());
-        LindaHP.setText(String.valueOf(linda.getHP()));
-        LindaSpeed.setText(String.valueOf(linda.getSpeed()));
-        LindaDodge.setText(String.valueOf(linda.getDodge()));
-        LindaAttack.setText(String.valueOf(linda.getAttack()));
-        LindaDefense.setText(String.valueOf(linda.getDefense()));
+    public void turn(){
+        if ((turnNumber%2)==0){
+            yourMove.setText("Your Move!");
+            AttackButton.setDisable(false);
+            PotionButton.setDisable(false);
+            turnNumber++;
+        } else {
+            yourMove.setText("Boss's Move!");
+            AttackButton.setDisable(true);
+            PotionButton.setDisable(true);
+            turnNumber++;
+        }
+    }
 
+    public void runBoss1(){
+
+        Boss1 boss1 = new Boss1();
+        Boss1HP.setText(String.valueOf(boss1.getHP()));
+        Boss1Speed.setText(String.valueOf(boss1.getSpeed()));
+        Boss1Dodge.setText(String.valueOf(boss1.getDodge()));
+        Boss1Attack.setText(String.valueOf(boss1.getAttack()));
+        Boss1Defense.setText(String.valueOf(boss1.getDefense()));
     }
 
     public void runKrogg(){
         Krogg krogg = new Krogg();
-        KroggType.setText(krogg.getType());
         KroggHP.setText(String.valueOf(krogg.getHP()));
         KroggSpeed.setText(String.valueOf(krogg.getSpeed()));
         KroggDodge.setText(String.valueOf(krogg.getDodge()));
@@ -119,15 +99,6 @@ public class characterChooser {
         KroggDefense.setText(String.valueOf(krogg.getDefense()));
     }
 
-    public void runGlen(){
-        Glen glen = new Glen();
-        GlenType.setText(glen.getType());
-        GlenHP.setText(String.valueOf(glen.getHP()));
-        GlenSpeed.setText(String.valueOf(glen.getSpeed()));
-        GlenDodge.setText(String.valueOf(glen.getDodge()));
-        GlenAttack.setText(String.valueOf(glen.getAttack()));
-        GlenDefense.setText(String.valueOf(glen.getDefense()));
-    }
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (!playing) {

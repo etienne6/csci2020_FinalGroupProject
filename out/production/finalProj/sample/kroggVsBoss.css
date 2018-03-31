@@ -68,5 +68,14 @@
     -fx-background-color: #353535;
     -fx-text-fill: #37ee1a;
     -fx-alignment: center;
-
+}
+#bossValue {
+    -fx-background-color: #353535;
+    -fx-text-fill: red;
+    -fx-alignment: center;
+}
+#moveAnnouncer {
+    -fx-background-color: darkgrey;
+    -fx-text-fill: #353535;
+    -fx-alignment: center;
 }

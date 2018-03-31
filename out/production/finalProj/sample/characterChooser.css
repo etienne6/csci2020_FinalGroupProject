@@ -67,4 +67,6 @@
 #characterValue {
     -fx-background-color: #353535;
     -fx-text-fill: #37ee1a;
+    -fx-alignment: center;
+
 }
