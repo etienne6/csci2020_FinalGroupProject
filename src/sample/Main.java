@@ -38,7 +38,7 @@ public class Main extends Application {
         Image icon = new Image(getClass().getResourceAsStream("../media/kroggicon.png"));
 
         String communitySong = "src/media/communitytheme.mp3";
-        Music.playSong(communitySong,25);
+        Music.playSong(communitySong,25,"");
 
         primaryStage.getIcons().add(icon);
         primaryStage.setTitle("KROGG The Destroyer - Welcome");
@@ -51,7 +51,7 @@ public class Main extends Application {
 }
 
 class Music {
-   static void playSong(String songName, int duration) {
+   static void playSong(String songName, int duration,String Mute) {
         Media song = new Media(new File(songName).toURI().toString());
         Main.mediaPlayer = new MediaPlayer(song);
 
@@ -64,16 +64,11 @@ class Music {
                 timeline.play();
             }
         });
-        Main.mediaPlayer.play();
-    }
-
-    public static boolean playPause(int soundCount) {
-        if ((soundCount % 2) == 0) {
+        if (Mute=="MUTE"){
             Main.mediaPlayer.play();
-            return true;
-        } else {
             Main.mediaPlayer.pause();
-            return false;
+        } else {
+            Main.mediaPlayer.play();
         }
     }
 }

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newGame">
+    <children>
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@singlePlayerGameSelect.css" VBox.vgrow="ALWAYS">
+            <menus>
+                <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
+                        <MenuItem fx:id="openGame" mnemonicParsing="false" onAction="#Open" text="Open Game" />
+                        <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#Exit" text="Exit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@singlePlayerGameSelect.css" VBox.vgrow="ALWAYS">
+            <children>
+                <Button id="ContinueGameButton" fx:id="ContinueGameButton" alignment="CENTER" disable="true" layoutX="173.0" layoutY="321.0" mnemonicParsing="false" onAction="#ContinueGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@singlePlayerGameSelect.css" text="Potion" textAlignment="CENTER">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button id="NewGameButton" fx:id="NewGameButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="321.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@singlePlayerGameSelect.css" text="Attack" textAlignment="CENTER">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+               </Button>
+                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIcon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIconOff.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Pane id="Pane" fx:id="Pane" layoutY="38.0" prefHeight="247.0" prefWidth="640.0" stylesheets="@newGame.css">
+                    <children>
+                        <TextArea id="textarea" editable="false" focusTraversable="false" layoutY="40.0" prefHeight="154.0" prefWidth="640.0" styleClass="text-area" stylesheets="@newGame.css" text="Welcome to the company of Krogg, the Destroyer! &#10;Krogg and his fellow adventurers, linda and glen, were chosen &#10;by the king of uoitopia to stop the evil dragon and his minions!&#10;You are the country's last hope in the battle against evil! &#10;The king has equipped you with the best weapons and magic in &#10;the country! are you up to the challenge?">
+                     <font>
+                        <Font name="Algerian" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                     </cursor>
+                  </TextArea>
+                  <Button id="challengeAccepted" fx:id="challengeAccepted" alignment="CENTER" layoutX="220.0" layoutY="205.0" mnemonicParsing="false" onAction="#characterChooser" prefHeight="20.0" prefWidth="200.0" stylesheets="@singlePlayerGameSelect.css" text="Challenge Accepted!" textAlignment="CENTER">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

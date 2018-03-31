@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.characterChooser">
+    <children>
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
+            <menus>
+                <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
+                        <MenuItem fx:id="openGame" mnemonicParsing="false" onAction="#Open" text="Open Game" />
+                        <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#Exit" text="Exit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
+            <children>
+                <Button id="ContinueGameButton" fx:id="ContinueGameButton" alignment="CENTER" disable="true" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#ContinueGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Potion" textAlignment="CENTER">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button id="NewGameButton" fx:id="NewGameButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Attack" textAlignment="CENTER">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIcon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIconOff.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Pane id="Pane" fx:id="Pane" layoutY="38.0" prefHeight="270.0" prefWidth="640.0" stylesheets="@characterChooser.css">
+                    <children>
+                        <Button id="NewGameButton" fx:id="NewGameButton1" alignment="CENTER" layoutX="271.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                  <Button id="NewGameButton" fx:id="NewGameButton11" alignment="CENTER" layoutX="47.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <Button id="NewGameButton" fx:id="NewGameButton111" alignment="CENTER" layoutX="502.0" layoutY="228.0" mnemonicParsing="false" onAction="#NewGame" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/krogg.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="452.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/glen.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../media/lindas.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="70.0" layoutY="136.0" text="HP:" />
+                  <Label layoutX="55.0" layoutY="189.0" text="Attack:" />
+                  <Label layoutX="47.0" layoutY="207.0" text="Defence:" />
+                  <Label layoutX="59.0" layoutY="117.0" text="Type: " />
+                  <Label layoutX="54.0" layoutY="153.0" text="Speed:" />
+                  <Label layoutX="51.0" layoutY="171.0" text="Dodge:" />
+                  <Label layoutX="294.0" layoutY="136.0" text="HP:" />
+                  <Label layoutX="279.0" layoutY="189.0" text="Attack:" />
+                  <Label layoutX="271.0" layoutY="207.0" text="Defence:" />
+                  <Label layoutX="283.0" layoutY="117.0" text="Type: " />
+                  <Label layoutX="278.0" layoutY="153.0" text="Speed:" />
+                  <Label layoutX="275.0" layoutY="171.0" text="Dodge:" />
+                  <Label layoutX="525.0" layoutY="136.0" text="HP:" />
+                  <Label layoutX="510.0" layoutY="189.0" text="Attack:" />
+                  <Label layoutX="502.0" layoutY="207.0" text="Defence:" />
+                  <Label layoutX="514.0" layoutY="117.0" text="Type: " />
+                  <Label layoutX="509.0" layoutY="153.0" text="Speed:" />
+                  <Label layoutX="506.0" layoutY="171.0" text="Dodge:" />
+
+                    </children>
+                </Pane>
+            <Label layoutX="251.0" layoutY="11.0" text="CHOOSE YOUR HERO" textFill="DARKGRAY">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</VBox>

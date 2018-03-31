@@ -1,0 +1,55 @@
+#anchor {
+    -fx-background-color: #353535 ;
+}
+
+#Pane {
+    -fx-background-color: darkgrey ;
+}
+
+#menubar {
+    -fx-background-color: darkgrey ;
+}
+
+.text-area .content{
+    -fx-background-color: darkgrey ;
+    -fx-text-alignment: center;
+}
+
+.text-area .scroll-pane .text {
+    -fx-background-color: darkgrey ;
+    -fx-text-alignment: center;
+}
+
+#FileMenu {
+    -fx-background-color: darkgrey ;
+}
+
+#newGame {
+    -fx-background-color: darkgrey ;
+}
+
+#openGame {
+    -fx-background-color: darkgrey ;
+}
+
+#saveGame {
+    -fx-background-color: darkgrey ;
+}
+
+#separator {
+    -fx-background-color: darkgrey ;
+}
+
+#exitGame {
+    -fx-background-color: darkgrey ;
+}
+
+#NewGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+
+#ContinueGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}

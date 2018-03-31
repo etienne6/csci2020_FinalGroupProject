@@ -47,7 +47,11 @@ public class singlePlayerGameSelect {
         primaryStage.setTitle("KROGG The Destroyer - Mode Select");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void NewGame(){
+    public void NewGame() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
+        primaryStage.setScene(new Scene(root, 640, 400));
 
     }
     public void ContinueGame() {
