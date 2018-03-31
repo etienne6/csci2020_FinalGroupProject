@@ -40,6 +40,7 @@ public class selectMode {
     public void Save(){
     }
     public void Open(){
+        OpenGame.OpenGame();
     }
     public void SinglePlayer()throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("singlePlayerGameSelect.fxml"));

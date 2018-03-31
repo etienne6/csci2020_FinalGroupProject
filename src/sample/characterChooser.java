@@ -9,7 +9,11 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+
+import java.io.File;
 
 public class characterChooser {
     public TextField Username;
@@ -35,11 +39,16 @@ public class characterChooser {
         }
     }
 
-    public void New(){
+    public void New() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - Select Mode");
+        primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void Save(){
     }
     public void Open(){
+        OpenGame.OpenGame();
     }
     public void Back() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
@@ -47,9 +56,14 @@ public class characterChooser {
         primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void NewGame(){
+    public void NewGame()throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
+        primaryStage.setScene(new Scene(root, 640, 400));
 
     }
+
     public void ContinueGame() {
 
     }
