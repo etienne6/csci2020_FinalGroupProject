@@ -16,21 +16,7 @@ public class Battle_Simulation {
 
         heroesArrayList = hero.heroList();
         bossArrayList = boss.bossList();
-
-        /*
-        System.out.println(heroesArrayList.get(0).getName());
-        System.out.println(heroesArrayList.get(1).getName());
-        System.out.println(heroesArrayList.get(2).getName());
-        System.out.println(bossArrayList.get(0).getName());
-        System.out.println(bossArrayList.get(1).getName());
-        System.out.println(bossArrayList.get(2).getName());
-        */
-
         Player userPlayer = chooseHero();
-
-        //Need to implement specific battle game play below...
-
-
     }
 
     /*
@@ -53,5 +39,16 @@ public class Battle_Simulation {
         }
 
         return heroPick;
+    }
+    public void Attack(Player player1, Player Player2){
+        player1.getAttack();
+    }
+
+    public void Battle(Player player1, Player player2){
+        float HP1 = player1.getHP();
+        float HP2 = player2.getHP();
+        while(HP1 > 0 || HP2 > 0){
+            
+        }
     }
 }

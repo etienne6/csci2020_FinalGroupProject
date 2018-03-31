@@ -9,18 +9,15 @@ public class Base {
         private float hp;
         private float speed;
         private float dodge;
-        private float attack;
         private float defense;
         private ArrayList<Move> moveList = new ArrayList<Move>();
 
-        public Player(String name, String type, float hp, float speed, float dodge, float attack,
-                      float defense)  {
+        public Player(String name, String type, float hp, float speed, float dodge, float defense)  {
             this.name = name;
             this.type = type;
             this.hp = hp;
             this.speed = speed;
             this.dodge = dodge;
-            this.attack = attack;
             this.defense = defense;
         }
 
@@ -46,10 +43,6 @@ public class Base {
 
         public float getDodge() {
             return this.dodge;
-        }
-
-        public float getAttack() {
-            return this.attack;
         }
 
         public float getDefense() {
