@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import Model.Base.*;
@@ -9,6 +10,8 @@ import sun.management.counter.perf.PerfLongArrayCounter;
 public class Battle_Simulation {
     private static ArrayList < Player > heroesArrayList = new ArrayList< Player >();
     private static ArrayList< Player > bossArrayList = new ArrayList< Player >();
+    private static Player userPlayer;
+    private static Player currentBoss = null;
 
     public static void main(String args[]){
         Heroes hero = new Heroes();
@@ -26,7 +29,9 @@ public class Battle_Simulation {
         System.out.println(bossArrayList.get(2).getName());
         */
 
-        Player userPlayer = chooseHero();
+        userPlayer = chooseHero();
+        currentBoss = getCurrentBoss(currentBoss);
+        System.out.println(chooseFirst(userPlayer, currentBoss));
 
         //Need to implement specific battle game play below...
 
@@ -54,4 +59,29 @@ public class Battle_Simulation {
 
         return heroPick;
     }
+
+    public static String chooseFirst(Player userHeroPick, Player currentBoss){
+        boolean userProb = new Random().nextInt((int)userHeroPick.getSpeed())>50;
+        boolean bossProb = new Random().nextInt((int)currentBoss.getSpeed())>50;
+
+        while((userProb == true && bossProb == false) || (userProb == false && bossProb == false)){
+            userProb = new Random().nextInt((int)userHeroPick.getSpeed())>50;
+            bossProb = new Random().nextInt((int)currentBoss.getSpeed())>50;
+        }
+
+        if(userProb == true){
+            return userHeroPick.getName();
+        }else{
+            return currentBoss.getName();
+        }
+    }
+
+    public static Player getCurrentBoss(Player currentBoss){
+        if(currentBoss == null){
+            return bossArrayList.get(0);
+        }else{
+            return bossArrayList.get(bossArrayList.indexOf(currentBoss)+1);
+        }
+    }
 }
+

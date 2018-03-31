@@ -6,10 +6,13 @@ public class Base {
     public static class Player {
         private String name;
         private String type;
+        //Attack decreases health
         private float hp;
+        //Probability based on speed
         private float speed;
+        //Attack hit with probability of dodge
         private float dodge;
-        private float attack;
+        //Calculate full damage based on defense
         private float defense;
         private ArrayList<Move> moveList = new ArrayList<Move>();
 
@@ -20,7 +23,6 @@ public class Base {
             this.hp = hp;
             this.speed = speed;
             this.dodge = dodge;
-            this.attack = attack;
             this.defense = defense;
         }
 
@@ -46,10 +48,6 @@ public class Base {
 
         public float getDodge() {
             return this.dodge;
-        }
-
-        public float getAttack() {
-            return this.attack;
         }
 
         public float getDefense() {
