@@ -16,8 +16,7 @@ public class Base {
         private float defense;
         private ArrayList<Move> moveList = new ArrayList<Move>();
 
-        public Player(String name, String type, float hp, float speed, float dodge, float attack,
-                      float defense)  {
+        public Player(String name, String type, float hp, float speed, float dodge, float defense)  {
             this.name = name;
             this.type = type;
             this.hp = hp;
@@ -54,11 +53,29 @@ public class Base {
             return this.defense;
         }
 
+        public ArrayList<Move> getMoveList() { return moveList; }
+
         public boolean hasLost() {
             if (this.getHP() <= 0) {
                 return true;
             } else {
                 return false;
+            }
+        }
+
+        public void setHP(float hp){
+            if(hp < 0){
+                this.hp = 0;
+            }else {
+                this.hp = hp;
+            }
+        }
+
+        public void setDefense(float defense){
+            if(defense < 0){
+                this.defense = 0;
+            }else {
+                this.defense = defense;
             }
         }
     }
@@ -79,7 +96,7 @@ public class Base {
         public String moveType(){
             return this.type;
         }
-        public int movePower(){
+        public float movePower(){
             return this.damage;
         }
     }

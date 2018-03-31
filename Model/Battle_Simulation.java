@@ -3,6 +3,7 @@ package Model;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
 
 import Model.Base.*;
 import sun.management.counter.perf.PerfLongArrayCounter;
@@ -31,9 +32,8 @@ public class Battle_Simulation {
 
         userPlayer = chooseHero();
         currentBoss = getCurrentBoss(currentBoss);
-        System.out.println(chooseFirst(userPlayer, currentBoss));
-
-        //Need to implement specific battle game play below...
+        //Battle implemented
+        Battle(userPlayer, currentBoss);
 
 
     }
@@ -47,7 +47,7 @@ public class Battle_Simulation {
         Scanner scanner = new Scanner(System.in);
         String userHeroPick = scanner.next();
 
-        Player heroPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f, 0f);
+        Player heroPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f);
 
         switch(userHeroPick){
             case "Krogg": heroPick = heroesArrayList.get(0);
@@ -83,5 +83,73 @@ public class Battle_Simulation {
             return bossArrayList.get(bossArrayList.indexOf(currentBoss)+1);
         }
     }
+    //returns the damage done by a Move
+    public static void Damage(Move move, Player player){
+        float playerDefense = player.getDefense();
+        float playerHP = player.getHP();
+
+        if(playerDefense > 0){
+            playerDefense = playerDefense - move.movePower();
+            player.setDefense(playerDefense);
+        }else{
+            playerHP = playerHP - move.movePower();
+            player.setHP(playerHP);
+        }
+    }
+
+    //Attack function
+    public static void Attack(Player player1, Player player2){
+        //prompt user to choose attack
+        ArrayList<Move> moves = player1.getMoveList();
+
+        System.out.println("Choose Attack: ");
+        for(int i = 0; i < moves.size(); i++){
+            System.out.println(i+1 + " " + moves.get(i).moveName());
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        int userMovePick = scanner.nextInt();
+
+
+        if(userMovePick == 1){
+            Damage(moves.get(1), player2);
+        }else if(userMovePick == 2){
+            Damage(moves.get(2), player2);
+        }else if(userMovePick == 3){
+            Damage(moves.get(3),player2);
+        }else{
+            System.out.println("Did not pick a move");
+        }
+    }
+
+    //Used for simulated battle where user doesn't pick attack
+    public static void rando_attack(Player player1, Player player2){
+        //prompt user to choose attack
+        ArrayList<Move> moves = player1.getMoveList();
+        Random rand = new Random();
+        int  n = rand.nextInt(moves.size());
+        Damage(moves.get(n),player2);
+    }
+
+    public static void Battle(Player player1, Player player2){
+        while(player1.getHP() > 0 && player2.getHP() > 0){
+            chooseFirst(player1,player2);
+            if(chooseFirst(player1,player2) == player1.getName()){
+                //player2 attacks player1
+                System.out.println(player1.getName() + "s turn");
+                rando_attack(player1, player2);
+            }else{
+                //player2 attacks player1
+                System.out.println(player2.getName() + "s turn");
+                rando_attack(player2,player1);
+            }
+        }
+        if(player1.getHP()>0){
+            System.out.println(player1.getName() + " wins!");
+        }else{
+            System.out.println(player2.getName() + " wins!");
+        }
+    }
+
 }
 
