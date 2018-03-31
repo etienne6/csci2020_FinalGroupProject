@@ -131,6 +131,7 @@ public class Battle_Simulation {
         Damage(moves.get(n),player2);
     }
 
+    //Currently using rando_attack but haven't tested the Attack function yet
     public static void Battle(Player player1, Player player2){
         while(player1.getHP() > 0 && player2.getHP() > 0){
             chooseFirst(player1,player2);
