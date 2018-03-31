@@ -13,13 +13,17 @@ import javafx.stage.Stage;
 import sample.model.*;
 
 public class kroggVsBoss {
-    public Button AttackButton;
-    public Button PotionButton;
+    //public Button AttackButton;
+    //public Button PotionButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
     public MenuItem exitGame;
     public SeparatorMenuItem separator;
+
+    public ImageView playerPic;
+    public ImageView bossPic;
+
     public ImageView soundButton;
     public ImageView soundButtonOff;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
@@ -34,8 +38,6 @@ public class kroggVsBoss {
     float boss1Speed = boss1.getSpeed();
     public TextField Boss1Dodge;
     float boss1Dodge = boss1.getDodge();
-    public TextField Boss1Attack;
-    float boss1Attack = boss1.getAttack();
     public TextField Boss1Defense;
     float boss1Defense = boss1.getDefense();
 
@@ -46,15 +48,19 @@ public class kroggVsBoss {
     float kroggSpeed = krogg.getSpeed();
     public TextField KroggDodge;
     float kroggDodge = krogg.getDodge();
-    public TextField KroggAttack;
-    float kroggAttack = krogg.getAttack();
     public TextField KroggDefense;
     float kroggDefense = krogg.getDefense();
 
+    public MenuBar AttackBar;
+    public Menu AttackMenu;
+    public MenuItem Move1;
+    public MenuItem Move2;
+    public MenuItem Move3;
+    public Menu ItemMenu;
+    public MenuItem Item1;
+    public MenuItem Item2;
+    public MenuItem Item3;
 
-
-
-    float totalKroggToBoss1Damage = kroggAttack-boss1Defense;
 
     int turnNumber = 0;
 
@@ -69,8 +75,8 @@ public class kroggVsBoss {
         Battle_Simulation.run();
         runBoss1();
         runKrogg();
-        turn();
 
+        turn();
 
    }
 
@@ -82,9 +88,10 @@ public class kroggVsBoss {
     }
     public void Save(){ SaveGame.SaveGame();}
     public void Open(){ OpenGame.OpenGame();}
-
+/*
     public void usePotion() {}
     public void useAttack() {
+
         boss1HP = boss1HP - totalKroggToBoss1Damage;
         Boss1HP.setText(String.valueOf(boss1HP));
         // NEED TO IMPLEMENT A TIMER TO ERASE MESSAGE AFTER 5 SECONDS OR SO
@@ -96,16 +103,16 @@ public class kroggVsBoss {
         turnNumber++;
         turn();
     }
-
+*/
     public void turn(){
         if ((turnNumber%2)==0){
             yourMove.setText("Your Move!");
-            AttackButton.setDisable(false);
-            PotionButton.setDisable(false);
+            AttackMenu.setDisable(false);
+            ItemMenu.setDisable(false);
         } else {
             yourMove.setText("Boss's Move!");
-            AttackButton.setDisable(true);
-            PotionButton.setDisable(true);
+            AttackMenu.setDisable(true);
+            ItemMenu.setDisable(true);
         }
     }
 
@@ -113,7 +120,6 @@ public class kroggVsBoss {
         Boss1HP.setText(String.valueOf(boss1HP));
         Boss1Speed.setText(String.valueOf(boss1Speed));
         Boss1Dodge.setText(String.valueOf(boss1Dodge));
-        Boss1Attack.setText(String.valueOf(boss1Attack));
         Boss1Defense.setText(String.valueOf(boss1Defense));
     }
 
@@ -121,7 +127,6 @@ public class kroggVsBoss {
         KroggHP.setText(String.valueOf(kroggHP));
         KroggSpeed.setText(String.valueOf(kroggSpeed));
         KroggDodge.setText(String.valueOf(kroggDodge));
-        KroggAttack.setText(String.valueOf(kroggAttack));
         KroggDefense.setText(String.valueOf(kroggDefense));
     }
 

@@ -29,6 +29,17 @@ public class newGame {
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
 
 
+    public MenuBar AttackBar;
+    public Menu AttackMenu;
+    public MenuItem Move1;
+    public MenuItem Move2;
+    public MenuItem Move3;
+    public Menu ItemMenu;
+    public MenuItem Item1;
+    public MenuItem Item2;
+    public MenuItem Item3;
+
+
     public void initialize(){
         if (!playing) {
             soundButton.setOpacity(0.0);

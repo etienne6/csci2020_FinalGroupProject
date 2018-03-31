@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -32,16 +31,6 @@
         </MenuBar>
         <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@kroggVsBoss.css" VBox.vgrow="ALWAYS">
             <children>
-                <Button id="PotionButton" fx:id="PotionButton" alignment="CENTER" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#usePotion" prefHeight="20.0" prefWidth="100.0" stylesheets="@kroggVsBoss.css" text="Potion" textAlignment="CENTER">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-                <Button id="AttackButton" fx:id="AttackButton" alignment="CENTER" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#useAttack" prefHeight="20.0" prefWidth="100.0" stylesheets="@kroggVsBoss.css" text="Attack" textAlignment="CENTER">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
                 <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/soundIcon.png" />
@@ -70,47 +59,43 @@
                         <Font name="Algerian" size="15.0" />
                      </font>
                   </TextField>
-                        <ImageView fitHeight="202.0" fitWidth="400.0" layoutX="416.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="playerPic" fitHeight="202.0" fitWidth="400.0" layoutX="416.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../media/krogg.png" />
                             </image>
                         </ImageView>
-                        <ImageView fitHeight="202.0" fitWidth="400.0" layoutX="-80.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="bossPic" fitHeight="202.0" fitWidth="400.0" layoutX="-80.0" layoutY="-18.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../media/lindas.png" />
+                                <Image url="@../media/boss1.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="144.0" layoutY="16.0" text="HP:" />
-                        <Label layoutX="429.0" layoutY="18.0" text="Attack:" />
-                        <Label layoutX="529.0" layoutY="18.0" text="Defense:" />
+                        <Label layoutX="144.0" layoutY="17.0" text="HP:" />
+                        <Label layoutX="432.0" layoutY="17.0" text="Defense:" />
                         <Label layoutX="224.0" layoutY="17.0" text="Speed:" />
                         <Label layoutX="326.0" layoutY="17.0" text="Dodge:" />
                         <TextField id="bossValue" fx:id="Boss1HP" editable="false" layoutX="167.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
                         <TextField id="bossValue" fx:id="Boss1Dodge" editable="false" layoutX="371.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="bossValue" fx:id="Boss1Defense" editable="false" layoutX="577.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
+                        <TextField id="bossValue" fx:id="Boss1Defense" editable="false" layoutX="480.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
                         <TextField id="bossValue" fx:id="Boss1Speed" editable="false" layoutX="263.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="bossValue" fx:id="Boss1Attack" editable="false" layoutX="468.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@kroggVsBoss.css" />
-                        <Label layoutX="8.0" layoutY="245.0" text="HP:" />
-                        <Label layoutX="293.0" layoutY="244.0" text="Attack:" />
-                        <Label layoutX="390.0" layoutY="244.0" text="Defense:" />
-                        <Label layoutX="90.0" layoutY="244.0" text="Speed:" />
-                        <Label layoutX="192.0" layoutY="244.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="30.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="characterValue" fx:id="KroggDodge" editable="false" layoutX="234.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="characterValue" fx:id="KroggDefense" editable="false" layoutX="439.0" layoutY="240.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="129.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@kroggVsBoss.css" />
-                        <TextField id="characterValue" fx:id="KroggAttack" editable="false" layoutX="332.0" layoutY="240.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@kroggVsBoss.css" />
-                        <Label layoutX="8.0" layoutY="218.0" text="krogg" textFill="#353535">
+                        <Label layoutX="95.0" layoutY="244.0" text="HP:" />
+                        <Label layoutX="383.0" layoutY="244.0" text="Defense:" />
+                        <Label layoutX="177.0" layoutY="244.0" text="Speed:" />
+                        <Label layoutX="279.0" layoutY="244.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="117.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
+                        <TextField id="characterValue" fx:id="KroggDodge" editable="false" layoutX="321.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
+                        <TextField id="characterValue" fx:id="KroggDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@kroggVsBoss.css" />
+                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="216.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@kroggVsBoss.css" />
+                        <Label layoutX="14.0" layoutY="245.0" text="krogg" textFill="#353535">
                             <font>
                                 <Font name="Algerian" size="15.0" />
                             </font>
                         </Label>
-                        <Label layoutX="591.0" layoutY="45.0" text="BOSS" textFill="#353535">
+                        <Label layoutX="590.0" layoutY="16.0" text="BOSS" textFill="#353535">
                             <font>
                                 <Font name="Algerian" size="15.0" />
                             </font>
                         </Label>
-                  <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="256.0" layoutY="71.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@kroggVsBoss.css">
+                  <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="275.0" layoutY="69.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@kroggVsBoss.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font>
@@ -122,6 +107,44 @@
                         <Font name="Algerian" size="15.0" />
                     </font>
                 </Label>
+            <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@kroggVsBoss.css">
+               <menus>
+                  <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+                  <Menu id="attackButton" fx:id="AttackMenu" mnemonicParsing="false" text="Attack">
+                     <items>
+                        <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                     </items>
+                  </Menu>
+                  <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+                  <Menu id="attackButton" fx:id="ItemMenu" mnemonicParsing="false" text="Item">
+                     <items>
+                        <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                     </items>
+                  </Menu>
+                  <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Label layoutX="251.0" layoutY="325.0" text="Choose your move" textFill="DARKGRAY">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>

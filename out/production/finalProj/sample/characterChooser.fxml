@@ -32,16 +32,6 @@
         </MenuBar>
         <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
             <children>
-                <Button id="PotionButton" fx:id="PotionButton" alignment="CENTER" disable="true" layoutX="172.0" layoutY="332.0" mnemonicParsing="false" onAction="#usePotion" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Potion" textAlignment="CENTER">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
-                <Button id="AttackButton" fx:id="AttackButton" alignment="CENTER" disable="true" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" onAction="#useAttack" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Attack" textAlignment="CENTER">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Button>
                 <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
                     <cursor>
                         <Cursor fx:constant="HAND" />
@@ -104,42 +94,36 @@
                                 <Image url="@../media/lindas.png" />
                             </image>
                         </ImageView>
-                        <Label layoutX="130.0" layoutY="126.0" text="HP:" />
-                        <Label layoutX="7.0" layoutY="193.0" text="Attack:" />
+                        <Label layoutX="25.0" layoutY="159.0" text="HP:" />
                         <Label layoutX="104.0" layoutY="193.0" text="Defense:" />
-                        <Label layoutX="12.0" layoutY="126.0" text="Type: " />
-                        <Label layoutX="7.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="65.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="9.0" layoutY="192.0" text="Speed:" />
                         <Label layoutX="107.0" layoutY="160.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="LindaType" editable="false" layoutX="46.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="LindaHP" editable="false" layoutX="152.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaType" editable="false" layoutX="99.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaHP" editable="false" layoutX="47.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="LindaDodge" editable="false" layoutX="152.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="LindaDefense" editable="false" layoutX="152.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="LindaSpeed" editable="false" layoutX="46.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="LindaAttack" editable="false" layoutX="46.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <Label layoutX="345.0" layoutY="126.0" text="HP:" />
-                        <Label layoutX="222.0" layoutY="193.0" text="Attack:" />
+                        <TextField id="characterValue" fx:id="LindaSpeed" editable="false" layoutX="48.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="240.0" layoutY="159.0" text="HP:" />
                         <Label layoutX="319.0" layoutY="193.0" text="Defense:" />
-                        <Label layoutX="227.0" layoutY="126.0" text="Type: " />
-                        <Label layoutX="222.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="280.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="224.0" layoutY="192.0" text="Speed:" />
                         <Label layoutX="326.0" layoutY="160.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="KroggType" editable="false" layoutX="261.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="368.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggType" editable="false" layoutX="314.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="263.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="KroggDodge" editable="false" layoutX="368.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="KroggDefense" editable="false" layoutX="368.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="261.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="KroggAttack" editable="false" layoutX="261.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <Label layoutX="559.0" layoutY="126.0" text="HP:" />
-                        <Label layoutX="436.0" layoutY="193.0" text="Attack:" />
+                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="263.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="454.0" layoutY="159.0" text="HP:" />
                         <Label layoutX="533.0" layoutY="193.0" text="Defense:" />
-                        <Label layoutX="442.0" layoutY="126.0" text="Type: " />
-                        <Label layoutX="436.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="495.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="438.0" layoutY="192.0" text="Speed:" />
                         <Label layoutX="540.0" layoutY="160.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="GlenType" editable="false" layoutX="475.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="GlenHP" editable="false" layoutX="581.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenType" editable="false" layoutX="528.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenHP" editable="false" layoutX="476.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="GlenDodge" editable="false" layoutX="581.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
                         <TextField id="characterValue" fx:id="GlenDefense" editable="false" layoutX="581.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="GlenSpeed" editable="false" layoutX="475.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
-                        <TextField id="characterValue" fx:id="GlenAttack" editable="false" layoutX="475.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenSpeed" editable="false" layoutX="477.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
 
                     </children>
                 </Pane>
@@ -150,5 +134,38 @@
                 </Label>
             </children>
         </AnchorPane>
+      <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@kroggVsBoss.css">
+         <menus>
+            <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
+               <items>
+                  <MenuItem />
+               </items>
+            </Menu>
+            <Menu id="attackButton" fx:id="AttackMenu" disable="true" mnemonicParsing="false" text="Attack">
+               <items>
+                  <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#New" />
+                  <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#Open" />
+                  <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#Save" />
+               </items>
+            </Menu>
+            <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
+               <items>
+                  <MenuItem />
+               </items>
+            </Menu>
+            <Menu id="attackButton" fx:id="ItemMenu" disable="true" mnemonicParsing="false" text="Item">
+               <items>
+                  <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#New" />
+                  <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#Open" />
+                  <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#Save" />
+               </items>
+            </Menu>
+            <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">
+               <items>
+                  <MenuItem />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
     </children>
 </VBox>

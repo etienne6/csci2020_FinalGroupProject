@@ -33,20 +33,27 @@ public class characterChooser {
     public TextField LindaHP;
     public TextField LindaSpeed;
     public TextField LindaDodge;
-    public TextField LindaAttack;
     public TextField LindaDefense;
     public TextField KroggType;
     public TextField KroggHP;
     public TextField KroggSpeed;
     public TextField KroggDodge;
-    public TextField KroggAttack;
     public TextField KroggDefense;
     public TextField GlenType;
     public TextField GlenHP;
     public TextField GlenSpeed;
     public TextField GlenDodge;
-    public TextField GlenAttack;
     public TextField GlenDefense;
+
+    public MenuBar AttackBar;
+    public Menu AttackMenu;
+    public MenuItem Move1;
+    public MenuItem Move2;
+    public MenuItem Move3;
+    public Menu ItemMenu;
+    public MenuItem Item1;
+    public MenuItem Item2;
+    public MenuItem Item3;
 
     public void initialize(){
         if (!playing) {
@@ -104,7 +111,6 @@ public class characterChooser {
         LindaHP.setText(String.valueOf(linda.getHP()));
         LindaSpeed.setText(String.valueOf(linda.getSpeed()));
         LindaDodge.setText(String.valueOf(linda.getDodge()));
-        LindaAttack.setText(String.valueOf(linda.getAttack()));
         LindaDefense.setText(String.valueOf(linda.getDefense()));
 
     }
@@ -115,7 +121,6 @@ public class characterChooser {
         KroggHP.setText(String.valueOf(krogg.getHP()));
         KroggSpeed.setText(String.valueOf(krogg.getSpeed()));
         KroggDodge.setText(String.valueOf(krogg.getDodge()));
-        KroggAttack.setText(String.valueOf(krogg.getAttack()));
         KroggDefense.setText(String.valueOf(krogg.getDefense()));
     }
 
@@ -125,7 +130,6 @@ public class characterChooser {
         GlenHP.setText(String.valueOf(glen.getHP()));
         GlenSpeed.setText(String.valueOf(glen.getSpeed()));
         GlenDodge.setText(String.valueOf(glen.getDodge()));
-        GlenAttack.setText(String.valueOf(glen.getAttack()));
         GlenDefense.setText(String.valueOf(glen.getDefense()));
     }
     public void Sound() {

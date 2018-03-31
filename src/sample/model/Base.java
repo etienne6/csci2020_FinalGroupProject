@@ -4,23 +4,24 @@ import java.util.ArrayList;
 public class Base {
 
     public static class Player {
-        public static String name;
-        public static String type;
-        public static float hp;
-        public static float speed;
-        public static float dodge;
-        public static float attack;
-        public static float defense;
-        public ArrayList<Move> moveList = new ArrayList<Move>();
+        private String name;
+        private String type;
+        //Attack decreases health
+        private float hp;
+        //Probability based on speed
+        private float speed;
+        //Attack hit with probability of dodge
+        private float dodge;
+        //Calculate full damage based on defense
+        private float defense;
+        private ArrayList<Move> moveList = new ArrayList<Move>();
 
-        public Player(String name, String type, float hp, float speed, float dodge, float attack,
-                      float defense)  {
+        public Player(String name, String type, float hp, float speed, float dodge, float defense)  {
             this.name = name;
             this.type = type;
             this.hp = hp;
             this.speed = speed;
             this.dodge = dodge;
-            this.attack = attack;
             this.defense = defense;
         }
 
@@ -48,19 +49,33 @@ public class Base {
             return this.dodge;
         }
 
-        public float getAttack() {
-            return this.attack;
-        }
-
         public float getDefense() {
             return this.defense;
         }
+
+        public ArrayList<Move> getMoveList() { return moveList; }
 
         public boolean hasLost() {
             if (this.getHP() <= 0) {
                 return true;
             } else {
                 return false;
+            }
+        }
+
+        public void setHP(float hp){
+            if(hp < 0){
+                this.hp = 0;
+            }else {
+                this.hp = hp;
+            }
+        }
+
+        public void setDefense(float defense){
+            if(defense < 0){
+                this.defense = 0;
+            }else {
+                this.defense = defense;
             }
         }
     }
@@ -81,7 +96,7 @@ public class Base {
         public String moveType(){
             return this.type;
         }
-        public int movePower(){
+        public float movePower(){
             return this.damage;
         }
     }

@@ -3,10 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.css" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.fxml" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/characterChooser.fxml" afterPath="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/characterChooser.java" afterPath="$PROJECT_DIR$/src/sample/characterChooser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.css" afterPath="$PROJECT_DIR$/src/sample/kroggVsBoss.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" afterPath="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.java" afterPath="$PROJECT_DIR$/src/sample/kroggVsBoss.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Base.java" afterPath="$PROJECT_DIR$/src/sample/model/Base.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" afterPath="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Boss1.java" afterPath="$PROJECT_DIR$/src/sample/model/Boss1.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Boss2.java" afterPath="$PROJECT_DIR$/src/sample/model/Boss2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Boss3.java" afterPath="$PROJECT_DIR$/src/sample/model/Boss3.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Glen.java" afterPath="$PROJECT_DIR$/src/sample/model/Glen.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Krogg.java" afterPath="$PROJECT_DIR$/src/sample/model/Krogg.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Linda.java" afterPath="$PROJECT_DIR$/src/sample/model/Linda.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/newGame.fxml" afterPath="$PROJECT_DIR$/src/sample/newGame.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/newGame.java" afterPath="$PROJECT_DIR$/src/sample/newGame.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,41 +77,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="characterChooser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
+      <file leaf-file-name="Krogg.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-591">
-              <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
+            <state relative-caret-position="323">
+              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Linda.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Linda.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Battle_Simulation.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2990#2991#0" expanded="true" />
-                <element signature="e#3050#3051#0" expanded="true" />
-                <element signature="e#3080#3081#0" expanded="true" />
-                <element signature="e#3139#3140#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="characterChooser.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1722">
-              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="characterChooser.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -106,43 +112,18 @@
       <file leaf-file-name="Base.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1021#1022#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Heroes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Heroes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Krogg.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="9" selection-end-column="28" />
+            <state relative-caret-position="51">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kroggVsBoss.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="kroggVsBoss.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="93" column="78" lean-forward="false" selection-start-line="93" selection-start-column="78" selection-end-line="93" selection-end-column="78" />
+            <state relative-caret-position="-442">
+              <caret line="36" column="14" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="61" selection-end-column="26" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -150,36 +131,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Boss1.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Boss1.java">
+      <file leaf-file-name="characterChooser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="kroggVsBoss.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="39" column="61" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="61" />
+            <state relative-caret-position="208">
+              <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="55" selection-end-column="26" />
               <folding>
-                <marker date="1522522882692" expanded="true" signature="8336:8485" ph="..." />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="kroggVsBoss.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.css">
+      <file leaf-file-name="newGame.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/newGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="77" column="34" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="34" />
+            <state relative-caret-position="459">
+              <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boss3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Boss3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bosses.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Bosses.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="23" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Glen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -247,25 +247,25 @@
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
         <option value="$PROJECT_DIR$/src/sample/Music.java" />
         <option value="$PROJECT_DIR$/src/sample/newGame.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/newGame.java" />
         <option value="$PROJECT_DIR$/src/sample/newGame.css" />
+        <option value="$PROJECT_DIR$/src/sample/model/Heroes.java" />
+        <option value="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/model/kroggVsBoss.java" />
+        <option value="$PROJECT_DIR$/src/sample/characterChooser.css" />
+        <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.css" />
+        <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/model/Base.java" />
+        <option value="$PROJECT_DIR$/src/sample/model/Boss1.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Boss2.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Boss3.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Bosses.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Glen.java" />
-        <option value="$PROJECT_DIR$/src/sample/model/Heroes.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Krogg.java" />
-        <option value="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
-        <option value="$PROJECT_DIR$/src/sample/model/Base.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Linda.java" />
-        <option value="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/model/kroggVsBoss.java" />
-        <option value="$PROJECT_DIR$/src/sample/characterChooser.java" />
-        <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/characterChooser.css" />
-        <option value="$PROJECT_DIR$/src/sample/model/Boss1.java" />
-        <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.css" />
+        <option value="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
         <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.java" />
+        <option value="$PROJECT_DIR$/src/sample/characterChooser.java" />
+        <option value="$PROJECT_DIR$/src/sample/newGame.java" />
       </list>
     </option>
   </component>
@@ -348,7 +348,7 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="SearchEverywhereHistoryKey" value="scene builder&#9;PSI&#9;JAVA://com.sun.javafx.fxml.builder.JavaFXSceneBuilder" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../finalprojup" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -535,12 +535,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1522341569502" duration="13095000" />
-      <workItem from="1522447806408" duration="38842000" />
+      <workItem from="1522447806408" duration="44404000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53239000" />
+    <option name="totallyTimeSpent" value="58801000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
@@ -724,9 +724,9 @@
         <state relative-caret-position="322">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1982#1983#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#1982#1983#0" expanded="false" />
+            <element signature="e#2012#2013#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -878,7 +878,7 @@
         <state relative-caret-position="429">
           <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -904,14 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/newGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="67" column="4" lean-forward="false" selection-start-line="67" selection-start-column="4" selection-end-line="68" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/newGame.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -928,48 +920,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Bosses.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Linda.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/model/kroggVsBoss.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -978,43 +928,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="15" column="40" lean-forward="true" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
+        <state relative-caret-position="374">
+          <caret line="22" column="25" lean-forward="false" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="128" column="28" lean-forward="true" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#185#195#0" expanded="true" />
-            <element signature="e#267#277#0" expanded="true" />
+            <marker date="1522538158341" expanded="true" signature="6902:7075" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="6937:7042" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="6632:6805" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="6667:6772" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="6986:7135" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7014:7104" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7296:7437" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7323:7412" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7553:9433" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7576:9410" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7743:7865" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7772:7839" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7965:8341" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="7994:8315" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="8498:8620" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="8527:8594" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="8716:9092" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="8745:9066" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="9264:9386" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="9293:9360" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="9529:9650" ph="..." />
+            <marker date="1522538158341" expanded="true" signature="9551:9629" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Heroes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="14" lean-forward="true" selection-start-line="8" selection-start-column="14" selection-end-line="9" selection-end-column="28" />
+        <state relative-caret-position="799">
+          <caret line="47" column="34" lean-forward="true" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -1030,49 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="59" column="34" lean-forward="true" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-591">
-          <caret line="59" column="8" lean-forward="true" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2990#2991#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3080#3081#0" expanded="true" />
-            <element signature="e#3139#3140#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="39" column="61" lean-forward="false" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="61" />
-          <folding>
-            <marker date="1522522882692" expanded="true" signature="8336:8485" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="77" column="34" lean-forward="false" selection-start-line="77" selection-start-column="26" selection-end-line="77" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/model/Boss1.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1081,13 +997,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="93" column="78" lean-forward="false" selection-start-line="93" selection-start-column="78" selection-end-line="93" selection-end-column="78" />
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Bosses.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="23" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Heroes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Linda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="59" column="0" lean-forward="true" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/kroggVsBoss.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-442">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="61" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="55" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/newGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="39" column="26" lean-forward="false" selection-start-line="39" selection-start-column="26" selection-end-line="39" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>

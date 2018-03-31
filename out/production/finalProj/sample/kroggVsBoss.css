@@ -10,6 +10,24 @@
     -fx-background-color: darkgrey ;
 }
 
+#attackBar {
+    -fx-background-color: #353535 ;
+    -fx-text-fill: #353535;
+}
+
+#attackButton {
+    -fx-background-color: #353535 ;
+}
+#attackButton .label{
+    -fx-text-fill: #37ee1a;
+    -fx-font-weight:bold;
+}
+
+#blankBar {
+    -fx-background-color: #353535 ;
+    -fx-text-fill: #353535;
+}
+
 .text-area .content{
     -fx-background-color: darkgrey ;
     -fx-text-alignment: center;
