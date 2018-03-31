@@ -90,6 +90,7 @@ public class Base {
             this.type = type;
             this.damage = power;
         }
+
         public String moveName(){
             return this.name;
         }

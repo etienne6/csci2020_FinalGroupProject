@@ -33,7 +33,7 @@ public class Battle_Simulation {
         userPlayer = chooseHero();
         currentBoss = getCurrentBoss(currentBoss);
         //Battle implemented
-        Battle(userPlayer, currentBoss);
+        battle(userPlayer, currentBoss);
 
 
     }
@@ -83,8 +83,9 @@ public class Battle_Simulation {
             return bossArrayList.get(bossArrayList.indexOf(currentBoss)+1);
         }
     }
+
     //returns the damage done by a Move
-    public static void Damage(Move move, Player player){
+    public static void damage(Move move, Player player){
         float playerDefense = player.getDefense();
         float playerHP = player.getHP();
 
@@ -98,7 +99,7 @@ public class Battle_Simulation {
     }
 
     //Attack function
-    public static void Attack(Player player1, Player player2){
+    public static void attack(Player player1, Player player2){
         //prompt user to choose attack
         ArrayList<Move> moves = player1.getMoveList();
 
@@ -112,14 +113,20 @@ public class Battle_Simulation {
 
 
         if(userMovePick == 1){
-            Damage(moves.get(1), player2);
+            damage(moves.get(1), player2);
         }else if(userMovePick == 2){
-            Damage(moves.get(2), player2);
+            damage(moves.get(2), player2);
         }else if(userMovePick == 3){
-            Damage(moves.get(3),player2);
+            damage(moves.get(3),player2);
         }else{
             System.out.println("Did not pick a move");
         }
+    }
+
+    public static boolean isHit(Player currentCharacter){
+        boolean missChance = new Random().nextInt((int)currentCharacter.getSpeed())>30;
+
+        return missChance;
     }
 
     //Used for simulated battle where user doesn't pick attack
@@ -128,11 +135,15 @@ public class Battle_Simulation {
         ArrayList<Move> moves = player1.getMoveList();
         Random rand = new Random();
         int  n = rand.nextInt(moves.size());
-        Damage(moves.get(n),player2);
+        if(isHit(player1)){
+            damage(moves.get(n),player2);
+        }else{
+            System.out.println("Missed Attack!");
+        }
     }
 
     //Currently using rando_attack but haven't tested the Attack function yet
-    public static void Battle(Player player1, Player player2){
+    public static void battle(Player player1, Player player2){
         while(player1.getHP() > 0 && player2.getHP() > 0){
             chooseFirst(player1,player2);
             if(chooseFirst(player1,player2) == player1.getName()){
