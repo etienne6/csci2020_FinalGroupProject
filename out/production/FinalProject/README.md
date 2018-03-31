@@ -1,9 +1,10 @@
-The contributors of this project are:
+# Model Branch:
 
-Etienne Caronan
+Worked on by:
 
-Stefan Cross
+* Etienne Caronan
+* Stefan Cross
 
-Mir Afgan Talpur
+# Update 
 
-Rolando Aguillano 
+Added base character models for the heroes of the story, krogg, glenn and linda
