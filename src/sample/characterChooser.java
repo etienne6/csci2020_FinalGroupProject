@@ -12,9 +12,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import sample.model.Base;
-import sample.model.Battle_Simulation;
-import sample.model.Krogg;
+import sample.model.*;
 
 import java.io.File;
 
@@ -23,7 +21,6 @@ import static sample.model.Battle_Simulation.chooseHero;
 public class characterChooser {
     public TextField Username;
     public PasswordField Password;
-    public Button SubmitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -32,7 +29,24 @@ public class characterChooser {
     public ImageView soundButton;
     public ImageView soundButtonOff;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
-
+    public TextField LindaType;
+    public TextField LindaHP;
+    public TextField LindaSpeed;
+    public TextField LindaDodge;
+    public TextField LindaAttack;
+    public TextField LindaDefense;
+    public TextField KroggType;
+    public TextField KroggHP;
+    public TextField KroggSpeed;
+    public TextField KroggDodge;
+    public TextField KroggAttack;
+    public TextField KroggDefense;
+    public TextField GlenType;
+    public TextField GlenHP;
+    public TextField GlenSpeed;
+    public TextField GlenDodge;
+    public TextField GlenAttack;
+    public TextField GlenDefense;
 
     public void initialize(){
         if (!playing) {
@@ -43,6 +57,10 @@ public class characterChooser {
             soundButtonOff.setOpacity(0.0);
         }
         Battle_Simulation.run();
+        runLinda();
+        runKrogg();
+        runGlen();
+
     }
 
     public void New() throws Exception{
@@ -68,6 +86,7 @@ public class characterChooser {
     public void pickLinda() {
         Base.Player userPlayer = chooseHero("Linda");
     }
+
     public void pickGlen() {
         Base.Player userPlayer = chooseHero("Glen");
     }
@@ -75,6 +94,36 @@ public class characterChooser {
     public void usePotion() {}
     public void useAttack() {}
 
+    public void runLinda(){
+        Linda linda = new Linda();
+        LindaType.setText(linda.getType());
+        LindaHP.setText(String.valueOf(linda.getHP()));
+        LindaSpeed.setText(String.valueOf(linda.getSpeed()));
+        LindaDodge.setText(String.valueOf(linda.getDodge()));
+        LindaAttack.setText(String.valueOf(linda.getAttack()));
+        LindaDefense.setText(String.valueOf(linda.getDefense()));
+
+    }
+
+    public void runKrogg(){
+        Krogg krogg = new Krogg();
+        KroggType.setText(krogg.getType());
+        KroggHP.setText(String.valueOf(krogg.getHP()));
+        KroggSpeed.setText(String.valueOf(krogg.getSpeed()));
+        KroggDodge.setText(String.valueOf(krogg.getDodge()));
+        KroggAttack.setText(String.valueOf(krogg.getAttack()));
+        KroggDefense.setText(String.valueOf(krogg.getDefense()));
+    }
+
+    public void runGlen(){
+        Glen glen = new Glen();
+        GlenType.setText(glen.getType());
+        GlenHP.setText(String.valueOf(glen.getHP()));
+        GlenSpeed.setText(String.valueOf(glen.getSpeed()));
+        GlenDodge.setText(String.valueOf(glen.getDodge()));
+        GlenAttack.setText(String.valueOf(glen.getAttack()));
+        GlenDefense.setText(String.valueOf(glen.getDefense()));
+    }
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (!playing) {

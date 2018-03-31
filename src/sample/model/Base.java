@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class Base {
 
     public static class Player {
-        private String name;
-        private String type;
-        private float hp;
-        private float speed;
-        private float dodge;
-        private float attack;
-        private float defense;
-        private ArrayList<Move> moveList = new ArrayList<Move>();
+        public static String name;
+        public static String type;
+        public static float hp;
+        public static float speed;
+        public static float dodge;
+        public static float attack;
+        public static float defense;
+        public ArrayList<Move> moveList = new ArrayList<Move>();
 
         public Player(String name, String type, float hp, float speed, float dodge, float attack,
                       float defense)  {

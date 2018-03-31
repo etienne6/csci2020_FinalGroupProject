@@ -7,6 +7,7 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -62,9 +63,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <Pane id="Pane" fx:id="Pane" layoutY="38.0" prefHeight="270.0" prefWidth="640.0" stylesheets="@characterChooser.css">
+                <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@characterChooser.css">
                     <children>
-                        <Button id="KroggButton" fx:id="KroggButton" alignment="CENTER" layoutX="271.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickKrogg" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
+                        <Button id="KroggButton" fx:id="KroggButton" alignment="CENTER" layoutX="269.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickKrogg" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
                             <cursor>
                                 <Cursor fx:constant="HAND" />
                             </cursor>
@@ -72,63 +73,81 @@
                                 <Font size="15.0" />
                             </font>
                         </Button>
-                  <Button id="LindaButton" fx:id="LindaButton" alignment="CENTER" layoutX="47.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickLinda" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <Button id="GlenButton" fx:id="GlenButton" alignment="CENTER" layoutX="502.0" layoutY="228.0" mnemonicParsing="false" onAction="#pickGlen" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Button>
-                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="220.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../media/krogg.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="452.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../media/glen.png" />
-                     </image>
-                  </ImageView>
-                  <ImageView fitHeight="202.0" fitWidth="200.0" layoutX="-3.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../media/lindas.png" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="70.0" layoutY="136.0" text="HP:" />
-                  <Label layoutX="55.0" layoutY="189.0" text="Attack:" />
-                  <Label layoutX="47.0" layoutY="207.0" text="Defence:" />
-                  <Label layoutX="59.0" layoutY="117.0" text="Type: " />
-                  <Label layoutX="54.0" layoutY="153.0" text="Speed:" />
-                  <Label layoutX="51.0" layoutY="171.0" text="Dodge:" />
-                  <Label layoutX="294.0" layoutY="136.0" text="HP:" />
-                  <Label layoutX="279.0" layoutY="189.0" text="Attack:" />
-                  <Label layoutX="271.0" layoutY="207.0" text="Defence:" />
-                  <Label layoutX="283.0" layoutY="117.0" text="Type: " />
-                  <Label layoutX="278.0" layoutY="153.0" text="Speed:" />
-                  <Label layoutX="275.0" layoutY="171.0" text="Dodge:" />
-                  <Label layoutX="525.0" layoutY="136.0" text="HP:" />
-                  <Label layoutX="510.0" layoutY="189.0" text="Attack:" />
-                  <Label layoutX="502.0" layoutY="207.0" text="Defence:" />
-                  <Label layoutX="514.0" layoutY="117.0" text="Type: " />
-                  <Label layoutX="509.0" layoutY="153.0" text="Speed:" />
-                  <Label layoutX="506.0" layoutY="171.0" text="Dodge:" />
+                        <Button id="LindaButton" fx:id="LindaButton" alignment="CENTER" layoutX="56.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickLinda" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button id="GlenButton" fx:id="GlenButton" alignment="CENTER" layoutX="485.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickGlen" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="211.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/krogg.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="425.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/glen.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="-4.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/lindas.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="130.0" layoutY="126.0" text="HP:" />
+                        <Label layoutX="7.0" layoutY="193.0" text="Attack:" />
+                        <Label layoutX="104.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="12.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="7.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="107.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="LindaType" editable="false" layoutX="46.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaHP" editable="false" layoutX="152.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaDodge" editable="false" layoutX="152.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaDefense" editable="false" layoutX="152.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaSpeed" editable="false" layoutX="46.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaAttack" editable="false" layoutX="46.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="345.0" layoutY="126.0" text="HP:" />
+                        <Label layoutX="222.0" layoutY="193.0" text="Attack:" />
+                        <Label layoutX="319.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="227.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="222.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="326.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="KroggType" editable="false" layoutX="261.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="368.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggDodge" editable="false" layoutX="368.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggDefense" editable="false" layoutX="368.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="261.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggAttack" editable="false" layoutX="261.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="559.0" layoutY="126.0" text="HP:" />
+                        <Label layoutX="436.0" layoutY="193.0" text="Attack:" />
+                        <Label layoutX="533.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="442.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="436.0" layoutY="160.0" text="Speed:" />
+                        <Label layoutX="540.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="GlenType" editable="false" layoutX="475.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenHP" editable="false" layoutX="581.0" layoutY="124.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenDodge" editable="false" layoutX="581.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenDefense" editable="false" layoutX="581.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenSpeed" editable="false" layoutX="475.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenAttack" editable="false" layoutX="475.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
 
                     </children>
                 </Pane>
-            <Label layoutX="251.0" layoutY="11.0" text="CHOOSE YOUR HERO" textFill="DARKGRAY">
-               <font>
-                  <Font name="Algerian" size="15.0" />
-               </font>
-            </Label>
+                <Label layoutX="251.0" layoutY="11.0" text="CHOOSE YOUR HERO" textFill="DARKGRAY">
+                    <font>
+                        <Font name="Algerian" size="15.0" />
+                    </font>
+                </Label>
             </children>
         </AnchorPane>
     </children>

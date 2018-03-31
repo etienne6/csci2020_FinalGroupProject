@@ -12,4 +12,5 @@ public class Linda extends Player {
         this.setMoves(new Move("Attack3","type3", 100));
     }
 
+
 }

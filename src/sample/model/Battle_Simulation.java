@@ -15,6 +15,7 @@ public class Battle_Simulation {
         heroesArrayList = hero.heroList();
         bossArrayList = boss.bossList();
 
+        /*
 
         System.out.println(heroesArrayList.get(0).getName());
         System.out.println(heroesArrayList.get(1).getName());
@@ -23,7 +24,7 @@ public class Battle_Simulation {
         System.out.println(bossArrayList.get(1).getName());
         System.out.println(bossArrayList.get(2).getName());
 
-
+*/
         //Need to implement specific battle game play below...
 
 

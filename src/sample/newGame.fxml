@@ -63,9 +63,9 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <Pane id="Pane" fx:id="Pane" layoutY="38.0" prefHeight="247.0" prefWidth="640.0" stylesheets="@newGame.css">
+                <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@newGame.css">
                     <children>
-                        <TextArea id="textarea" editable="false" focusTraversable="false" layoutY="40.0" prefHeight="154.0" prefWidth="640.0" styleClass="text-area" stylesheets="@newGame.css" text="Welcome to the company of Krogg, the Destroyer! &#10;Krogg and his fellow adventurers, linda and glen, were chosen &#10;by the king of uoitopia to stop the evil dragon and his minions!&#10;You are the country's last hope in the battle against evil! &#10;The king has equipped you with the best weapons and magic in &#10;the country! are you up to the challenge?">
+                        <TextArea id="textarea" editable="false" focusTraversable="false" layoutY="52.0" prefHeight="154.0" prefWidth="640.0" styleClass="text-area" stylesheets="@newGame.css" text="Welcome to the company of Krogg, the Destroyer! &#10;Krogg and his fellow adventurers, linda and glen, were chosen &#10;by the king of uoitopia to stop the evil dragon and his minions!&#10;You are the country's last hope in the battle against evil! &#10;The king has equipped you with the best weapons and magic in &#10;the country! are you up to the challenge?">
                      <font>
                         <Font name="Algerian" size="18.0" />
                      </font>
@@ -73,7 +73,7 @@
                         <Cursor fx:constant="DISAPPEAR" />
                      </cursor>
                   </TextArea>
-                  <Button id="challengeAccepted" fx:id="challengeAccepted" alignment="CENTER" layoutX="220.0" layoutY="205.0" mnemonicParsing="false" onAction="#characterChooser" prefHeight="20.0" prefWidth="200.0" stylesheets="@singlePlayerGameSelect.css" text="Challenge Accepted!" textAlignment="CENTER">
+                  <Button id="challengeAccepted" fx:id="challengeAccepted" alignment="CENTER" layoutX="220.0" layoutY="224.0" mnemonicParsing="false" onAction="#characterChooser" prefHeight="20.0" prefWidth="200.0" stylesheets="@singlePlayerGameSelect.css" text="Challenge Accepted!" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -84,6 +84,11 @@
 
                     </children>
                 </Pane>
+            <Label layoutX="220.0" layoutY="13.0" text="The Adventure Begins..." textFill="DARKGRAY">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Label>
             </children>
         </AnchorPane>
     </children>
