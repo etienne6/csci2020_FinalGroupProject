@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,12 +8,8 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import sample.model.*;
-
-import java.io.File;
 
 import static sample.model.Battle_Simulation.chooseHero;
 
@@ -55,6 +50,14 @@ public class characterChooser {
     public MenuItem Item2;
     public MenuItem Item3;
 
+    private static Base.Player userPlayer;
+
+    private void setCharacter(Base.Player userPlayer) {
+        characterChooser.userPlayer = userPlayer;
+    }
+
+    static public Base.Player getUserPlayer(){ return characterChooser.userPlayer;}
+
     public void initialize(){
         if (!playing) {
             soundButton.setOpacity(0.0);
@@ -87,19 +90,28 @@ public class characterChooser {
     }
 
     public void pickKrogg() throws Exception{
-        Base.Player userPlayer = chooseHero("Krogg");
-        Parent root = FXMLLoader.load(getClass().getResource("kroggVsBoss.fxml"));
+        userPlayer = chooseHero("Krogg");
+        setCharacter(userPlayer);
+        Parent root = FXMLLoader.load(getClass().getResource("singlePlayerFight.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Battle");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 
-    public void pickLinda() {
-        Base.Player userPlayer = chooseHero("Linda");
+    public void pickLinda() throws Exception{
+        userPlayer = chooseHero("Linda");
+        Parent root = FXMLLoader.load(getClass().getResource("singlePlayerFight.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - Battle");
+        primaryStage.setScene(new Scene(root, 640, 400));;
     }
 
-    public void pickGlen() {
-        Base.Player userPlayer = chooseHero("Glen");
+    public void pickGlen() throws Exception {
+        userPlayer = chooseHero("Glen");
+        Parent root = FXMLLoader.load(getClass().getResource("singlePlayerFight.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - Battle");
+        primaryStage.setScene(new Scene(root, 640, 400));
     }
 
     public void usePotion() {}

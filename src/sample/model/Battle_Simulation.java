@@ -104,6 +104,7 @@ public class Battle_Simulation {
         float playerHP = healed.getHP();
         float playerMaxHP = healed.getMaxHP();
         float playerDefense = healed.getDefense();
+        float playerMaxDefense = healed.getMaxDefense();
 
         if(itemType=="Defense Booster"){
             playerDefense = playerDefense + itemHealing;
@@ -117,8 +118,13 @@ public class Battle_Simulation {
                 healed.setHP(playerMaxHP);
             }
             return healer.getName() + " heals " + healed.getName() + " by " + itemHealing + " points with " + item.itemName() + "!";
+        }else if (itemType=="Elixir") {
+            healed.setHP(playerMaxHP);
+            healed.setDefense(playerMaxDefense);
+            return healer.getName() + " returns " + healed.getName() + " to full health and defense with " + item.itemName() + "!";
         } else {
-            return healer.getName() + " revives " + healed.getName() + " with " + item.itemName() + "!";
+            healed.setHP(playerMaxHP);
+            return healer.getName() + " revives/heals " + healed.getName() + " with " + item.itemName() + "!";
         }
     }
 

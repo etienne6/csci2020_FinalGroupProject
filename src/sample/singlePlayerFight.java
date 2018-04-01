@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import static sample.model.Battle_Simulation.*;
 import static sample.model.Battle_Simulation.getCurrentBoss;
 
-public class kroggVsBoss {
+public class singlePlayerFight {
     public Button newGameButton;
     public MenuItem newGame;
     public MenuItem openGame;
@@ -38,55 +38,49 @@ public class kroggVsBoss {
     public TextField villainName;
 
     public Base.Player currentBoss = getCurrentBoss(null);
-    public Base.Player userPlayer = chooseHero("Krogg");
+    public Base.Player userPlayer = characterChooser.getUserPlayer();
 
+    Image kroggPic = new Image("/media/krogg.png");
+    Image lindaPic = new Image("/media/lindas.png");
+    Image glenPic = new Image("/media/glen.png");
     Image draconisPic = new Image("/media/boss2.png");
     Image dragonPic = new Image("/media/boss3.png");
-    //Boss boss1 = new Boss1();
+
     public TextField BossHP;
-    float bossHP = currentBoss.getHP();
     public TextField BossSpeed;
-    float bossSpeed = currentBoss.getSpeed();
     public TextField BossDodge;
-    float bossDodge = currentBoss.getDodge();
     public TextField BossDefense;
-    float bossDefense = currentBoss.getDefense();
-    ArrayList<Base.Move> bossMoves = currentBoss.getMoveList();
 
-    public TextField KroggHP;
-    float kroggHP = userPlayer.getHP();
-    public TextField KroggSpeed;
-    float kroggSpeed = userPlayer.getSpeed();
-    public TextField KroggDodge;
-    float kroggDodge = userPlayer.getDodge();
-    public TextField KroggDefense;
-    float kroggDefense = userPlayer.getDefense();
+    public TextField PlayerHP;
+    public TextField PlayerSpeed;
+    public TextField PlayerDodge;
+    public TextField PlayerDefense;
 
-    ArrayList<Base.Move> kroggMoves = userPlayer.getMoveList();
-    ArrayList<Base.Item> kroggItems = userPlayer.getItemList();
+    ArrayList<Base.Move> playerMoves = userPlayer.getMoveList();
+    ArrayList<Base.Item> playerItems = userPlayer.getItemList();
     public MenuBar AttackBar;
     public Menu AttackMenu;
-    public String move1 = kroggMoves.get(0).moveName();
-    public String move2 = kroggMoves.get(1).moveName();
-    public String move3 = kroggMoves.get(2).moveName();
-    public String move1Type = kroggMoves.get(0).moveType();
-    public String move2Type = kroggMoves.get(1).moveType();
-    public String move3Type = kroggMoves.get(2).moveType();
-    public float move1Power = kroggMoves.get(0).movePower();
-    public float move2Power = kroggMoves.get(1).movePower();
-    public float move3Power = kroggMoves.get(2).movePower();
-    public String item1 = kroggItems.get(0).itemName();
-    public String item2 = kroggItems.get(1).itemName();
-    public String item3 = kroggItems.get(2).itemName();
-    public String item1Type = kroggItems.get(0).itemType();
-    public String item2Type = kroggItems.get(1).itemType();
-    public String item3Type = kroggItems.get(2).itemType();
-    public float item1Power = kroggItems.get(0).itemPower();
-    public float item2Power = kroggItems.get(1).itemPower();
-    public float item3Power = kroggItems.get(2).itemPower();
-    public int item1Quantity = kroggItems.get(0).itemQuantity();
-    public int item2Quantity = kroggItems.get(1).itemQuantity();
-    public int item3Quantity = kroggItems.get(2).itemQuantity();
+    public String move1 = playerMoves.get(0).moveName();
+    public String move2 = playerMoves.get(1).moveName();
+    public String move3 = playerMoves.get(2).moveName();
+    public String move1Type = playerMoves.get(0).moveType();
+    public String move2Type = playerMoves.get(1).moveType();
+    public String move3Type = playerMoves.get(2).moveType();
+    public float move1Power = playerMoves.get(0).movePower();
+    public float move2Power = playerMoves.get(1).movePower();
+    public float move3Power = playerMoves.get(2).movePower();
+    public String item1 = playerItems.get(0).itemName();
+    public String item2 = playerItems.get(1).itemName();
+    public String item3 = playerItems.get(2).itemName();
+    public String item1Type = playerItems.get(0).itemType();
+    public String item2Type = playerItems.get(1).itemType();
+    public String item3Type = playerItems.get(2).itemType();
+    public float item1Power = playerItems.get(0).itemPower();
+    public float item2Power = playerItems.get(1).itemPower();
+    public float item3Power = playerItems.get(2).itemPower();
+    public int item1Quantity = playerItems.get(0).itemQuantity();
+    public int item2Quantity = playerItems.get(1).itemQuantity();
+    public int item3Quantity = playerItems.get(2).itemQuantity();
     public MenuItem Move1;
     public MenuItem Move2;
     public MenuItem Move3;
@@ -95,10 +89,6 @@ public class kroggVsBoss {
     public MenuItem Item2;
     public MenuItem Item3;
     public Label moveChooseLabel;
-
-
-
-    int turnNumber = 0;
 
     public void initialize(){
         if (!playing) {
@@ -111,10 +101,17 @@ public class kroggVsBoss {
         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
         heroName.setText(userPlayer.getName());
         villainName.setText(currentBoss.getName());
+        if (userPlayer.getName()=="Krogg") {
+            playerPic.setImage(kroggPic);
+        } else if (userPlayer.getName()=="Linda") {
+            playerPic.setImage(lindaPic);
+        } else {
+            playerPic.setImage(glenPic);
+        }
         yourMove.setOpacity(0.0);
         Battle_Simulation.run();
         runBoss();
-        runKrogg();
+        runPlayer();
         Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
         Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
         Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
@@ -137,12 +134,10 @@ public class kroggVsBoss {
     }
     public void Save(){ SaveGame.SaveGame();}
     public void Open(){ OpenGame.OpenGame();}
-/*
-    public void usePotion() {}
-    */
+
     public void useAttack1() {
         yourMove.setOpacity(0.0);
-        String attackAnnouncement = damage(kroggMoves.get(0),userPlayer,currentBoss);
+        String attackAnnouncement = damage(playerMoves.get(0),userPlayer,currentBoss);
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -160,7 +155,7 @@ public class kroggVsBoss {
 
     public void useAttack2() {
         yourMove.setOpacity(0.0);
-        String attackAnnouncement = damage(kroggMoves.get(1),userPlayer,currentBoss);
+        String attackAnnouncement = damage(playerMoves.get(1),userPlayer,currentBoss);
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -178,7 +173,7 @@ public class kroggVsBoss {
 
     public void useAttack3() {
         yourMove.setOpacity(0.0);
-        String attackAnnouncement = damage(kroggMoves.get(2),userPlayer,currentBoss);
+        String attackAnnouncement = damage(playerMoves.get(2),userPlayer,currentBoss);
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
@@ -196,7 +191,7 @@ public class kroggVsBoss {
     public void useItem1() {
         yourMove.setOpacity(0.0);
         if (item1Quantity > 0) {
-            String attackAnnouncement = heal(kroggItems.get(0), userPlayer, userPlayer);
+            String attackAnnouncement = heal(playerItems.get(0), userPlayer, userPlayer);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -207,8 +202,8 @@ public class kroggVsBoss {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            KroggHP.setText(String.valueOf(userPlayer.getHP()));
-            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
+            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item1Quantity--;
             Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
@@ -221,7 +216,7 @@ public class kroggVsBoss {
     public void useItem2() {
         yourMove.setOpacity(0.0);
         if (item2Quantity > 0) {
-            String attackAnnouncement = heal(kroggItems.get(1), userPlayer, userPlayer);
+            String attackAnnouncement = heal(playerItems.get(1), userPlayer, userPlayer);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -232,8 +227,8 @@ public class kroggVsBoss {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            KroggHP.setText(String.valueOf(userPlayer.getHP()));
-            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
+            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item2Quantity--;
             Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
@@ -246,7 +241,7 @@ public class kroggVsBoss {
     public void useItem3() {
         yourMove.setOpacity(0.0);
         if (item3Quantity > 0) {
-            String attackAnnouncement = heal(kroggItems.get(2), userPlayer, userPlayer);
+            String attackAnnouncement = heal(playerItems.get(2), userPlayer, userPlayer);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -257,8 +252,8 @@ public class kroggVsBoss {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            KroggHP.setText(String.valueOf(userPlayer.getHP()));
-            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
+            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item3Quantity--;
             Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
@@ -287,7 +282,7 @@ public class kroggVsBoss {
             }
         }
         if (!currentBoss.hasLost() && !userPlayer.hasLost()) {
-            if (firstPlayer == "Krogg") {
+            if (firstPlayer == userPlayer.getName()) {
                 yourMove.setText("Your Move!");
                 moveChooseLabel.setOpacity(100.0);
                 AttackMenu.setDisable(false);
@@ -314,8 +309,8 @@ public class kroggVsBoss {
                             @Override
                             public void run() {
                                 damageAnnouncer.setText(rando_attack(currentBoss, userPlayer));
-                                KroggHP.setText(String.valueOf(userPlayer.getHP()));
-                                KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+                                PlayerHP.setText(String.valueOf(userPlayer.getHP()));
+                                PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
                                 turn(chooseFirst(userPlayer, currentBoss));
                             }
                         },
@@ -333,11 +328,11 @@ public class kroggVsBoss {
         BossDefense.setText(String.valueOf(currentBoss.getDefense()));
     }
 
-    public void runKrogg(){
-        KroggHP.setText(String.valueOf(userPlayer.getHP()));
-        KroggSpeed.setText(String.valueOf(userPlayer.getSpeed()));
-        KroggDodge.setText(String.valueOf(userPlayer.getDodge()));
-        KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+    public void runPlayer(){
+        PlayerHP.setText(String.valueOf(userPlayer.getHP()));
+        PlayerSpeed.setText(String.valueOf(userPlayer.getSpeed()));
+        PlayerDodge.setText(String.valueOf(userPlayer.getDodge()));
+        PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
     }
     public void bossIsDead(){
         damageAnnouncer.setText("You have slain the boss! \nOh no, here comes another one!");
@@ -361,7 +356,7 @@ public class kroggVsBoss {
                         Item1.setDisable(false);
                         Item2.setDisable(false);
                         Item3.setDisable(false);
-                        runKrogg();
+                        runPlayer();
                         runBoss();
                         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
                         heroName.setText(userPlayer.getName());

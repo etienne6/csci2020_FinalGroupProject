@@ -81,7 +81,7 @@
             </Label>
             </children>
         </AnchorPane>
-      <MenuBar id="attackBar" fx:id="AttackBar" stylesheets="@kroggVsBoss.css">
+      <MenuBar id="attackBar" fx:id="AttackBar" stylesheets="@singlePlayerFight.css">
          <menus>
             <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
                <items>

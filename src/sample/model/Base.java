@@ -121,13 +121,13 @@ public class Base {
     public static class Item {
         protected String name;
         protected String type;
-        protected int damage;
+        protected float power;
         protected int quantity;
 
-        public Item(String name, String type, int power, int quantity) {
+        public Item(String name, String type, float power, int quantity) {
             this.name = name;
             this.type = type;
-            this.damage = power;
+            this.power = power;
             this.quantity = quantity;
         }
         public String itemName(){
@@ -136,9 +136,7 @@ public class Base {
         public String itemType(){
             return this.type;
         }
-        public float itemPower(){
-            return this.damage;
-        }
+        public float itemPower(){ return this.power; }
         public int itemQuantity() {return this.quantity;}
     }
 }
