@@ -28,10 +28,10 @@ public class Battle_Simulation {
         System.out.println(bossArrayList.get(2).getName());
 
 */
-        userPlayer = chooseHero("Krogg");
-        currentBoss = getCurrentBoss(currentBoss);
+        //userPlayer = chooseHero("Krogg");
+        //currentBoss = getCurrentBoss(currentBoss);
         //Battle implemented
-        battle(userPlayer, currentBoss);
+        //battle(userPlayer, currentBoss);
 
 
     }
@@ -46,13 +46,10 @@ public class Battle_Simulation {
 
         switch(userHeroPick){
             case "Krogg": heroPick = heroesArrayList.get(0);
-                System.out.println("You picked " + heroesArrayList.get(0));
                 break;
             case "Linda": heroPick = heroesArrayList.get(1);
-                System.out.println("You picked " + heroesArrayList.get(1));
                 break;
             case "Glen": heroPick = heroesArrayList.get(2);
-                System.out.println("You picked " + heroesArrayList.get(2));
         }
 
         return heroPick;
@@ -83,41 +80,20 @@ public class Battle_Simulation {
     }
 
     //returns the damage done by a Move
-    public static void damage(Move move, Player player){
+    public static String damage(Move move, Player attacker, Player player){
+
         float playerDefense = player.getDefense();
+        float damageCount = move.movePower();
         float playerHP = player.getHP();
 
         if(playerDefense > 0){
             playerDefense = playerDefense - move.movePower();
             player.setDefense(playerDefense);
+            return attacker.getName() + " does " + damageCount + " points of damage to " + player.getName() + "'s defense with " + move.moveName() + "!";
         }else{
             playerHP = playerHP - move.movePower();
             player.setHP(playerHP);
-        }
-    }
-
-    //Attack function
-    public static void attack(Player player1, Player player2){
-        //prompt user to choose attack
-        ArrayList<Move> moves = player1.getMoveList();
-
-        System.out.println("Choose Attack: ");
-        for(int i = 0; i < moves.size(); i++){
-            System.out.println(i+1 + " " + moves.get(i).moveName());
-        }
-
-        Scanner scanner = new Scanner(System.in);
-        int userMovePick = scanner.nextInt();
-
-
-        if(userMovePick == 1){
-            damage(moves.get(1), player2);
-        }else if(userMovePick == 2){
-            damage(moves.get(2), player2);
-        }else if(userMovePick == 3){
-            damage(moves.get(3),player2);
-        }else{
-            System.out.println("Did not pick a move");
+            return attacker.getName() + " does " + damageCount + " points of damage to " + player.getName() + "'s HP with " + move.moveName() + "!";
         }
     }
 
@@ -128,36 +104,24 @@ public class Battle_Simulation {
     }
 
     //Used for simulated battle where user doesn't pick attack
-    public static void rando_attack(Player player1, Player player2){
+    public static String rando_attack(Player player1, Player player2){
         //prompt user to choose attack
         ArrayList<Move> moves = player1.getMoveList();
         Random rand = new Random();
         int  n = rand.nextInt(moves.size());
         if(isHit(player1)){
-            damage(moves.get(n),player2);
+            return damage(moves.get(n),player1, player2);
+
         }else{
-            System.out.println("Missed Attack!");
+            return player1.getName() + "'s attack missed!";
         }
     }
 
-    //Currently using rando_attack but haven't tested the Attack function yet
-    public static void battle(Player player1, Player player2){
-        while(player1.getHP() > 0 && player2.getHP() > 0){
-            chooseFirst(player1,player2);
-            if(chooseFirst(player1,player2) == player1.getName()){
-                //player2 attacks player1
-                System.out.println(player1.getName() + "s turn");
-                rando_attack(player1, player2);
-            }else{
-                //player2 attacks player1
-                System.out.println(player2.getName() + "s turn");
-                rando_attack(player2,player1);
-            }
-        }
-        if(player1.getHP()>0){
-            System.out.println(player1.getName() + " wins!");
-        }else{
-            System.out.println(player2.getName() + " wins!");
+    public static boolean isDead(Player player1) {
+        if (player1.getHP()<=0.0){
+            return true;
+        } else {
+            return false;
         }
     }
 

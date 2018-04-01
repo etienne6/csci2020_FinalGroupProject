@@ -9,9 +9,9 @@ public class Krogg extends Player{
     public Krogg(){
         super("Krogg", "Knight", 800.0f, 80.0f, 50.0f,
                 85.0f);
-        this.setMoves(new Move("Attack1", "Type2", 100));
-        this.setMoves(new Move("Attack2","type2", 100));
-        this.setMoves(new Move("Attack3","type3", 100));
+        this.setMoves(new Move("It's Lit!", "Fire", 300));
+        this.setMoves(new Move("Say It, Don't Spray It","Water", 200));
+        this.setMoves(new Move("Blow a 3-1 Lead","Wind", 100));
     }
 
 }

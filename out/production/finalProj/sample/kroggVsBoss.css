@@ -15,12 +15,22 @@
     -fx-text-fill: #353535;
 }
 
-#attackButton {
+#attackButton .menu-item{
     -fx-background-color: #353535 ;
+}
+#attackButton .menu-item:focused {
+    -fx-background-color: #37ee1a;
+}
+#attackButton .menu-item:focused .label {
+    -fx-text-fill: #353535;
 }
 #attackButton .label{
     -fx-text-fill: #37ee1a;
     -fx-font-weight:bold;
+}
+.attackButton:hover{
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
 }
 
 #blankBar {
@@ -95,5 +105,11 @@
 #moveAnnouncer {
     -fx-background-color: darkgrey;
     -fx-text-fill: #353535;
+    -fx-alignment: center;
+}
+
+#battleInfo {
+    -fx-background-color: #353535;
+    -fx-text-fill: darkgrey;
     -fx-alignment: center;
 }
