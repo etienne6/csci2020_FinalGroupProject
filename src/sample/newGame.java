@@ -60,7 +60,7 @@ public class newGame {
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void Save(){ SaveGame.SaveGame();}
+    public void Save(){}
     public void Open(){ OpenGame.OpenGame();}
 
     public void Back() throws Exception{

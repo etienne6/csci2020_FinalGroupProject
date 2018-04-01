@@ -17,20 +17,20 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newGame">
     <children>
-        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@singlePlayerGameSelect.css" VBox.vgrow="ALWAYS">
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@newGame.css" VBox.vgrow="ALWAYS">
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
                         <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
-                        <MenuItem fx:id="openGame" mnemonicParsing="false" onAction="#Open" text="Open Game" />
-                        <MenuItem fx:id="saveGame" disable="false" mnemonicParsing="false" onAction="#Save" text="Save Game" />
+                        <MenuItem fx:id="openGame" disable="true" mnemonicParsing="false" onAction="#Open" text="Open Game" />
+                        <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#Exit" text="Exit" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@singlePlayerGameSelect.css" VBox.vgrow="ALWAYS">
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@newGame.css" VBox.vgrow="ALWAYS">
             <children>
                 <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
                     <cursor>
@@ -63,7 +63,7 @@
                         <Cursor fx:constant="DISAPPEAR" />
                      </cursor>
                   </TextArea>
-                  <Button id="challengeAccepted" fx:id="challengeAccepted" alignment="CENTER" layoutX="220.0" layoutY="224.0" mnemonicParsing="false" onAction="#characterChooser" prefHeight="20.0" prefWidth="200.0" stylesheets="@singlePlayerGameSelect.css" text="Challenge Accepted!" textAlignment="CENTER">
+                  <Button id="challengeAccepted" fx:id="challengeAccepted" alignment="CENTER" layoutX="220.0" layoutY="224.0" mnemonicParsing="false" onAction="#characterChooser" prefHeight="20.0" prefWidth="200.0" stylesheets="@newGame.css" text="Challenge Accepted!" textAlignment="CENTER">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -81,7 +81,7 @@
             </Label>
             </children>
         </AnchorPane>
-      <MenuBar id="attackBar" fx:id="AttackBar" stylesheets="@singlePlayerFight.css">
+      <MenuBar id="attackBar" fx:id="AttackBar" stylesheets="@newGame.css">
          <menus>
             <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
                <items>

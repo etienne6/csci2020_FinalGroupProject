@@ -14,6 +14,7 @@ import sample.model.*;
 import java.util.ArrayList;
 
 import static sample.model.Battle_Simulation.*;
+import static sample.model.Battle_Simulation.chooseHero;
 import static sample.model.Battle_Simulation.getCurrentBoss;
 
 public class singlePlayerFight {
@@ -115,11 +116,11 @@ public class singlePlayerFight {
         Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
         Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
         Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
-        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Power: " + item1Power +
                 " - Remaining: " + item1Quantity);
-        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
+        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Power: " + item2Power +
                 " - Remaining: " + item2Quantity);
-        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Power: " + item3Power +
                 " - Remaining: " + item3Quantity);
         currentBoss = getCurrentBoss(currentBoss);
         String firstPlayer = chooseFirst(userPlayer,currentBoss);
@@ -132,8 +133,95 @@ public class singlePlayerFight {
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void Save(){ SaveGame.SaveGame();}
-    public void Open(){ OpenGame.OpenGame();}
+    public void Save(){
+        String gameState = null;
+        gameState = userPlayer.getName() + "," + userPlayer.getHP() + "," + userPlayer.getDefense() + "," +
+                item1Quantity + "," + item2Quantity + "," + item3Quantity + "," + currentBoss.getName() + "," +
+                currentBoss.getHP() + "," + currentBoss.getDefense();
+        System.out.println(gameState);
+        SaveGame.SaveGame(gameState);
+    }
+    public void Open(){
+        String [] openedGame = OpenGame.OpenGame();
+        userPlayer = chooseHero(openedGame[0]);
+        userPlayer.setHP(Float.valueOf(openedGame[1]));
+        userPlayer.setDefense(Float.valueOf(openedGame[2]));
+        item1Quantity = Integer.valueOf(openedGame[3]);
+        item2Quantity = Integer.valueOf(openedGame[4]);
+        item3Quantity = Integer.valueOf(openedGame[5]);
+
+        currentBoss = chooseBoss(openedGame[6]);
+        if (currentBoss.getName()=="Dragon"){
+            currentBoss = bossArrayList.get(2);
+            bossPic.setImage(dragonPic);
+        } else if (currentBoss.getName()=="Draconis"){
+            currentBoss = bossArrayList.get(1);
+            bossPic.setImage(draconisPic);
+        } else {
+            currentBoss = bossArrayList.get(0);
+        }
+        currentBoss.setHP(Float.valueOf(openedGame[7]));
+        currentBoss.setDefense(Float.valueOf(openedGame[8]));
+        initializedOpenGame();
+    }
+
+    public void initializedOpenGame(){
+        battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
+        heroName.setText(userPlayer.getName());
+        villainName.setText(currentBoss.getName());
+        if (userPlayer.getName()=="Krogg") {
+            playerPic.setImage(kroggPic);
+        } else if (userPlayer.getName()=="Linda") {
+            playerPic.setImage(lindaPic);
+        } else {
+            playerPic.setImage(glenPic);
+        }
+        yourMove.setOpacity(0.0);
+        Battle_Simulation.run();
+        runBoss();
+        runPlayer();
+        ArrayList<Base.Move> playerMoves = userPlayer.getMoveList();
+        ArrayList<Base.Item> playerItems = userPlayer.getItemList();
+        move1 = playerMoves.get(0).moveName();
+        move2 = playerMoves.get(1).moveName();
+        move3 = playerMoves.get(2).moveName();
+        move1Type = playerMoves.get(0).moveType();
+        move2Type = playerMoves.get(1).moveType();
+        move3Type = playerMoves.get(2).moveType();
+        move1Power = playerMoves.get(0).movePower();
+        move2Power = playerMoves.get(1).movePower();
+        move3Power = playerMoves.get(2).movePower();
+        item1 = playerItems.get(0).itemName();
+        item2 = playerItems.get(1).itemName();
+        item3 = playerItems.get(2).itemName();
+        item1Type = playerItems.get(0).itemType();
+        item2Type = playerItems.get(1).itemType();
+        item3Type = playerItems.get(2).itemType();
+        item1Power = playerItems.get(0).itemPower();
+        item2Power = playerItems.get(1).itemPower();
+        item3Power = playerItems.get(2).itemPower();
+        Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
+        Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
+        Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
+        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Power: " + item1Power +
+                " - Remaining: " + item1Quantity);
+        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Power: " + item2Power +
+                " - Remaining: " + item2Quantity);
+        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Power: " + item3Power +
+                " - Remaining: " + item3Quantity);
+        if(item1Quantity==0){
+            Item1.setDisable(true);
+        }
+        if (item2Quantity==0) {
+            Item2.setDisable(true);
+        }
+        if (item3Quantity==0) {
+            Item3.setDisable(true);
+        }
+        String firstPlayer = chooseFirst(userPlayer,currentBoss);
+        turn(firstPlayer);
+    }
+
 
     public void useAttack1() {
         yourMove.setOpacity(0.0);

@@ -18,7 +18,7 @@
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
-                        <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
+                        <MenuItem fx:id="newGame" disable="true" mnemonicParsing="false" onAction="#New" text="New Game" />
                         <MenuItem fx:id="openGame" disable="true" mnemonicParsing="false" onAction="#Open" text="Open Game" />
                         <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
                         <SeparatorMenuItem mnemonicParsing="false" />

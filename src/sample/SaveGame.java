@@ -3,15 +3,12 @@ package sample;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SaveGame {
-    public static void SaveGame() {
+    public static void SaveGame(String gameState) {
         String sep = System.getProperty("file.separator");
         Stage primaryStage = Main.getPrimaryStage();
 
@@ -31,18 +28,20 @@ public class SaveGame {
             f = fileChooser.showSaveDialog(null);
         }
 
-        PrintWriter outFile = null;
+        SaveFile(gameState, f);
+    }
+    private static void SaveFile(String gameState, File file){
         try {
-            outFile = new PrintWriter(f);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("starting filewriter");
+            FileWriter fileWriter = null;
+            fileWriter = new FileWriter(file);
+            System.out.println("starting to write");
+            fileWriter.write(gameState);
+            fileWriter.close();
+            System.out.println("closing file");
+        } catch (IOException ex) {
+           System.err.println("Could not save game.");
         }
-/*
-        for(int i = 0; i<table.getItems().size(); i++){
-            outFile.println(table.getItems().get(i).toString());
-        }
-        */
 
-        outFile.close();
     }
 }

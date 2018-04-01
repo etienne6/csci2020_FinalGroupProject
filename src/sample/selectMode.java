@@ -40,12 +40,12 @@ public class selectMode {
     public void Save(){
     }
     public void Open(){
-        OpenGame.OpenGame();
     }
+
     public void SinglePlayer()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("singlePlayerGameSelect.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Single Player: Select Game");
+        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void MultiPlayer() throws Exception{

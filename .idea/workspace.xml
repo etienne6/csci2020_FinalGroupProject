@@ -2,22 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/kroggVsBoss.fxml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.css" afterPath="$PROJECT_DIR$/src/sample/singlePlayerFight.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" afterPath="$PROJECT_DIR$/src/sample/singlePlayerFight.fxml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/sample/kroggVsBoss.java" afterPath="$PROJECT_DIR$/src/sample/singlePlayerFight.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/singlePlayerGameSelect.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/singlePlayerGameSelect.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/saved_games/KroggSaveGame-2018-03-31_09-39-47.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/saved_games/KroggSaveGame-2018-03-31_094457.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/finalProj/saved_games/KroggSaveGame-2018-03-31___09-46-57.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.fxml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/saved_games/KroggSaveGame-2018-03-31_09-39-47.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/saved_games/KroggSaveGame-2018-03-31_094457.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/saved_games/KroggSaveGame-2018-03-31___09-46-57.txt" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/characterChooser.fxml" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/characterChooser.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/multiPlayerGameSelect.fxml" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/multiPlayerGameSelect.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/newGame.fxml" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/newGame.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/finalProj/sample/singlePlayerFight.fxml" afterPath="$PROJECT_DIR$/out/production/finalProj/sample/singlePlayerFight.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/OpenGame.java" afterPath="$PROJECT_DIR$/src/sample/OpenGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/SaveGame.java" afterPath="$PROJECT_DIR$/src/sample/SaveGame.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/characterChooser.fxml" afterPath="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/characterChooser.java" afterPath="$PROJECT_DIR$/src/sample/characterChooser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Base.java" afterPath="$PROJECT_DIR$/src/sample/model/Base.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" afterPath="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Glen.java" afterPath="$PROJECT_DIR$/src/sample/model/Glen.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Krogg.java" afterPath="$PROJECT_DIR$/src/sample/model/Krogg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/model/Linda.java" afterPath="$PROJECT_DIR$/src/sample/model/Linda.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml" afterPath="$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/newGame.css" afterPath="$PROJECT_DIR$/src/sample/newGame.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/newGame.fxml" afterPath="$PROJECT_DIR$/src/sample/newGame.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/newGame.java" afterPath="$PROJECT_DIR$/src/sample/newGame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/selectMode.java" afterPath="$PROJECT_DIR$/src/sample/selectMode.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/singlePlayerFight.fxml" afterPath="$PROJECT_DIR$/src/sample/singlePlayerFight.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/sample/singlePlayerFight.java" afterPath="$PROJECT_DIR$/src/sample/singlePlayerFight.java" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,33 +87,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Battle_Simulation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="126" column="92" lean-forward="false" selection-start-line="126" selection-start-column="88" selection-end-line="126" selection-end-column="92" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Base.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1836">
-              <caret line="138" column="53" lean-forward="false" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="characterChooser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="857">
-              <caret line="110" column="58" lean-forward="true" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
+            <state relative-caret-position="65">
+              <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,34 +99,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Krogg.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
+      <file leaf-file-name="newGame.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sample/newGame.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Glen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="singlePlayerFight.fxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.fxml">
-          <provider editor-type-id="JavaFX-Scene-Builder">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-918">
-              <caret line="76" column="73" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+            <state relative-caret-position="106">
+              <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -145,41 +112,9 @@
       <file leaf-file-name="singlePlayerFight.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="120" column="1" lean-forward="false" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+            <state relative-caret-position="102">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Linda.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Linda.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="79" lean-forward="false" selection-start-line="13" selection-start-column="79" selection-end-line="13" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Boss3.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/model/Boss3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="56" lean-forward="false" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="singlePlayerFight.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1033">
-              <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -195,14 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.css</find>
-      <find>loginscr</find>
-      <find>challenge</find>
-      <find>continu</find>
-      <find>lindaty</find>
-      <find>attack</find>
-      <find>damagea</find>
-      <find>damageannoun</find>
       <find>imagevi</find>
       <find>choose</find>
       <find>newgamebutt</find>
@@ -219,9 +146,20 @@
       <find>imageview</find>
       <find>first</find>
       <find>run</find>
-      <find>item</find>
       <find>runplay</find>
       <find>krogg</find>
+      <find>item</find>
+      <find>getcurrent</find>
+      <find>opened</find>
+      <find>runboss</find>
+      <find>open</find>
+      <find>userplaye</find>
+      <find>setcharac</find>
+      <find>userp</find>
+      <find>bossarra</find>
+      <find>getuser</find>
+      <find>single</find>
+      <find>getuserpla</find>
     </findStrings>
   </component>
   <component name="FindManager">
@@ -240,7 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sample/sample.fxml" />
         <option value="$PROJECT_DIR$/src/sample/login/Controller.java" />
         <option value="$PROJECT_DIR$/src/sample/login/login.css" />
         <option value="$PROJECT_DIR$/src/sample/login/Main.java" />
@@ -255,39 +192,43 @@
         <option value="$PROJECT_DIR$/src/sample/signupController.java" />
         <option value="$PROJECT_DIR$/src/sample/signup.fxml" />
         <option value="$PROJECT_DIR$/src/sample/selectMode.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml" />
         <option value="$PROJECT_DIR$/src/sample/login.fxml" />
         <option value="$PROJECT_DIR$/src/sample/greeting.fxml" />
         <option value="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.fxml" />
         <option value="$PROJECT_DIR$/src/sample/loginController.java" />
-        <option value="$PROJECT_DIR$/src/sample/selectMode.java" />
-        <option value="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.java" />
-        <option value="$PROJECT_DIR$/src/sample/SaveGame.java" />
-        <option value="$PROJECT_DIR$/src/sample/OpenGame.java" />
         <option value="$PROJECT_DIR$/src/sample/Music.java" />
-        <option value="$PROJECT_DIR$/src/sample/newGame.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/newGame.css" />
         <option value="$PROJECT_DIR$/src/sample/model/Heroes.java" />
-        <option value="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
         <option value="$PROJECT_DIR$/src/sample/model/kroggVsBoss.java" />
         <option value="$PROJECT_DIR$/src/sample/characterChooser.css" />
         <option value="$PROJECT_DIR$/src/sample/model/Bosses.java" />
-        <option value="$PROJECT_DIR$/src/sample/newGame.java" />
         <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.css" />
         <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.fxml" />
         <option value="$PROJECT_DIR$/src/sample/model/Boss3.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Boss2.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Boss1.java" />
         <option value="$PROJECT_DIR$/src/sample/Main.java" />
-        <option value="$PROJECT_DIR$/src/sample/characterChooser.java" />
         <option value="$PROJECT_DIR$/src/sample/kroggVsBoss.java" />
-        <option value="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Linda.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Base.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Krogg.java" />
         <option value="$PROJECT_DIR$/src/sample/singlePlayerFight.fxml" />
-        <option value="$PROJECT_DIR$/src/sample/singlePlayerFight.java" />
         <option value="$PROJECT_DIR$/src/sample/model/Glen.java" />
+        <option value="$PROJECT_DIR$/src/sample/newGame.java" />
+        <option value="$PROJECT_DIR$/src/sample/SaveGame.java" />
+        <option value="$PROJECT_DIR$/src/sample/model/Battle_Simulation.java" />
+        <option value="$PROJECT_DIR$/src/sample/OpenedGame.css" />
+        <option value="$PROJECT_DIR$/src/sample/OpenedGame.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/characterChooser.java" />
+        <option value="$PROJECT_DIR$/src/sample/OpenedGame.java" />
+        <option value="$PROJECT_DIR$/src/sample/OpenGame.java" />
+        <option value="$PROJECT_DIR$/src/sample/OpenedGameFile.java" />
+        <option value="$PROJECT_DIR$/src/sample/singlePlayerFight.java" />
+        <option value="$PROJECT_DIR$/src/sample/singlePlayerGameSelect.java" />
+        <option value="$PROJECT_DIR$/src/sample/selectMode.java" />
+        <option value="$PROJECT_DIR$/src/sample/characterChooser.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/newGame.fxml" />
+        <option value="$PROJECT_DIR$/src/sample/newGame.css" />
       </list>
     </option>
   </component>
@@ -557,12 +498,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1522341569502" duration="13095000" />
-      <workItem from="1522447806408" duration="75755000" />
+      <workItem from="1522447806408" duration="86836000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90152000" />
+    <option name="totallyTimeSpent" value="101233000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
@@ -657,17 +598,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sample/login/login.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/sample/login/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/login/loginController.java" />
-    <entry file="file://$PROJECT_DIR$/src/sample/2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/112.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -743,61 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/signup.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/selectMode.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="63" column="29" lean-forward="false" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/greeting.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerGameSelect.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder">
         <state />
@@ -825,35 +700,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/selectMode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="42" column="28" lean-forward="false" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="28" />
-          <folding>
-            <element signature="e#1139#1140#0" expanded="false" />
-            <element signature="e#1174#1175#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/loginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerGameSelect.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="41" column="57" lean-forward="false" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
-          <folding>
-            <element signature="e#1429#1430#0" expanded="false" />
-            <element signature="e#1464#1465#0" expanded="false" />
-            <element signature="e#2123#2124#0" expanded="false" />
-            <element signature="e#2158#2159#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,16 +716,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/OpenGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/Music.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -882,24 +723,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/SaveGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="19" column="85" lean-forward="false" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/newGame.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -919,17 +742,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1722">
-          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/model/Bosses.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -937,25 +749,6 @@
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/newGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="15" lean-forward="true" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/newGame.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="57" column="251" lean-forward="false" selection-start-line="57" selection-start-column="246" selection-end-line="57" selection-end-column="251" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,32 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="126" column="92" lean-forward="false" selection-start-line="126" selection-start-column="88" selection-end-line="126" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/model/Boss3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1036,10 +803,214 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.css">
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="120" column="1" lean-forward="false" selection-start-line="120" selection-start-column="1" selection-end-line="120" selection-end-column="1" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/SaveGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="138" column="53" lean-forward="false" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Boss1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/newGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/OpenedGame.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="497">
+          <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/model/Battle_Simulation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/OpenedGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/OpenGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/OpenedGameFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="160" column="12" lean-forward="false" selection-start-line="160" selection-start-column="12" selection-end-line="160" selection-end-column="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerGameSelect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/signup.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/OpenedGame.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1919">
+          <caret line="142" column="169" lean-forward="false" selection-start-line="142" selection-start-column="169" selection-end-line="142" selection-end-column="169" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/greeting.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="7" lean-forward="true" selection-start-line="65" selection-start-column="7" selection-end-line="65" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="26" lean-forward="false" selection-start-line="57" selection-start-column="26" selection-end-line="57" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="65" lean-forward="false" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/newGame.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="126" lean-forward="true" selection-start-line="24" selection-start-column="126" selection-end-line="24" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/selectMode.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/multiPlayerGameSelect.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="13" lean-forward="true" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/selectMode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1049,52 +1020,34 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-918">
-          <caret line="76" column="73" lean-forward="false" selection-start-line="76" selection-start-column="73" selection-end-line="76" selection-end-column="73" />
+        <state relative-caret-position="1479">
+          <caret line="93" column="110" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/characterChooser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="110" column="58" lean-forward="true" selection-start-line="110" selection-start-column="58" selection-end-line="110" selection-end-column="58" />
+        <state relative-caret-position="65">
+          <caret line="58" column="20" lean-forward="true" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Base.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="138" column="53" lean-forward="false" selection-start-line="138" selection-start-column="53" selection-end-line="138" selection-end-column="53" />
+        <state relative-caret-position="102">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="33" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/singlePlayerFight.java">
+    <entry file="file://$PROJECT_DIR$/src/sample/newGame.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1033">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Glen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="73" lean-forward="true" selection-start-line="12" selection-start-column="73" selection-end-line="12" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/model/Krogg.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="106">
+          <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
           <folding />
         </state>
       </provider>

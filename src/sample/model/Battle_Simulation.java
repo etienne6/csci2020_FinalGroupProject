@@ -7,7 +7,7 @@ import sample.model.Base.*;
 
 public class Battle_Simulation {
     private static ArrayList < Player > heroesArrayList = new ArrayList< Player >();
-    private static ArrayList< Player > bossArrayList = new ArrayList< Player >();
+    public static ArrayList< Player > bossArrayList = new ArrayList< Player >();
     private static Player userPlayer;
     private static Player currentBoss = null;
 
@@ -53,6 +53,21 @@ public class Battle_Simulation {
         }
 
         return heroPick;
+    }
+
+    public static Player chooseBoss(String userBossPick){
+
+        Player bossPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f, 0f, 0f);
+
+        switch(userBossPick){
+            case "Professor X": bossPick = bossArrayList.get(0);
+                break;
+            case "Draconis": bossPick = bossArrayList.get(1);
+                break;
+            case "Dragon": bossPick = bossArrayList.get(2);
+        }
+
+        return bossPick;
     }
 
     public static String chooseFirst(Player userHeroPick, Player currentBoss){

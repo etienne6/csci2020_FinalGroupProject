@@ -50,7 +50,7 @@ public class characterChooser {
     public MenuItem Item2;
     public MenuItem Item3;
 
-    private static Base.Player userPlayer;
+    public static Base.Player userPlayer;
 
     private void setCharacter(Base.Player userPlayer) {
         characterChooser.userPlayer = userPlayer;
@@ -79,7 +79,7 @@ public class characterChooser {
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void Save(){ SaveGame.SaveGame();}
+    public void Save(){}
     public void Open(){ OpenGame.OpenGame();}
 
     public void Back() throws Exception{

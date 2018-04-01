@@ -96,7 +96,7 @@
                         <Font name="Algerian" size="15.0" />
                      </font>
                   </TextField>
-                  <Button id="newGameButton" fx:id="newGameButton" layoutX="305.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@singlePlayerFight.css" text="New Game?" textFill="#353535" visible="false">
+                  <Button id="newGameButton" fx:id="newGameButton" layoutX="292.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@singlePlayerFight.css" text="New Game?" textFill="#353535" visible="false">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
