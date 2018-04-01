@@ -8,25 +8,33 @@ public class Base {
         private String type;
         //Attack decreases health
         private float hp;
+        private float maxHp;
         //Probability based on speed
         private float speed;
         //Attack hit with probability of dodge
         private float dodge;
         //Calculate full damage based on defense
         private float defense;
-        private ArrayList<Move> moveList = new ArrayList<Move>();
+        private float maxDefense;
+        private ArrayList<Move> moveList = new ArrayList<>();
+        private ArrayList<Item> itemList = new ArrayList<>();
 
-        public Player(String name, String type, float hp, float speed, float dodge, float defense)  {
+        public Player(String name, String type, float hp, float maxHp, float speed, float dodge, float defense, float maxDefense)  {
             this.name = name;
             this.type = type;
             this.hp = hp;
+            this.maxHp = maxHp;
             this.speed = speed;
             this.dodge = dodge;
             this.defense = defense;
+            this.maxDefense = maxDefense;
         }
 
         public void setMoves(Move move){
             this.moveList.add(move);
+        }
+        public void setItems(Item item){
+            this.itemList.add(item);
         }
 
         public String getName() {
@@ -41,6 +49,10 @@ public class Base {
             return this.hp;
         }
 
+        public float getMaxHP() {
+            return this.maxHp;
+        }
+
         public float getSpeed() {
             return this.speed;
         }
@@ -53,7 +65,12 @@ public class Base {
             return this.defense;
         }
 
+        public float getMaxDefense() {
+            return this.maxDefense;
+        }
+
         public ArrayList<Move> getMoveList() { return moveList; }
+        public ArrayList<Item> getItemList() { return itemList; }
 
         public boolean hasLost() {
             if (this.getHP() <= 0) {
@@ -100,4 +117,30 @@ public class Base {
             return this.damage;
         }
     }
+
+    public static class Item {
+        protected String name;
+        protected String type;
+        protected int damage;
+        protected int quantity;
+
+        public Item(String name, String type, int power, int quantity) {
+            this.name = name;
+            this.type = type;
+            this.damage = power;
+            this.quantity = quantity;
+        }
+        public String itemName(){
+            return this.name;
+        }
+        public String itemType(){
+            return this.type;
+        }
+        public float itemPower(){
+            return this.damage;
+        }
+        public int itemQuantity() {return this.quantity;}
+    }
 }
+
+

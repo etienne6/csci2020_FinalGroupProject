@@ -113,3 +113,9 @@
     -fx-text-fill: darkgrey;
     -fx-alignment: center;
 }
+
+#newGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+    -fx-font-weight: bold;
+}

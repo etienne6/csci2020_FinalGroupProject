@@ -12,12 +12,12 @@ import javafx.stage.Stage;
 import sample.model.*;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 import static sample.model.Battle_Simulation.*;
 import static sample.model.Battle_Simulation.getCurrentBoss;
 
 public class kroggVsBoss {
+    public Button newGameButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -53,28 +53,6 @@ public class kroggVsBoss {
     float bossDefense = currentBoss.getDefense();
     ArrayList<Base.Move> bossMoves = currentBoss.getMoveList();
 
-    Boss2 boss2 = new Boss2();
-    public TextField Boss2HP;
-    float boss2HP = boss2.getHP();
-    public TextField Boss2Speed;
-    float boss2Speed = boss2.getSpeed();
-    public TextField Boss2Dodge;
-    float boss2Dodge = boss2.getDodge();
-    public TextField Boss2Defense;
-    float boss2Defense = boss2.getDefense();
-    ArrayList<Base.Move> boss2Moves = boss2.getMoveList();
-
-    Boss3 boss3 = new Boss3();
-    public TextField Boss3HP;
-    float boss3HP = boss3.getHP();
-    public TextField Boss3Speed;
-    float boss3Speed = boss3.getSpeed();
-    public TextField Boss3Dodge;
-    float boss3Dodge = boss3.getDodge();
-    public TextField Boss3Defense;
-    float boss3Defense = boss3.getDefense();
-    ArrayList<Base.Move> boss3Moves = boss3.getMoveList();
-
     public TextField KroggHP;
     float kroggHP = userPlayer.getHP();
     public TextField KroggSpeed;
@@ -85,6 +63,7 @@ public class kroggVsBoss {
     float kroggDefense = userPlayer.getDefense();
 
     ArrayList<Base.Move> kroggMoves = userPlayer.getMoveList();
+    ArrayList<Base.Item> kroggItems = userPlayer.getItemList();
     public MenuBar AttackBar;
     public Menu AttackMenu;
     public String move1 = kroggMoves.get(0).moveName();
@@ -96,6 +75,18 @@ public class kroggVsBoss {
     public float move1Power = kroggMoves.get(0).movePower();
     public float move2Power = kroggMoves.get(1).movePower();
     public float move3Power = kroggMoves.get(2).movePower();
+    public String item1 = kroggItems.get(0).itemName();
+    public String item2 = kroggItems.get(1).itemName();
+    public String item3 = kroggItems.get(2).itemName();
+    public String item1Type = kroggItems.get(0).itemType();
+    public String item2Type = kroggItems.get(1).itemType();
+    public String item3Type = kroggItems.get(2).itemType();
+    public float item1Power = kroggItems.get(0).itemPower();
+    public float item2Power = kroggItems.get(1).itemPower();
+    public float item3Power = kroggItems.get(2).itemPower();
+    public int item1Quantity = kroggItems.get(0).itemQuantity();
+    public int item2Quantity = kroggItems.get(1).itemQuantity();
+    public int item3Quantity = kroggItems.get(2).itemQuantity();
     public MenuItem Move1;
     public MenuItem Move2;
     public MenuItem Move3;
@@ -103,6 +94,7 @@ public class kroggVsBoss {
     public MenuItem Item1;
     public MenuItem Item2;
     public MenuItem Item3;
+    public Label moveChooseLabel;
 
 
 
@@ -126,6 +118,12 @@ public class kroggVsBoss {
         Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
         Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
         Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
+        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+                " - Remaining: " + item1Quantity);
+        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
+                " - Remaining: " + item2Quantity);
+        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+                " - Remaining: " + item3Quantity);
         currentBoss = getCurrentBoss(currentBoss);
         String firstPlayer = chooseFirst(userPlayer,currentBoss);
         turn(firstPlayer);
@@ -195,25 +193,10 @@ public class kroggVsBoss {
         BossDefense.setText(String.valueOf(currentBoss.getDefense()));
         turn(chooseFirst(userPlayer,currentBoss));
     }
-
-    public void turn(String firstPlayer){
+    public void useItem1() {
         yourMove.setOpacity(0.0);
-        if(isDead(userPlayer)){
-            damageAnnouncer.setText("GAME OVER. \nYou fought valiantly, brave warrior. Alas, it was not enough. UOITOPIA will fall to evil... and it's all your fault...");
-        }
-        if(isDead(currentBoss)){
-            bossIsDead();
-        }
-        if (firstPlayer == "Krogg"){
-            yourMove.setText("Your Move!");
-            AttackMenu.setDisable(false);
-            ItemMenu.setDisable(false);
-            yourMove.setOpacity(100.0);
-        } else {
-            yourMove.setText("Boss's Move!");
-            AttackMenu.setDisable(true);
-            ItemMenu.setDisable(true);
-            yourMove.setOpacity(100.0);
+        if (item1Quantity > 0) {
+            String attackAnnouncement = heal(kroggItems.get(0), userPlayer, userPlayer);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
@@ -223,19 +206,123 @@ public class kroggVsBoss {
                     },
                     5000
             );
+            damageAnnouncer.setText(attackAnnouncement);
+            KroggHP.setText(String.valueOf(userPlayer.getHP()));
+            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            turn(chooseFirst(userPlayer, currentBoss));
+            item1Quantity--;
+            Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+                    " - Remaining: " + item1Quantity);
+            if (item1Quantity == 0) {
+                Item1.setDisable(true);
+            }
+        }
+    }
+    public void useItem2() {
+        yourMove.setOpacity(0.0);
+        if (item2Quantity > 0) {
+            String attackAnnouncement = heal(kroggItems.get(1), userPlayer, userPlayer);
             new java.util.Timer().schedule(
                     new java.util.TimerTask() {
                         @Override
                         public void run() {
-                           damageAnnouncer.setText(rando_attack(currentBoss,userPlayer));
-                            KroggHP.setText(String.valueOf(userPlayer.getHP()));
-                            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
-                            turn(chooseFirst(userPlayer,currentBoss));
+                            damageAnnouncer.setText("");
                         }
                     },
                     5000
             );
+            damageAnnouncer.setText(attackAnnouncement);
+            KroggHP.setText(String.valueOf(userPlayer.getHP()));
+            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            turn(chooseFirst(userPlayer, currentBoss));
+            item2Quantity--;
+            Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
+                    " - Remaining: " + item2Quantity);
+            if (item2Quantity == 0) {
+                Item2.setDisable(true);
+            }
+        }
+    }
+    public void useItem3() {
+        yourMove.setOpacity(0.0);
+        if (item3Quantity > 0) {
+            String attackAnnouncement = heal(kroggItems.get(2), userPlayer, userPlayer);
+            new java.util.Timer().schedule(
+                    new java.util.TimerTask() {
+                        @Override
+                        public void run() {
+                            damageAnnouncer.setText("");
+                        }
+                    },
+                    5000
+            );
+            damageAnnouncer.setText(attackAnnouncement);
+            KroggHP.setText(String.valueOf(userPlayer.getHP()));
+            KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+            turn(chooseFirst(userPlayer, currentBoss));
+            item3Quantity--;
+            Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+                    " - Remaining: " + item3Quantity);
+            if (item3Quantity == 0) {
+                Item3.setDisable(true);
+            }
+        }
+    }
 
+    public void turn(String firstPlayer){
+        yourMove.setOpacity(0.0);
+        if(userPlayer.hasLost()){
+            damageAnnouncer.setText("GAME OVER. \nYou fought valiantly, brave warrior. Alas, it was not enough. UOITOPIA will fall to evil... and it's all your fault...");
+            moveChooseLabel.setOpacity(0.0);
+            yourMove.setOpacity(0.0);
+            AttackMenu.setDisable(true);
+            ItemMenu.setDisable(true);
+            newGameButton.setVisible(true);
+        }
+        if(currentBoss.hasLost()){
+            if (currentBoss.getName()!="Dragon"){
+                bossIsDead();
+            } else {
+                dragonIsDead();
+            }
+        }
+        if (!currentBoss.hasLost() && !userPlayer.hasLost()) {
+            if (firstPlayer == "Krogg") {
+                yourMove.setText("Your Move!");
+                moveChooseLabel.setOpacity(100.0);
+                AttackMenu.setDisable(false);
+                ItemMenu.setDisable(false);
+                yourMove.setOpacity(100.0);
+            } else {
+                yourMove.setText(currentBoss.getName() +"'s Move!");
+                moveChooseLabel.setOpacity(0.0);
+
+                AttackMenu.setDisable(true);
+                ItemMenu.setDisable(true);
+                yourMove.setOpacity(100.0);
+                new java.util.Timer().schedule(
+                        new java.util.TimerTask() {
+                            @Override
+                            public void run() {
+                                damageAnnouncer.setText("");
+                            }
+                        },
+                        4000
+                );
+                new java.util.Timer().schedule(
+                        new java.util.TimerTask() {
+                            @Override
+                            public void run() {
+                                damageAnnouncer.setText(rando_attack(currentBoss, userPlayer));
+                                KroggHP.setText(String.valueOf(userPlayer.getHP()));
+                                KroggDefense.setText(String.valueOf(userPlayer.getDefense()));
+                                turn(chooseFirst(userPlayer, currentBoss));
+                            }
+                        },
+                        5000
+                );
+
+            }
         }
     }
 
@@ -255,14 +342,27 @@ public class kroggVsBoss {
     public void bossIsDead(){
         damageAnnouncer.setText("You have slain the boss! \nOh no, here comes another one!");
         currentBoss = getCurrentBoss(currentBoss);
-        runBoss();
-        userPlayer.setHP(800.0f);
-        userPlayer.setDefense(85.0f);
-        runKrogg();
         new java.util.Timer().schedule(
                 new java.util.TimerTask() {
                     @Override
                     public void run() {
+                        userPlayer.setHP(userPlayer.getMaxHP());
+                        userPlayer.setDefense(userPlayer.getMaxDefense());
+                        item1Quantity = 1;
+                        item2Quantity = 2;
+                        item3Quantity = 3;
+                        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+                                " - Remaining: " + item1Quantity);
+                        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Healing: " + item2Power +
+                                " - Remaining: " + item2Quantity);
+
+                        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+                                " - Remaining: " + item3Quantity);
+                        Item1.setDisable(false);
+                        Item2.setDisable(false);
+                        Item3.setDisable(false);
+                        runKrogg();
+                        runBoss();
                         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
                         heroName.setText(userPlayer.getName());
                         villainName.setText(currentBoss.getName());
@@ -273,9 +373,18 @@ public class kroggVsBoss {
                         }
                     }
                 },
-                6000
+                5000
         );
     }
+    public void dragonIsDead() {
+        damageAnnouncer.setText("Huzzah! You have defeated Dragon and his evil minions! \n UOITOPIA will be forever in your debt!");
+        moveChooseLabel.setOpacity(0.0);
+        yourMove.setOpacity(0.0);
+        AttackMenu.setDisable(true);
+        ItemMenu.setDisable(true);
+        newGameButton.setVisible(true);
+    }
+
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (!playing) {

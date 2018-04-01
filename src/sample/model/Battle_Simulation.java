@@ -42,7 +42,7 @@ public class Battle_Simulation {
     */
     public static Player chooseHero(String userHeroPick){
 
-        Player heroPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f);
+        Player heroPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f, 0f, 0f);
 
         switch(userHeroPick){
             case "Krogg": heroPick = heroesArrayList.get(0);
@@ -97,9 +97,33 @@ public class Battle_Simulation {
         }
     }
 
+    public static String heal(Item item, Player healer, Player healed){
+
+        float itemHealing = item.itemPower();
+        String itemType = item.itemType();
+        float playerHP = healed.getHP();
+        float playerMaxHP = healed.getMaxHP();
+        float playerDefense = healed.getDefense();
+
+        if(itemType=="Defense Booster"){
+            playerDefense = playerDefense + itemHealing;
+            healed.setDefense(playerDefense);
+            return healer.getName() + " boosts " + healed.getName() + "'s defense by " + itemHealing + " points with " + item.itemName() + "!";
+        }else if (itemType=="Healing") {
+            playerHP = playerHP + item.itemPower();
+            if (playerHP <= playerMaxHP) {
+                healed.setHP(playerHP);
+            } else {
+                healed.setHP(playerMaxHP);
+            }
+            return healer.getName() + " heals " + healed.getName() + " by " + itemHealing + " points with " + item.itemName() + "!";
+        } else {
+            return healer.getName() + " revives " + healed.getName() + " with " + item.itemName() + "!";
+        }
+    }
+
     public static boolean isHit(Player currentCharacter){
         boolean missChance = new Random().nextInt((int)currentCharacter.getSpeed())>30;
-
         return missChance;
     }
 
@@ -111,17 +135,8 @@ public class Battle_Simulation {
         int  n = rand.nextInt(moves.size());
         if(isHit(player1)){
             return damage(moves.get(n),player1, player2);
-
         }else{
             return player1.getName() + "'s attack missed!";
-        }
-    }
-
-    public static boolean isDead(Player player1) {
-        if (player1.getHP()<=0.0){
-            return true;
-        } else {
-            return false;
         }
     }
 
