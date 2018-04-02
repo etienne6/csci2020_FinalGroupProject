@@ -12,13 +12,12 @@ import javafx.stage.Stage;
 import sample.model.*;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import static sample.model.Battle_Simulation.*;
 import static sample.model.Battle_Simulation.chooseHero;
 import static sample.model.Battle_Simulation.getCurrentBoss;
 
-public class singlePlayerFight {
+public class SinglePlayerFight {
     public Button newGameButton;
     public Button loadGameButton;
     public MenuItem newGame;
@@ -41,7 +40,7 @@ public class singlePlayerFight {
     public TextField villainName;
 
     public Base.Player currentBoss = getCurrentBoss(null);
-    public Base.Player userPlayer = characterChooser.getUserPlayer();
+    public Base.Player userPlayer = CharacterChooser.getUserPlayer();
 
     Image kroggPic = new Image("/media/krogg.png");
     Image lindaPic = new Image("/media/lindas.png");
@@ -92,7 +91,7 @@ public class singlePlayerFight {
     public MenuItem Item2;
     public MenuItem Item3;
     public Label moveChooseLabel;
-    String currentPlayerName = loginController.getUserPlayer();
+    String currentPlayerName = LoginController.getUserPlayer();
     public static String savedPlayerName;
 
     public void initialize(){
@@ -132,7 +131,7 @@ public class singlePlayerFight {
     }
 
     public void New() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));

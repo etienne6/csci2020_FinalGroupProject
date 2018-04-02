@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class SaveGame {
     public static void SaveGame(String gameState) {
-        String userName = loginController.getUserPlayer();
+        String userName = LoginController.getUserPlayer();
         String sep = System.getProperty("file.separator");
         Stage primaryStage = Main.getPrimaryStage();
 

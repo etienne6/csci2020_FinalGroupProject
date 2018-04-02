@@ -1,20 +1,13 @@
 package sample;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.KeyValue;
-import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import javafx.util.Duration;
-
-import java.io.File;
-
+import sample.network.Client;
 
 
 public class Main extends Application {
@@ -33,7 +26,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         setPrimaryStage(primaryStage);
-        Parent root = FXMLLoader.load(getClass().getResource("greeting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Greeting.fxml"));
 
         Image icon = new Image(getClass().getResourceAsStream("../media/kroggicon.png"));
 
@@ -46,6 +39,7 @@ public class Main extends Application {
         primaryStage.show();
     }
     public static void main(String[] args) {
+
         launch(args);
     }
 }

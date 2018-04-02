@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -13,10 +12,9 @@ import javafx.stage.Stage;
 
 import java.io.*;
 
-public class signupController {
+public class LoginController {
     public TextField Username;
     public PasswordField Password;
-    public PasswordField PasswordConfirm;
     public Button SubmitButton;
     public MenuItem newGame;
     public MenuItem openGame;
@@ -28,11 +26,16 @@ public class signupController {
     public TextField feedback;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
 
+    protected FileReader in = null;
+    protected FileWriter out = null;
+    protected String userName = "";
+    protected String userPass = "";
     protected String newuserName = "";
     protected String newuserPass = "";
-    protected String newuserPassCheck = "";
     protected final String dataBaseFile = "KroggDatabase.txt";
     public BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public static String playerName;
+
 
     public void initialize(){
         if (!playing) {
@@ -46,49 +49,37 @@ public class signupController {
 
     public void New(){
     }
-
     public void Save(){
     }
-
     public void Open(){
     }
-    public void ModeSelect() {
-        Register();
-    }
     public void Back() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("greeting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Greeting.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Welcome");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-
-    public void Register(){
-        boolean taken = false;
-        try{
-            newuserName = Username.getText();
-            newuserPass = Password.getText();
-            taken = CheckUsername(this.newuserName, "fluff", true);
-            if(taken){
-                feedback.setText("Error: Username has been taken. Please try again.");
-
-            } else {
-
-                Writer writer = new BufferedWriter(new FileWriter(dataBaseFile, true));
-
-                String newLine = System.getProperty("line.separator");
-                writer.append(newLine + newuserName + " " + newuserPass);
-                writer.close();
-
-                feedback.setText("Your account now has been saved.");
-                Parent root = FXMLLoader.load(getClass().getResource("selectMode.fxml"));
-                Stage primaryStage = Main.getPrimaryStage();
-                primaryStage.setTitle("KROGG The Destroyer - Select Mode");
-                primaryStage.setScene(new Scene(root, 640, 400));
-            }
-
-        }catch(IOException e){System.out.println(e);}
+    public void Submit() throws Exception{
+        String userName = Username.getText();
+        String userPass = Password.getText();
+        SignIn(userName, userPass);
     }
 
+    public void SignIn(String userName, String userPass) throws Exception{
+        boolean success = true;
+
+        success = CheckUsername(userName, userPass, false);
+        if(success){
+            setPlayer(userName);
+            feedback.setText("You have successfully logged in.");
+            Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+            Stage primaryStage = Main.getPrimaryStage();
+            primaryStage.setTitle("KROGG The Destroyer - Select Mode");
+            primaryStage.setScene(new Scene(root, 640, 400));
+        } else {
+            feedback.setText("Password or Username may be incorrect. Please try again.");
+        }
+    }
 
     public boolean CheckUsername(String user, String pass, boolean register){
         try{
@@ -116,6 +107,12 @@ public class signupController {
         }catch(FileNotFoundException e){System.out.println("Unable to open file.");}
         return false;
     }
+
+    private void setPlayer(String playerName) {
+        this.playerName = playerName;
+    }
+
+    static public String getUserPlayer(){ return playerName;}
 
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);

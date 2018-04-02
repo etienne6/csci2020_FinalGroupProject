@@ -1,5 +1,4 @@
 package sample.network;
-
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -130,8 +129,6 @@ public class MainServer extends javax.swing.JFrame
             }
         });
 
-        lb_name.setText("TechWorld3g");
-        lb_name.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

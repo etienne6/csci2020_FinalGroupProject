@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.singlePlayerFight">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SinglePlayerFight">
     <children>
-        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@singlePlayerFight.css" VBox.vgrow="ALWAYS">
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@SinglePlayerFight.css" VBox.vgrow="ALWAYS">
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
@@ -31,7 +31,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@singlePlayerFight.css" VBox.vgrow="ALWAYS">
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@SinglePlayerFight.css" VBox.vgrow="ALWAYS">
             <children>
                 <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -49,7 +49,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@singlePlayerFight.css">
+                <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@SinglePlayerFight.css">
                     <children>
                         <ImageView fx:id="playerPic" fitHeight="202.0" fitWidth="400.0" layoutX="416.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
                             <image>
@@ -65,19 +65,19 @@
                         <Label layoutX="517.0" layoutY="17.0" text="Defense:" />
                         <Label layoutX="257.0" layoutY="17.0" text="Speed:" />
                         <Label layoutX="390.0" layoutY="17.0" text="Dodge:" />
-                        <TextField id="bossValue" fx:id="BossHP" editable="false" layoutX="167.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossDodge" editable="false" layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossDefense" editable="false" layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossSpeed" editable="false" layoutX="296.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@singlePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="BossHP" editable="false" layoutX="167.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="BossDodge" editable="false" layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="BossDefense" editable="false" layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="BossSpeed" editable="false" layoutX="296.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
                         <Label layoutX="25.0" layoutY="244.0" text="HP:" />
                         <Label layoutX="381.0" layoutY="244.0" text="Defense:" />
                         <Label layoutX="128.0" layoutY="244.0" text="Speed:" />
                         <Label layoutX="254.0" layoutY="244.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="PlayerHP" editable="false" layoutX="47.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerDodge" editable="false" layoutX="296.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerSpeed" editable="false" layoutX="167.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@singlePlayerFight.css" />
-                  <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="244.0" layoutY="46.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@singlePlayerFight.css">
+                        <TextField id="characterValue" fx:id="PlayerHP" editable="false" layoutX="47.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="PlayerDodge" editable="false" layoutX="296.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="PlayerDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="PlayerSpeed" editable="false" layoutX="167.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
+                  <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="244.0" layoutY="46.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@SinglePlayerFight.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font>
@@ -86,28 +86,28 @@
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font></TextArea>
-                  <TextField id="moveAnnouncer" fx:id="heroName" editable="false" layoutX="511.0" layoutY="93.0" prefHeight="28.0" prefWidth="120.0" stylesheets="@singlePlayerFight.css">
+                  <TextField id="moveAnnouncer" fx:id="heroName" editable="false" layoutX="511.0" layoutY="93.0" prefHeight="28.0" prefWidth="120.0" stylesheets="@SinglePlayerFight.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font>
                   </TextField>
-                  <TextField id="moveAnnouncer" fx:id="villainName" editable="false" layoutX="9.0" layoutY="170.0" prefHeight="28.0" prefWidth="139.0" stylesheets="@singlePlayerFight.css">
+                  <TextField id="moveAnnouncer" fx:id="villainName" editable="false" layoutX="9.0" layoutY="170.0" prefHeight="28.0" prefWidth="139.0" stylesheets="@SinglePlayerFight.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
                      </font>
                   </TextField>
-                  <Button id="newGameButton" fx:id="newGameButton" layoutX="225.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@singlePlayerFight.css" text="New Game" textFill="#353535" visible="false">
+                  <Button id="newGameButton" fx:id="newGameButton" layoutX="225.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@SinglePlayerFight.css" text="New Game" textFill="#353535" visible="false">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor></Button>
-                  <Button id="newGameButton" fx:id="loadGameButton" layoutX="349.0" layoutY="189.0" mnemonicParsing="false" onAction="#Open" stylesheets="@singlePlayerFight.css" text="Load Game" textFill="#353535" visible="false">
+                  <Button id="newGameButton" fx:id="loadGameButton" layoutX="349.0" layoutY="189.0" mnemonicParsing="false" onAction="#Open" stylesheets="@SinglePlayerFight.css" text="Load Game" textFill="#353535" visible="false">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                     </children>
                 </Pane>
-            <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@singlePlayerFight.css">
+            <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@SinglePlayerFight.css">
                <menus>
                   <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
                      <items>
@@ -145,7 +145,7 @@
                   <Font name="Algerian" size="15.0" />
                </font>
             </Label>
-            <TextField id="battleInfo" fx:id="battleInfo" editable="false" layoutX="156.0" layoutY="8.0" prefHeight="28.0" prefWidth="343.0" stylesheets="@singlePlayerFight.css">
+            <TextField id="battleInfo" fx:id="battleInfo" editable="false" layoutX="156.0" layoutY="8.0" prefHeight="28.0" prefWidth="343.0" stylesheets="@SinglePlayerFight.css">
                <font>
                   <Font name="Algerian" size="15.0" />
                </font>

@@ -2,23 +2,17 @@ package sample;
 
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import sample.model.Base;
-import sample.model.Battle_Simulation;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static sample.model.Battle_Simulation.chooseBoss;
-import static sample.model.Battle_Simulation.chooseHero;
-
 public class OpenGame{
     public static String[] OpenGame(){
-        String userName = loginController.getUserPlayer();
+        String userName = LoginController.getUserPlayer();
         String[] gameStats = null;
         String sep = System.getProperty("file.separator");
         FileChooser fileChooser = new FileChooser();

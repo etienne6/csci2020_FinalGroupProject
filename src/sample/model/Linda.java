@@ -5,7 +5,7 @@ import sample.model.Base.*;
 public class Linda extends Player {
 
     public Linda(){
-        super("Linda", "Healer", 800.0f, 600.0f,90.0f,
+        super("Linda", "Healer", 800.0f, 800.0f,90.0f,
                 50.0f, 60.0f,60.0f);
         this.setMoves(new Move("Valkyrie", "Magic", 200));
         this.setMoves(new Move("Fallen Angel","Magic", 150));

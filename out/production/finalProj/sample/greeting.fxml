@@ -14,7 +14,7 @@
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
-        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@greeting.css" VBox.vgrow="ALWAYS">
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@Greeting.css" VBox.vgrow="ALWAYS">
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
@@ -27,18 +27,18 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@greeting.css" VBox.vgrow="ALWAYS">
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@Greeting.css" VBox.vgrow="ALWAYS">
             <children>
                 <ImageView fitHeight="276.0" fitWidth="479.0" layoutX="81.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/krogg%20logo.png" />
                     </image>
                 </ImageView>
-                <Button id="LogInButton" fx:id="LogInButton" alignment="CENTER" layoutX="334.0" layoutY="240.0" mnemonicParsing="false" onAction="#LogInScreen" prefWidth="60.0" stylesheets="@greeting.css" text="Log In" textAlignment="CENTER">
+                <Button id="LogInButton" fx:id="LogInButton" alignment="CENTER" layoutX="334.0" layoutY="240.0" mnemonicParsing="false" onAction="#LogInScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Log In" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button id="SignUpButton" fx:id="SignUpButton" alignment="CENTER" layoutX="334.0" layoutY="282.0" mnemonicParsing="false" onAction="#SignUpScreen" prefWidth="60.0" stylesheets="@greeting.css" text="Sign Up" textAlignment="CENTER">
+                <Button id="SignUpButton" fx:id="SignUpButton" alignment="CENTER" layoutX="334.0" layoutY="282.0" mnemonicParsing="false" onAction="#SignUpScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Sign Up" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>

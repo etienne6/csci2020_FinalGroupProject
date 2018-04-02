@@ -1,6 +1,5 @@
 package sample;
 
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,8 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import sample.network.Client;
 
-public class selectMode {
+public class MultiPlayerGameSelect {
     public TextField Username;
     public PasswordField Password;
     public Button SubmitButton;
@@ -35,24 +35,28 @@ public class selectMode {
         }
     }
 
-    public void New(){
+    public void New() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+        Stage primaryStage = Main.getPrimaryStage();
+        primaryStage.setTitle("KROGG The Destroyer - Mode Select");
+        primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void Save(){
     }
     public void Open(){
     }
-
-    public void SinglePlayer()throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("newGame.fxml"));
+    public void Back() throws Exception{
+        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
+        primaryStage.setTitle("KROGG The Destroyer - Mode Select");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-    public void MultiPlayer() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("multiPlayerGameSelect.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Multi-Player: Select Game");
-        primaryStage.setScene(new Scene(root, 640, 400));
+    public void Versus(){
+        Client.StartClient();
+
+    }
+    public void Coop() {
+        Client.StartClient();
 
     }
     public void Sound() {
