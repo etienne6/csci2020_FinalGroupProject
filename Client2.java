@@ -252,7 +252,6 @@ public class client2 extends javax.swing.JFrame
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lb_name)
                 .addGap(201, 201, 201))
         );
         layout.setVerticalGroup(
