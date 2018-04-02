@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.characterChooser">
+    <children>
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
+            <menus>
+                <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="newGame" mnemonicParsing="false" onAction="#New" text="New Game" />
+                        <MenuItem fx:id="openGame" disable="true" mnemonicParsing="false" onAction="#Open" text="Open Game" />
+                        <MenuItem fx:id="saveGame" disable="true" mnemonicParsing="false" onAction="#Save" text="Save Game" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="exitGame" mnemonicParsing="false" onAction="#Exit" text="Exit" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@characterChooser.css" VBox.vgrow="ALWAYS">
+            <children>
+                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Label>
+                <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIcon.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../media/soundIconOff.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </ImageView>
+                <Pane id="Pane" fx:id="Pane" layoutY="43.0" prefHeight="272.0" prefWidth="640.0" stylesheets="@characterChooser.css">
+                    <children>
+                        <Button id="KroggButton" fx:id="KroggButton" alignment="CENTER" layoutX="269.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickKrogg" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Krogg" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button id="LindaButton" fx:id="LindaButton" alignment="CENTER" layoutX="56.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickLinda" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Linda" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <Button id="GlenButton" fx:id="GlenButton" alignment="CENTER" layoutX="485.0" layoutY="230.0" mnemonicParsing="false" onAction="#pickGlen" prefHeight="20.0" prefWidth="100.0" stylesheets="@characterChooser.css" text="Glen" textAlignment="CENTER" textFill="#353535">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Button>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="211.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/krogg.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="425.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/glen.png" />
+                            </image>
+                        </ImageView>
+                        <ImageView fitHeight="202.0" fitWidth="220.0" layoutX="-4.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../media/lindas.png" />
+                            </image>
+                        </ImageView>
+                        <Label layoutX="25.0" layoutY="159.0" text="HP:" />
+                        <Label layoutX="104.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="65.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="9.0" layoutY="192.0" text="Speed:" />
+                        <Label layoutX="107.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="LindaType" editable="false" layoutX="99.0" layoutY="124.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaHP" editable="false" layoutX="47.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaDodge" editable="false" layoutX="152.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaDefense" editable="false" layoutX="152.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="LindaSpeed" editable="false" layoutX="48.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="240.0" layoutY="159.0" text="HP:" />
+                        <Label layoutX="319.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="280.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="224.0" layoutY="192.0" text="Speed:" />
+                        <Label layoutX="326.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="KroggType" editable="false" layoutX="314.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggHP" editable="false" layoutX="263.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggDodge" editable="false" layoutX="368.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggDefense" editable="false" layoutX="368.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="KroggSpeed" editable="false" layoutX="263.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <Label layoutX="454.0" layoutY="159.0" text="HP:" />
+                        <Label layoutX="533.0" layoutY="193.0" text="Defense:" />
+                        <Label layoutX="495.0" layoutY="126.0" text="Type: " />
+                        <Label layoutX="438.0" layoutY="192.0" text="Speed:" />
+                        <Label layoutX="540.0" layoutY="160.0" text="Dodge:" />
+                        <TextField id="characterValue" fx:id="GlenType" editable="false" layoutX="528.0" layoutY="124.0" maxHeight="25.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenHP" editable="false" layoutX="476.0" layoutY="157.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenDodge" editable="false" layoutX="581.0" layoutY="157.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenDefense" editable="false" layoutX="581.0" layoutY="189.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@characterChooser.css" />
+                        <TextField id="characterValue" fx:id="GlenSpeed" editable="false" layoutX="477.0" layoutY="189.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@characterChooser.css" />
+
+                    </children>
+                </Pane>
+                <Label layoutX="251.0" layoutY="11.0" text="CHOOSE YOUR HERO" textFill="DARKGRAY">
+                    <font>
+                        <Font name="Algerian" size="15.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+        <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@singlePlayerFight.css">
+            <menus>
+                <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
+                    <items>
+                        <MenuItem />
+                    </items>
+                </Menu>
+                <Menu id="attackButton" fx:id="AttackMenu" disable="true" mnemonicParsing="false" text="Attack">
+                    <items>
+                        <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                    </items>
+                </Menu>
+                <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
+                    <items>
+                        <MenuItem />
+                    </items>
+                </Menu>
+                <Menu id="attackButton" fx:id="ItemMenu" disable="true" mnemonicParsing="false" text="Item">
+                    <items>
+                        <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                    </items>
+                </Menu>
+                <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">
+                    <items>
+                        <MenuItem />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</VBox>

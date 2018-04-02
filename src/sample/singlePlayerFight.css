@@ -1,0 +1,121 @@
+#anchor {
+    -fx-background-color: #353535 ;
+}
+
+#Pane {
+    -fx-background-color: darkgrey ;
+}
+
+#menubar {
+    -fx-background-color: darkgrey ;
+}
+
+#attackBar {
+    -fx-background-color: #353535 ;
+    -fx-text-fill: #353535;
+}
+
+#attackButton .menu-item{
+    -fx-background-color: #353535 ;
+}
+#attackButton .menu-item:focused {
+    -fx-background-color: #37ee1a;
+}
+#attackButton .menu-item:focused .label {
+    -fx-text-fill: #353535;
+}
+#attackButton .label{
+    -fx-text-fill: #37ee1a;
+    -fx-font-weight:bold;
+}
+.attackButton:hover{
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+
+#blankBar {
+    -fx-background-color: #353535 ;
+    -fx-text-fill: #353535;
+}
+
+.text-area .content{
+    -fx-background-color: darkgrey ;
+    -fx-text-alignment: center;
+}
+
+.text-area .scroll-pane .text {
+    -fx-background-color: darkgrey ;
+    -fx-text-alignment: center;
+}
+
+#FileMenu {
+    -fx-background-color: darkgrey ;
+}
+
+#newGame {
+    -fx-background-color: darkgrey ;
+}
+
+#openGame {
+    -fx-background-color: darkgrey ;
+}
+
+#saveGame {
+    -fx-background-color: darkgrey ;
+}
+
+#separator {
+    -fx-background-color: darkgrey ;
+}
+
+#exitGame {
+    -fx-background-color: darkgrey ;
+}
+
+#KroggButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#LindaButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#GlenButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#AttackButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#PotionButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+}
+#characterValue {
+    -fx-background-color: #353535;
+    -fx-text-fill: #37ee1a;
+    -fx-alignment: center;
+}
+#bossValue {
+    -fx-background-color: #353535;
+    -fx-text-fill: red;
+    -fx-alignment: center;
+}
+#moveAnnouncer {
+    -fx-background-color: darkgrey;
+    -fx-text-fill: #353535;
+    -fx-alignment: center;
+}
+
+#battleInfo {
+    -fx-background-color: #353535;
+    -fx-text-fill: darkgrey;
+    -fx-alignment: center;
+}
+
+#newGameButton {
+    -fx-background-color: #37ee1a;
+    -fx-text-fill: #353535;
+    -fx-font-weight: bold;
+}
