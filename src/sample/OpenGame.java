@@ -18,10 +18,15 @@ import static sample.model.Battle_Simulation.chooseHero;
 
 public class OpenGame{
     public static String[] OpenGame(){
+        String userName = loginController.getUserPlayer();
         String[] gameStats = null;
         String sep = System.getProperty("file.separator");
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("." + sep + "src" + sep + "saved_games"));
+        fileChooser.setInitialDirectory(new File("." + sep + "src" + sep + "saved_games" + sep + userName + "_saveFiles"));
+        File directory = fileChooser.getInitialDirectory();
+        if (! directory.exists()){
+            directory.mkdir();
+        }
         Stage primaryStage = Main.getPrimaryStage();
         fileChooser.setTitle("Open Game File");
         File file = fileChooser.showOpenDialog(primaryStage.getScene().getWindow());

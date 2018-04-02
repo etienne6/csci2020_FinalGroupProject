@@ -20,6 +20,7 @@ import static sample.model.Battle_Simulation.getCurrentBoss;
 
 public class singlePlayerFight {
     public Button newGameButton;
+    public Button loadGameButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -254,6 +255,8 @@ public class singlePlayerFight {
         if (item3Quantity==0) {
             Item3.setDisable(true);
         }
+        newGameButton.setVisible(false);
+        loadGameButton.setVisible(false);
         String firstPlayer = chooseFirst(userPlayer,currentBoss);
     }
 
@@ -396,6 +399,7 @@ public class singlePlayerFight {
             AttackMenu.setDisable(true);
             ItemMenu.setDisable(true);
             newGameButton.setVisible(true);
+            loadGameButton.setVisible(true);
         }
         if(currentBoss.hasLost()){
             if (currentBoss.getName()!="Dragon"){
@@ -501,6 +505,8 @@ public class singlePlayerFight {
         AttackMenu.setDisable(true);
         ItemMenu.setDisable(true);
         newGameButton.setVisible(true);
+        loadGameButton.setVisible(true);
+
     }
 
     private void setSavedPlayer(String savedPlayerName) {

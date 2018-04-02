@@ -135,10 +135,13 @@ public class Battle_Simulation {
             return healer.getName() + " heals " + healed.getName() + " by " + itemHealing + " points with " + item.itemName() + "!";
         }else if (itemType=="Elixir") {
             healed.setHP(playerMaxHP);
-            healed.setDefense(playerMaxDefense);
+            if (playerDefense < playerMaxDefense) {
+                healed.setDefense(playerMaxDefense);
+            }
             return healer.getName() + " returns " + healed.getName() + " to full health and defense with " + item.itemName() + "!";
         } else {
             healed.setHP(playerMaxHP);
+            healed.setDefense(playerMaxDefense);
             return healer.getName() + " revives/heals " + healed.getName() + " with " + item.itemName() + "!";
         }
     }

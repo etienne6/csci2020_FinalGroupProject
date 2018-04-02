@@ -77,74 +77,79 @@
                         <TextField id="characterValue" fx:id="PlayerDodge" editable="false" layoutX="296.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
                         <TextField id="characterValue" fx:id="PlayerDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@singlePlayerFight.css" />
                         <TextField id="characterValue" fx:id="PlayerSpeed" editable="false" layoutX="167.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@singlePlayerFight.css" />
-                        <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="244.0" layoutY="46.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@singlePlayerFight.css">
-                            <font>
-                                <Font name="Algerian" size="15.0" />
-                            </font>
-                        </TextField>
-                        <TextArea fx:id="damageAnnouncer" editable="false" layoutX="162.0" layoutY="80.0" prefHeight="150.0" prefWidth="343.0" scaleShape="false" wrapText="true">
-                            <font>
-                                <Font name="Algerian" size="15.0" />
-                            </font></TextArea>
-                        <TextField id="moveAnnouncer" fx:id="heroName" editable="false" layoutX="511.0" layoutY="93.0" prefHeight="28.0" prefWidth="120.0" stylesheets="@singlePlayerFight.css">
-                            <font>
-                                <Font name="Algerian" size="15.0" />
-                            </font>
-                        </TextField>
-                        <TextField id="moveAnnouncer" fx:id="villainName" editable="false" layoutX="9.0" layoutY="170.0" prefHeight="28.0" prefWidth="139.0" stylesheets="@singlePlayerFight.css">
-                            <font>
-                                <Font name="Algerian" size="15.0" />
-                            </font>
-                        </TextField>
-                        <Button id="newGameButton" fx:id="newGameButton" layoutX="292.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@singlePlayerFight.css" text="New Game?" textFill="#353535" visible="false">
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor></Button>
+                  <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="244.0" layoutY="46.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@singlePlayerFight.css">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextArea fx:id="damageAnnouncer" editable="false" layoutX="162.0" layoutY="80.0" prefHeight="150.0" prefWidth="343.0" scaleShape="false" wrapText="true">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font></TextArea>
+                  <TextField id="moveAnnouncer" fx:id="heroName" editable="false" layoutX="511.0" layoutY="93.0" prefHeight="28.0" prefWidth="120.0" stylesheets="@singlePlayerFight.css">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <TextField id="moveAnnouncer" fx:id="villainName" editable="false" layoutX="9.0" layoutY="170.0" prefHeight="28.0" prefWidth="139.0" stylesheets="@singlePlayerFight.css">
+                     <font>
+                        <Font name="Algerian" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button id="newGameButton" fx:id="newGameButton" layoutX="225.0" layoutY="189.0" mnemonicParsing="false" onAction="#New" stylesheets="@singlePlayerFight.css" text="New Game" textFill="#353535" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
+                  <Button id="newGameButton" fx:id="loadGameButton" layoutX="349.0" layoutY="189.0" mnemonicParsing="false" onAction="#Open" stylesheets="@singlePlayerFight.css" text="Load Game" textFill="#353535" visible="false">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                     </children>
                 </Pane>
-                <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@singlePlayerFight.css">
-                    <menus>
-                        <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
-                            <items>
-                                <MenuItem />
-                            </items>
-                        </Menu>
-                        <Menu id="attackButton" fx:id="AttackMenu" mnemonicParsing="false" text="Attack">
-                            <items>
-                                <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#useAttack1" />
-                                <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#useAttack2" />
-                                <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#useAttack3" />
-                            </items>
-                        </Menu>
-                        <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
-                            <items>
-                                <MenuItem />
-                            </items>
-                        </Menu>
-                        <Menu id="attackButton" fx:id="ItemMenu" mnemonicParsing="false" text="Item">
-                            <items>
-                                <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#useItem1" />
-                                <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#useItem2" />
-                                <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#useItem3" />
-                            </items>
-                        </Menu>
-                        <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">
-                            <items>
-                                <MenuItem />
-                            </items>
-                        </Menu>
-                    </menus>
-                </MenuBar>
-                <Label fx:id="moveChooseLabel" layoutX="251.0" layoutY="325.0" text="Choose your move" textFill="DARKGRAY">
-                    <font>
-                        <Font name="Algerian" size="15.0" />
-                    </font>
-                </Label>
-                <TextField id="battleInfo" fx:id="battleInfo" editable="false" layoutX="156.0" layoutY="8.0" prefHeight="28.0" prefWidth="343.0" stylesheets="@singlePlayerFight.css">
-                    <font>
-                        <Font name="Algerian" size="15.0" />
-                    </font>
-                </TextField>
+            <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@singlePlayerFight.css">
+               <menus>
+                  <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+                  <Menu id="attackButton" fx:id="AttackMenu" mnemonicParsing="false" text="Attack">
+                     <items>
+                        <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#useAttack1" />
+                        <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#useAttack2" />
+                        <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#useAttack3" />
+                     </items>
+                  </Menu>
+                  <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+                  <Menu id="attackButton" fx:id="ItemMenu" mnemonicParsing="false" text="Item">
+                     <items>
+                        <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#useItem1" />
+                        <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#useItem2" />
+                        <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#useItem3" />
+                     </items>
+                  </Menu>
+                  <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">
+                     <items>
+                        <MenuItem />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+            <Label fx:id="moveChooseLabel" layoutX="251.0" layoutY="325.0" text="Choose your move" textFill="DARKGRAY">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </Label>
+            <TextField id="battleInfo" fx:id="battleInfo" editable="false" layoutX="156.0" layoutY="8.0" prefHeight="28.0" prefWidth="343.0" stylesheets="@singlePlayerFight.css">
+               <font>
+                  <Font name="Algerian" size="15.0" />
+               </font>
+            </TextField>
             </children>
         </AnchorPane>
     </children>

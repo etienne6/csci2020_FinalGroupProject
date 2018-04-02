@@ -9,11 +9,16 @@ import java.util.Date;
 
 public class SaveGame {
     public static void SaveGame(String gameState) {
+        String userName = loginController.getUserPlayer();
         String sep = System.getProperty("file.separator");
         Stage primaryStage = Main.getPrimaryStage();
 
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("." + sep + "src" + sep + "saved_games"));
+        fileChooser.setInitialDirectory(new File("." + sep + "src" + sep + "saved_games" + sep + userName + "_saveFiles"));
+        File directory = fileChooser.getInitialDirectory();
+        if (! directory.exists()){
+            directory.mkdir();
+        }
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd___hh-mm-ss");
         Date now = new Date();
         String timeAndDate = simpleDateFormat.format(now);
@@ -39,6 +44,5 @@ public class SaveGame {
         } catch (IOException ex) {
             System.err.println("Could not save game.");
         }
-
     }
 }
