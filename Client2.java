@@ -1,8 +1,10 @@
+
+
 import java.net.*;
 import java.io.*;
 import java.util.*;
 
-public class client2 extends javax.swing.JFrame
+public class client_frame extends javax.swing.JFrame
 {
     String username, address = "localhost";
     ArrayList<String> users = new ArrayList<>();
@@ -78,7 +80,7 @@ public class client2 extends javax.swing.JFrame
 
     }
 
-    public client2()
+    public client_frame()
     {
         initComponents();
     }
@@ -161,14 +163,14 @@ public class client2 extends javax.swing.JFrame
             }
         });
 
-        lb_port.setText("Port :");
+        /*lb_port.setText("Port :");
 
         tf_port.setText("2222");
         tf_port.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_portActionPerformed(evt);
             }
-        });
+        });*/
 
         lb_username.setText("Username :");
 
@@ -194,13 +196,6 @@ public class client2 extends javax.swing.JFrame
             }
         });
 
-        b_anonymous.setText("Anonymous Login");
-        b_anonymous.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_anonymousActionPerformed(evt);
-            }
-        });
-
         ta_chat.setColumns(20);
         ta_chat.setRows(5);
         jScrollPane1.setViewportView(ta_chat);
@@ -211,7 +206,6 @@ public class client2 extends javax.swing.JFrame
                 b_sendActionPerformed(evt);
             }
         });
-
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -252,6 +246,7 @@ public class client2 extends javax.swing.JFrame
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lb_name)
                 .addGap(201, 201, 201))
         );
         layout.setVerticalGroup(
@@ -333,43 +328,6 @@ public class client2 extends javax.swing.JFrame
         Disconnect();
     }//GEN-LAST:event_b_disconnectActionPerformed
 
-    private void b_anonymousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_anonymousActionPerformed
-        tf_username.setText("");
-        if (isConnected == false)
-        {
-            String anon="anon";
-            Random generator = new Random();
-            int i = generator.nextInt(999) + 1;
-            String is=String.valueOf(i);
-            anon=anon.concat(is);
-            username=anon;
-
-            tf_username.setText(anon);
-            tf_username.setEditable(false);
-
-            try
-            {
-                sock = new Socket(address, port);
-                InputStreamReader streamreader = new InputStreamReader(sock.getInputStream());
-                reader = new BufferedReader(streamreader);
-                writer = new PrintWriter(sock.getOutputStream());
-                writer.println(anon + ":has connected.:Connect");
-                writer.flush();
-                isConnected = true;
-            }
-            catch (Exception ex)
-            {
-                ta_chat.append("Cannot Connect! Try Again. \n");
-                tf_username.setEditable(true);
-            }
-
-            ListenThread();
-
-        } else if (isConnected == true)
-        {
-            ta_chat.append("You are already connected. \n");
-        }
-    }//GEN-LAST:event_b_anonymousActionPerformed
 
     private void b_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_sendActionPerformed
         String nothing = "";
