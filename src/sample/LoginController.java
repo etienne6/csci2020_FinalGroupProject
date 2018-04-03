@@ -36,7 +36,8 @@ public class LoginController {
     public BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     public static String playerName;
 
-
+    
+    //intializes the sound for entry
     public void initialize(){
         if (!playing) {
             soundButton.setOpacity(0.0);
@@ -53,6 +54,7 @@ public class LoginController {
     }
     public void Open(){
     }
+    //creates stage 
     public void Back() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("Greeting.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
@@ -64,7 +66,8 @@ public class LoginController {
         String userPass = Password.getText();
         SignIn(userName, userPass);
     }
-
+    
+    //will simulate the sign in process, checking the username and password via server database
     public void SignIn(String userName, String userPass) throws Exception{
         boolean success = true;
 
@@ -80,7 +83,8 @@ public class LoginController {
             feedback.setText("Password or Username may be incorrect. Please try again.");
         }
     }
-
+    
+    //will regulate the process of checking username
     public boolean CheckUsername(String user, String pass, boolean register){
         try{
             FileReader fileReader = new FileReader(this.dataBaseFile);
