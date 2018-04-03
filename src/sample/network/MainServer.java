@@ -4,10 +4,12 @@ import java.net.*;
 import java.util.*;
 
 public class MainServer extends javax.swing.JFrame
-{
+{   
+    //arraylists for the program
     ArrayList<PrintWriter> clientOutputStreams = new ArrayList<>();
     ArrayList<String> users = new ArrayList<>();
-
+    
+    //regulates the process of creating individual handlers for incoming clients
     public class ClientConnectionHandler implements Runnable
     {
         BufferedReader reader;
@@ -35,7 +37,8 @@ public class MainServer extends javax.swing.JFrame
         {
             String message, connect = "Connect", disconnect = "Disconnect", chat = "Chat" ;
             String[] data;
-
+            
+            //will determine message and desired outcome view from server to client
             try
             {
                 while ((message = reader.readLine()) != null)
@@ -184,14 +187,16 @@ public class MainServer extends javax.swing.JFrame
 
         textArea.setText("");
     }
-
+    
+    //wil start the server
     private void b_startActionPerformed(java.awt.event.ActionEvent evt) {
         Thread starter = new Thread(new ServerStart());
         starter.start();
 
         textArea.append("Server started...\n");
     }
-
+    
+    //inform the server host of the current clients
     private void b_usersActionPerformed(java.awt.event.ActionEvent evt) {
         textArea.append("\n Online users : \n");
         for (String current_user : users)
