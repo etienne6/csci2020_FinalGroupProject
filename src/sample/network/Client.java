@@ -154,7 +154,7 @@ public class Client extends javax.swing.JFrame
             }
         });
 
-        lb_username.setText("Username :");
+        lb_username.setText("username :");
 
         tf_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +162,7 @@ public class Client extends javax.swing.JFrame
             }
         });
 
-        lb_password.setText("Password : ");
+        lb_password.setText("password : ");
 
         b_connect.setText("Connect");
         b_connect.addActionListener(new java.awt.event.ActionListener() {

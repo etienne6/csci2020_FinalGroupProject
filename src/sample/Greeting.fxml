@@ -34,16 +34,16 @@
                         <Image url="@../media/krogg%20logo.png" />
                     </image>
                 </ImageView>
-                <Button id="LogInButton" fx:id="LogInButton" alignment="CENTER" layoutX="334.0" layoutY="240.0" mnemonicParsing="false" onAction="#LogInScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Log In" textAlignment="CENTER">
+                <Button id="LogInButton" fx:id="logInButton" alignment="CENTER" layoutX="334.0" layoutY="240.0" mnemonicParsing="false" onAction="#LogInScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Log In" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button id="SignUpButton" fx:id="SignUpButton" alignment="CENTER" layoutX="334.0" layoutY="282.0" mnemonicParsing="false" onAction="#SignUpScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Sign Up" textAlignment="CENTER">
+                <Button id="SignUpButton" fx:id="signUpButton" alignment="CENTER" layoutX="334.0" layoutY="282.0" mnemonicParsing="false" onAction="#SignUpScreen" prefWidth="60.0" stylesheets="@Greeting.css" text="Sign Up" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Label fx:id="ReturningUser" layoutX="235.0" layoutY="244.0" text="Returning User?" textFill="#bababa" />
-                <Label fx:id="NewUser" layoutX="263.0" layoutY="286.0" text="New User?" textFill="#bababa" />
+                <Label fx:id="returningUser" layoutX="235.0" layoutY="244.0" text="Returning User?" textFill="#bababa" />
+                <Label fx:id="newUser" layoutX="263.0" layoutY="286.0" text="New User?" textFill="#bababa" />
                 <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/soundIcon.png" />

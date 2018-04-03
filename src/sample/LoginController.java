@@ -13,9 +13,9 @@ import javafx.stage.Stage;
 import java.io.*;
 
 public class LoginController {
-    public TextField Username;
-    public PasswordField Password;
-    public Button SubmitButton;
+    public TextField username;
+    public PasswordField password;
+    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -60,8 +60,8 @@ public class LoginController {
         primaryStage.setScene(new Scene(root, 640, 400));
     }
     public void Submit() throws Exception{
-        String userName = Username.getText();
-        String userPass = Password.getText();
+        String userName = username.getText();
+        String userPass = password.getText();
         SignIn(userName, userPass);
     }
 
@@ -77,7 +77,7 @@ public class LoginController {
             primaryStage.setTitle("KROGG The Destroyer - Select Mode");
             primaryStage.setScene(new Scene(root, 640, 400));
         } else {
-            feedback.setText("Password or Username may be incorrect. Please try again.");
+            feedback.setText("password or username may be incorrect. Please try again.");
         }
     }
 

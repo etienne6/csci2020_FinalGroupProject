@@ -11,9 +11,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class NewGame {
-    public TextField Username;
-    public PasswordField Password;
-    public Button SubmitButton;
+    public TextField username;
+    public PasswordField password;
+    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -25,15 +25,15 @@ public class NewGame {
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
 
 
-    public MenuBar AttackBar;
-    public Menu AttackMenu;
-    public MenuItem Move1;
-    public MenuItem Move2;
-    public MenuItem Move3;
-    public Menu ItemMenu;
-    public MenuItem Item1;
-    public MenuItem Item2;
-    public MenuItem Item3;
+    public MenuBar attackBar;
+    public Menu attackMenu;
+    public MenuItem move1;
+    public MenuItem move2;
+    public MenuItem move3;
+    public Menu itemMenu;
+    public MenuItem item1;
+    public MenuItem item2;
+    public MenuItem item3;
 
 
     public void initialize(){

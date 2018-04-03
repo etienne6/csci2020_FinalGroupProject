@@ -36,10 +36,8 @@ public class Battle_Simulation {
 
     }
 
-    /*
-    Quick method to pick characters to start the game. Probably going to be buttons to select characters,
-    but using terminal input for now where you just type in character name.
-    */
+
+    //Method to pick characters to start the game.
     public static Player chooseHero(String userHeroPick){
 
         Player heroPick = new Player("Not initialized", "None", 0f, 0f, 0f, 0f, 0f, 0f);
@@ -70,6 +68,8 @@ public class Battle_Simulation {
         return bossPick;
     }
 
+
+    //Picks player to go first based on speed
     public static String chooseFirst(Player userHeroPick, Player currentBoss){
         boolean userProb = new Random().nextInt((int)userHeroPick.getSpeed())>50;
         boolean bossProb = new Random().nextInt((int)currentBoss.getSpeed())>50;

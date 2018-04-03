@@ -9,10 +9,10 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class Controller {
-    public Label ReturningUser;
-    public Label NewUser;
-    public Button LogInButton;
-    public Button SignUpButton;
+    public Label returningUser;
+    public Label newUser;
+    public Button logInButton;
+    public Button signUpButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;

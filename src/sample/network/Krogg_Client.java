@@ -94,7 +94,7 @@ public class Krogg_Client{
             reader = new BufferedReader(new InputStreamReader(System.in));
 
             //simulates log in screen
-            System.out.println("Username?");
+            System.out.println("username?");
             username = reader.readLine();
 
 

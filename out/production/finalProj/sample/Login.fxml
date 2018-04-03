@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignupController">
+<VBox fx:id="loginScreen" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
     <children>
-        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@Signup.css" VBox.vgrow="ALWAYS">
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@Login.css" VBox.vgrow="ALWAYS">
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
@@ -29,7 +29,7 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@Signup.css" VBox.vgrow="ALWAYS">
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@Login.css" VBox.vgrow="ALWAYS">
             <children>
                 <ImageView fitHeight="276.0" fitWidth="479.0" layoutX="81.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -37,14 +37,14 @@
                     </image>
                 </ImageView>
                 <Label layoutX="203.0" layoutY="234.0" text="Username" textFill="#bababa" />
-                <Label layoutX="207.0" layoutY="267.0" text="Password" textFill="#bababa" />
-                <TextField id="Username" fx:id="Username" layoutX="291.0" layoutY="230.0" promptText="Krogg" stylesheets="@Signup.css" />
-                <PasswordField id="Password" fx:id="Password" layoutX="291.0" layoutY="262.0" prefHeight="26.0" prefWidth="149.0" promptText="******" stylesheets="@Signup.css" />
-                <Button id="submitButton" fx:id="SubmitButton" alignment="CENTER" layoutX="291.0" layoutY="313.0" mnemonicParsing="false" onAction="#ModeSelect" stylesheets="@Signup.css" text="Submit" textAlignment="CENTER">
+                <Label layoutX="203.0" layoutY="266.0" text="Password" textFill="#bababa" />
+                <TextField id="Username" fx:id="username" layoutX="291.0" layoutY="230.0" prefWidth="152.0" promptText="Krogg" stylesheets="@Login.css" />
+                <PasswordField id="Password" fx:id="password" layoutX="291.0" layoutY="262.0" prefHeight="26.0" prefWidth="152.0" promptText="******" stylesheets="@Login.css" />
+                <Button id="submitButton" fx:id="submitButton" alignment="CENTER" layoutX="291.0" layoutY="312.0" mnemonicParsing="false" onAction="#Submit" stylesheets="@Login.css" text="Submit" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
+                <Label fx:id="back" layoutX="14.0" layoutY="14.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>

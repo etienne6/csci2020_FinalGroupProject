@@ -81,18 +81,18 @@
                 </Label>
             </children>
         </AnchorPane>
-        <MenuBar id="attackBar" fx:id="AttackBar" stylesheets="@NewGame.css">
+        <MenuBar id="attackBar" fx:id="attackBar" stylesheets="@NewGame.css">
             <menus>
                 <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
                     <items>
                         <MenuItem />
                     </items>
                 </Menu>
-                <Menu id="attackButton" fx:id="AttackMenu" disable="true" mnemonicParsing="false" text="Attack">
+                <Menu id="attackButton" fx:id="attackMenu" disable="true" mnemonicParsing="false" text="Attack">
                     <items>
-                        <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#New" />
-                        <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#Open" />
-                        <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                        <MenuItem fx:id="move1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="move2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="move3" disable="false" mnemonicParsing="false" onAction="#Save" />
                     </items>
                 </Menu>
                 <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
@@ -100,11 +100,11 @@
                         <MenuItem />
                     </items>
                 </Menu>
-                <Menu id="attackButton" fx:id="ItemMenu" disable="true" mnemonicParsing="false" text="Item">
+                <Menu id="attackButton" fx:id="itemMenu" disable="true" mnemonicParsing="false" text="Item">
                     <items>
-                        <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#New" />
-                        <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#Open" />
-                        <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#Save" />
+                        <MenuItem fx:id="item1" mnemonicParsing="false" onAction="#New" />
+                        <MenuItem fx:id="item2" mnemonicParsing="false" onAction="#Open" />
+                        <MenuItem fx:id="item3" disable="false" mnemonicParsing="false" onAction="#Save" />
                     </items>
                 </Menu>
                 <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">

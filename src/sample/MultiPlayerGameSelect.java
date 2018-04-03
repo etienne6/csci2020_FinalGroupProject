@@ -20,9 +20,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class MultiPlayerGameSelect {
-    public TextField Username;
-    public PasswordField Password;
-    public Button SubmitButton;
+    public TextField username;
+    public PasswordField password;
+    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;

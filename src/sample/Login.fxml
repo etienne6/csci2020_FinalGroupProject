@@ -38,9 +38,9 @@
                 </ImageView>
                 <Label layoutX="203.0" layoutY="234.0" text="Username" textFill="#bababa" />
                 <Label layoutX="203.0" layoutY="266.0" text="Password" textFill="#bababa" />
-                <TextField id="Username" fx:id="Username" layoutX="291.0" layoutY="230.0" prefWidth="152.0" promptText="Krogg" stylesheets="@Login.css" />
-                <PasswordField id="Password" fx:id="Password" layoutX="291.0" layoutY="262.0" prefHeight="26.0" prefWidth="152.0" promptText="******" stylesheets="@Login.css" />
-                <Button id="submitButton" fx:id="SubmitButton" alignment="CENTER" layoutX="291.0" layoutY="312.0" mnemonicParsing="false" onAction="#Submit" stylesheets="@Login.css" text="Submit" textAlignment="CENTER">
+                <TextField id="Username" fx:id="username" layoutX="291.0" layoutY="230.0" prefWidth="152.0" promptText="Krogg" stylesheets="@Login.css" />
+                <PasswordField id="Password" fx:id="password" layoutX="291.0" layoutY="262.0" prefHeight="26.0" prefWidth="152.0" promptText="******" stylesheets="@Login.css" />
+                <Button id="submitButton" fx:id="submitButton" alignment="CENTER" layoutX="291.0" layoutY="312.0" mnemonicParsing="false" onAction="#Submit" stylesheets="@Login.css" text="Submit" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>

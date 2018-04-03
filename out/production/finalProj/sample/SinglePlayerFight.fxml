@@ -65,18 +65,18 @@
                         <Label layoutX="517.0" layoutY="17.0" text="Defense:" />
                         <Label layoutX="257.0" layoutY="17.0" text="Speed:" />
                         <Label layoutX="390.0" layoutY="17.0" text="Dodge:" />
-                        <TextField id="bossValue" fx:id="BossHP" editable="false" layoutX="167.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossDodge" editable="false" layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossDefense" editable="false" layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="bossValue" fx:id="BossSpeed" editable="false" layoutX="296.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="bossHP" editable="false" layoutX="167.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="bossDodge" editable="false" layoutX="432.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="bossDefense" editable="false" layoutX="567.0" layoutY="14.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="bossValue" fx:id="bossSpeed" editable="false" layoutX="296.0" layoutY="14.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
                         <Label layoutX="25.0" layoutY="244.0" text="HP:" />
                         <Label layoutX="381.0" layoutY="244.0" text="Defense:" />
                         <Label layoutX="128.0" layoutY="244.0" text="Speed:" />
                         <Label layoutX="254.0" layoutY="244.0" text="Dodge:" />
-                        <TextField id="characterValue" fx:id="PlayerHP" editable="false" layoutX="47.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerDodge" editable="false" layoutX="296.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
-                        <TextField id="characterValue" fx:id="PlayerSpeed" editable="false" layoutX="167.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="playerHP" editable="false" layoutX="47.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="playerDodge" editable="false" layoutX="296.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="playerDefense" editable="false" layoutX="432.0" layoutY="241.0" prefHeight="25.0" prefWidth="50.0" stylesheets="@SinglePlayerFight.css" />
+                        <TextField id="characterValue" fx:id="playerSpeed" editable="false" layoutX="167.0" layoutY="241.0" prefHeight="25.0" prefWidth="52.0" stylesheets="@SinglePlayerFight.css" />
                   <TextField id="moveAnnouncer" fx:id="yourMove" editable="false" layoutX="244.0" layoutY="46.0" prefHeight="25.0" prefWidth="179.0" stylesheets="@SinglePlayerFight.css">
                      <font>
                         <Font name="Algerian" size="15.0" />
@@ -107,18 +107,18 @@
                   </Button>
                     </children>
                 </Pane>
-            <MenuBar id="attackBar" fx:id="AttackBar" layoutX="5.0" layoutY="343.0" stylesheets="@SinglePlayerFight.css">
+            <MenuBar id="attackBar" fx:id="attackBar" layoutX="5.0" layoutY="343.0" stylesheets="@SinglePlayerFight.css">
                <menus>
                   <Menu id="blankBar" fx:id="FileMenu121" disable="true" mnemonicParsing="false" text=".............................................................">
                      <items>
                         <MenuItem />
                      </items>
                   </Menu>
-                  <Menu id="attackButton" fx:id="AttackMenu" mnemonicParsing="false" text="Attack">
+                  <Menu id="attackButton" fx:id="attackMenu" mnemonicParsing="false" text="Attack">
                      <items>
-                        <MenuItem fx:id="Move1" mnemonicParsing="false" onAction="#useAttack1" />
-                        <MenuItem fx:id="Move2" mnemonicParsing="false" onAction="#useAttack2" />
-                        <MenuItem fx:id="Move3" disable="false" mnemonicParsing="false" onAction="#useAttack3" />
+                        <MenuItem fx:id="menuMove1" mnemonicParsing="false" onAction="#useAttack1" />
+                        <MenuItem fx:id="menuMove2" mnemonicParsing="false" onAction="#useAttack2" />
+                        <MenuItem fx:id="menuMove3" disable="false" mnemonicParsing="false" onAction="#useAttack3" />
                      </items>
                   </Menu>
                   <Menu id="blankBar" fx:id="FileMenu12" disable="true" mnemonicParsing="false" text="....................................................">
@@ -126,11 +126,11 @@
                         <MenuItem />
                      </items>
                   </Menu>
-                  <Menu id="attackButton" fx:id="ItemMenu" mnemonicParsing="false" text="Item">
+                  <Menu id="attackButton" fx:id="itemMenu" mnemonicParsing="false" text="Item">
                      <items>
-                        <MenuItem fx:id="Item1" mnemonicParsing="false" onAction="#useItem1" />
-                        <MenuItem fx:id="Item2" mnemonicParsing="false" onAction="#useItem2" />
-                        <MenuItem fx:id="Item3" disable="false" mnemonicParsing="false" onAction="#useItem3" />
+                        <MenuItem fx:id="menuItem1" mnemonicParsing="false" onAction="#useItem1" />
+                        <MenuItem fx:id="menuItem2" mnemonicParsing="false" onAction="#useItem2" />
+                        <MenuItem fx:id="menuItem3" disable="false" mnemonicParsing="false" onAction="#useItem3" />
                      </items>
                   </Menu>
                   <Menu id="blankBar" fx:id="FileMenu1211" disable="true" mnemonicParsing="false" text=".................................................................">

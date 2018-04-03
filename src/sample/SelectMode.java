@@ -11,9 +11,9 @@ import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 public class SelectMode {
-    public TextField Username;
-    public PasswordField Password;
-    public Button SubmitButton;
+    public TextField username;
+    public PasswordField password;
+    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;

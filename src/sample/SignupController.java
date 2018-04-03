@@ -13,10 +13,10 @@ import javafx.stage.Stage;
 import java.io.*;
 
 public class SignupController {
-    public TextField Username;
-    public PasswordField Password;
+    public TextField username;
+    public PasswordField password;
     public PasswordField PasswordConfirm;
-    public Button SubmitButton;
+    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -64,11 +64,11 @@ public class SignupController {
     public void Register(){
         boolean taken = false;
         try{
-            newuserName = Username.getText();
-            newuserPass = Password.getText();
+            newuserName = username.getText();
+            newuserPass = password.getText();
             taken = CheckUsername(this.newuserName, "fluff", true);
             if(taken){
-                feedback.setText("Error: Username has been taken. Please try again.");
+                feedback.setText("Error: username has been taken. Please try again.");
 
             } else {
 

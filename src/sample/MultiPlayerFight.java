@@ -51,15 +51,15 @@ public class MultiPlayerFight {
     Image draconisPic = new Image("/media/boss2.png");
     Image dragonPic = new Image("/media/boss3.png");
 
-    public TextField BossHP;
-    public TextField BossSpeed;
-    public TextField BossDodge;
-    public TextField BossDefense;
+    public TextField bossHP;
+    public TextField bossSpeed;
+    public TextField bossDodge;
+    public TextField bossDefense;
 
-    public TextField PlayerHP;
-    public TextField PlayerSpeed;
-    public TextField PlayerDodge;
-    public TextField PlayerDefense;
+    public TextField playerHP;
+    public TextField playerSpeed;
+    public TextField playerDodge;
+    public TextField playerDefense;
 
     public TextField teamMate1HP;
     public TextField teamMate1Defense;
@@ -72,10 +72,10 @@ public class MultiPlayerFight {
 
     ArrayList<Base.Move> playerMoves = userPlayer.getMoveList();
     ArrayList<Base.Item> playerItems = userPlayer.getItemList();
-    public MenuBar AttackBar;
-    public MenuBar MenuBar;
-    public Menu AttackMenu;
-    public Pane Pane;
+    public MenuBar attackBar;
+    public MenuBar menuBar;
+    public Menu attackMenu;
+    public Pane pane;
     public String move1 = playerMoves.get(0).moveName();
     public String move2 = playerMoves.get(1).moveName();
     public String move3 = playerMoves.get(2).moveName();
@@ -97,13 +97,13 @@ public class MultiPlayerFight {
     public int item1Quantity = playerItems.get(0).itemQuantity();
     public int item2Quantity = playerItems.get(1).itemQuantity();
     public int item3Quantity = playerItems.get(2).itemQuantity();
-    public MenuItem Move1;
-    public MenuItem Move2;
-    public MenuItem Move3;
-    public Menu ItemMenu;
-    public MenuItem Item1;
-    public MenuItem Item2;
-    public MenuItem Item3;
+    public MenuItem menuMove1;
+    public MenuItem menuMove2;
+    public MenuItem menuMove3;
+    public Menu itemMenu;
+    public MenuItem menuItem1;
+    public MenuItem menuItem2;
+    public MenuItem menuItem3;
     public Label moveChooseLabel;
     String currentPlayerName = LoginController.getUserPlayer();
     public static String savedPlayerName;
@@ -145,14 +145,14 @@ public class MultiPlayerFight {
         Battle_Simulation.run();
         runBoss();
         runPlayer();
-        Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
-        Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
-        Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
-        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Power: " + item1Power +
+        menuMove1.setText("Attack: '" + menuMove1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
+        menuMove2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
+        menuMove3.setText("Attack: '" + menuMove3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
+        menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Power: " + item1Power +
                 " - Remaining: " + item1Quantity);
-        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Power: " + item2Power +
+        menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Power: " + item2Power +
                 " - Remaining: " + item2Quantity);
-        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Power: " + item3Power +
+        menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Power: " + item3Power +
                 " - Remaining: " + item3Quantity);
         currentBoss = getCurrentBoss(currentBoss);
         String firstPlayer = chooseFirst(userPlayer,currentBoss);
@@ -265,23 +265,23 @@ public class MultiPlayerFight {
         item1Power = playerItems.get(0).itemPower();
         item2Power = playerItems.get(1).itemPower();
         item3Power = playerItems.get(2).itemPower();
-        Move1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
-        Move2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
-        Move3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
-        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Power: " + item1Power +
+        menuMove1.setText("Attack: '" + menuMove1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
+        menuMove2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
+        menuMove3.setText("Attack: '" + menuMove3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
+        menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Power: " + item1Power +
                 " - Remaining: " + item1Quantity);
-        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Power: " + item2Power +
+        menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Power: " + item2Power +
                 " - Remaining: " + item2Quantity);
-        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Power: " + item3Power +
+        menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Power: " + item3Power +
                 " - Remaining: " + item3Quantity);
         if(item1Quantity==0){
-            Item1.setDisable(true);
+            menuItem1.setDisable(true);
         }
         if (item2Quantity==0) {
-            Item2.setDisable(true);
+            menuItem2.setDisable(true);
         }
         if (item3Quantity==0) {
-            Item3.setDisable(true);
+            menuItem3.setDisable(true);
         }
         newGameButton.setVisible(false);
         loadGameButton.setVisible(false);
@@ -362,8 +362,8 @@ public class MultiPlayerFight {
                 5000
         );
         damageAnnouncer.setText(attackAnnouncement);
-        BossHP.setText(String.valueOf(currentBoss.getHP()));
-        BossDefense.setText(String.valueOf(currentBoss.getDefense()));
+        bossHP.setText(String.valueOf(currentBoss.getHP()));
+        bossDefense.setText(String.valueOf(currentBoss.getDefense()));
         turn(chooseFirst(userPlayer,currentBoss));
     }
 
@@ -380,8 +380,8 @@ public class MultiPlayerFight {
                 5000
         );
         damageAnnouncer.setText(attackAnnouncement);
-        BossHP.setText(String.valueOf(currentBoss.getHP()));
-        BossDefense.setText(String.valueOf(currentBoss.getDefense()));
+        bossHP.setText(String.valueOf(currentBoss.getHP()));
+        bossDefense.setText(String.valueOf(currentBoss.getDefense()));
         turn(chooseFirst(userPlayer,currentBoss));
     }
 
@@ -398,8 +398,8 @@ public class MultiPlayerFight {
                 5000
         );
         damageAnnouncer.setText(attackAnnouncement);
-        BossHP.setText(String.valueOf(currentBoss.getHP()));
-        BossDefense.setText(String.valueOf(currentBoss.getDefense()));
+        bossHP.setText(String.valueOf(currentBoss.getHP()));
+        bossDefense.setText(String.valueOf(currentBoss.getDefense()));
         turn(chooseFirst(userPlayer,currentBoss));
     }
     public void useItem1() {
@@ -416,14 +416,14 @@ public class MultiPlayerFight {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
-            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
+            playerHP.setText(String.valueOf(userPlayer.getHP()));
+            playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item1Quantity--;
-            Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+            menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
                     " - Remaining: " + item1Quantity);
             if (item1Quantity == 0) {
-                Item1.setDisable(true);
+                menuItem1.setDisable(true);
             }
         }
     }
@@ -441,14 +441,14 @@ public class MultiPlayerFight {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
-            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
+            playerHP.setText(String.valueOf(userPlayer.getHP()));
+            playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item2Quantity--;
-            Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
+            menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
                     " - Remaining: " + item2Quantity);
             if (item2Quantity == 0) {
-                Item2.setDisable(true);
+                menuItem2.setDisable(true);
             }
         }
     }
@@ -466,14 +466,14 @@ public class MultiPlayerFight {
                     5000
             );
             damageAnnouncer.setText(attackAnnouncement);
-            PlayerHP.setText(String.valueOf(userPlayer.getHP()));
-            PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
+            playerHP.setText(String.valueOf(userPlayer.getHP()));
+            playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item3Quantity--;
-            Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+            menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
                     " - Remaining: " + item3Quantity);
             if (item3Quantity == 0) {
-                Item3.setDisable(true);
+                menuItem3.setDisable(true);
             }
         }
     }
@@ -484,8 +484,8 @@ public class MultiPlayerFight {
             damageAnnouncer.setText("GAME OVER. \nYou fought valiantly, brave warrior. Alas, it was not enough. UOITOPIA will fall to evil... and it's all your fault...");
             moveChooseLabel.setOpacity(0.0);
             yourMove.setOpacity(0.0);
-            AttackMenu.setDisable(true);
-            ItemMenu.setDisable(true);
+            attackMenu.setDisable(true);
+            itemMenu.setDisable(true);
             newGameButton.setVisible(true);
             loadGameButton.setVisible(true);
         }
@@ -500,15 +500,15 @@ public class MultiPlayerFight {
             if (firstPlayer == userPlayer.getName()) {
                 yourMove.setText("Your Move!");
                 moveChooseLabel.setOpacity(100.0);
-                AttackMenu.setDisable(false);
-                ItemMenu.setDisable(false);
+                attackMenu.setDisable(false);
+                itemMenu.setDisable(false);
                 yourMove.setOpacity(100.0);
             } else {
                 yourMove.setText(currentBoss.getName() +"'s Move!");
                 moveChooseLabel.setOpacity(0.0);
 
-                AttackMenu.setDisable(true);
-                ItemMenu.setDisable(true);
+                attackMenu.setDisable(true);
+                itemMenu.setDisable(true);
                 yourMove.setOpacity(100.0);
                 new java.util.Timer().schedule(
                         new java.util.TimerTask() {
@@ -524,8 +524,8 @@ public class MultiPlayerFight {
                             @Override
                             public void run() {
                                 damageAnnouncer.setText(rando_attack(currentBoss, userPlayer));
-                                PlayerHP.setText(String.valueOf(userPlayer.getHP()));
-                                PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
+                                playerHP.setText(String.valueOf(userPlayer.getHP()));
+                                playerDefense.setText(String.valueOf(userPlayer.getDefense()));
                                 turn(chooseFirst(userPlayer, currentBoss));
                             }
                         },
@@ -537,17 +537,17 @@ public class MultiPlayerFight {
     }
 
     public void runBoss(){
-        BossHP.setText(String.valueOf(currentBoss.getHP()));
-        BossSpeed.setText(String.valueOf(currentBoss.getSpeed()));
-        BossDodge.setText(String.valueOf(currentBoss.getDodge()));
-        BossDefense.setText(String.valueOf(currentBoss.getDefense()));
+        bossHP.setText(String.valueOf(currentBoss.getHP()));
+        bossSpeed.setText(String.valueOf(currentBoss.getSpeed()));
+        bossDodge.setText(String.valueOf(currentBoss.getDodge()));
+        bossDefense.setText(String.valueOf(currentBoss.getDefense()));
     }
 
     public void runPlayer(){
-        PlayerHP.setText(String.valueOf(userPlayer.getHP()));
-        PlayerSpeed.setText(String.valueOf(userPlayer.getSpeed()));
-        PlayerDodge.setText(String.valueOf(userPlayer.getDodge()));
-        PlayerDefense.setText(String.valueOf(userPlayer.getDefense()));
+        playerHP.setText(String.valueOf(userPlayer.getHP()));
+        playerSpeed.setText(String.valueOf(userPlayer.getSpeed()));
+        playerDodge.setText(String.valueOf(userPlayer.getDodge()));
+        playerDefense.setText(String.valueOf(userPlayer.getDefense()));
     }
     public void bossIsDead(){
         damageAnnouncer.setText("You have slain the boss! \nOh no, here comes another one!");
@@ -561,16 +561,16 @@ public class MultiPlayerFight {
                         item1Quantity = 1;
                         item2Quantity = 2;
                         item3Quantity = 3;
-                        Item1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+                        menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
                                 " - Remaining: " + item1Quantity);
-                        Item2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Healing: " + item2Power +
+                        menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Healing: " + item2Power +
                                 " - Remaining: " + item2Quantity);
 
-                        Item3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+                        menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
                                 " - Remaining: " + item3Quantity);
-                        Item1.setDisable(false);
-                        Item2.setDisable(false);
-                        Item3.setDisable(false);
+                        menuItem1.setDisable(false);
+                        menuItem2.setDisable(false);
+                        menuItem3.setDisable(false);
                         runPlayer();
                         runBoss();
                         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
@@ -590,8 +590,8 @@ public class MultiPlayerFight {
         damageAnnouncer.setText("Huzzah! You have defeated Dragon and his evil minions! \n UOITOPIA will be forever in your debt!");
         moveChooseLabel.setOpacity(0.0);
         yourMove.setOpacity(0.0);
-        AttackMenu.setDisable(true);
-        ItemMenu.setDisable(true);
+        attackMenu.setDisable(true);
+        itemMenu.setDisable(true);
         newGameButton.setVisible(true);
         loadGameButton.setVisible(true);
 

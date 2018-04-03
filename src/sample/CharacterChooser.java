@@ -10,16 +10,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import sample.model.*;
-import sample.network.Client;
-import sample.network.MainServer;
-
-import java.util.Arrays;
 
 import static sample.model.Battle_Simulation.chooseHero;
 
 public class CharacterChooser {
-    public TextField Username;
-    public PasswordField Password;
+    public TextField username;
+    public PasswordField password;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -28,31 +24,31 @@ public class CharacterChooser {
     public ImageView soundButton;
     public ImageView soundButtonOff;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
-    public TextField LindaType;
-    public TextField LindaHP;
-    public TextField LindaSpeed;
-    public TextField LindaDodge;
-    public TextField LindaDefense;
-    public TextField KroggType;
-    public TextField KroggHP;
-    public TextField KroggSpeed;
-    public TextField KroggDodge;
-    public TextField KroggDefense;
-    public TextField GlenType;
-    public TextField GlenHP;
-    public TextField GlenSpeed;
-    public TextField GlenDodge;
-    public TextField GlenDefense;
+    public TextField lindaType;
+    public TextField lindaHP;
+    public TextField lindaSpeed;
+    public TextField lindaDodge;
+    public TextField lindaDefense;
+    public TextField kroggType;
+    public TextField kroggHP;
+    public TextField kroggSpeed;
+    public TextField kroggDodge;
+    public TextField kroggDefense;
+    public TextField glenType;
+    public TextField glenHP;
+    public TextField glenSpeed;
+    public TextField glenDodge;
+    public TextField glenDefense;
 
-    public MenuBar AttackBar;
-    public Menu AttackMenu;
-    public MenuItem Move1;
-    public MenuItem Move2;
-    public MenuItem Move3;
-    public Menu ItemMenu;
-    public MenuItem Item1;
-    public MenuItem Item2;
-    public MenuItem Item3;
+    public MenuBar attackBar;
+    public Menu attackMenu;
+    public MenuItem move1;
+    public MenuItem move2;
+    public MenuItem move3;
+    public Menu itemMenu;
+    public MenuItem item1;
+    public MenuItem item2;
+    public MenuItem item3;
 
 
 
@@ -127,30 +123,30 @@ public class CharacterChooser {
 
     public void runLinda(){
         Linda linda = new Linda();
-        LindaType.setText(linda.getType());
-        LindaHP.setText(String.valueOf(linda.getHP()));
-        LindaSpeed.setText(String.valueOf(linda.getSpeed()));
-        LindaDodge.setText(String.valueOf(linda.getDodge()));
-        LindaDefense.setText(String.valueOf(linda.getDefense()));
+        lindaType.setText(linda.getType());
+        lindaHP.setText(String.valueOf(linda.getHP()));
+        lindaSpeed.setText(String.valueOf(linda.getSpeed()));
+        lindaDodge.setText(String.valueOf(linda.getDodge()));
+        lindaDefense.setText(String.valueOf(linda.getDefense()));
 
     }
 
     public void runKrogg(){
         Krogg krogg = new Krogg();
-        KroggType.setText(krogg.getType());
-        KroggHP.setText(String.valueOf(krogg.getHP()));
-        KroggSpeed.setText(String.valueOf(krogg.getSpeed()));
-        KroggDodge.setText(String.valueOf(krogg.getDodge()));
-        KroggDefense.setText(String.valueOf(krogg.getDefense()));
+        kroggType.setText(krogg.getType());
+        kroggHP.setText(String.valueOf(krogg.getHP()));
+        kroggSpeed.setText(String.valueOf(krogg.getSpeed()));
+        kroggDodge.setText(String.valueOf(krogg.getDodge()));
+        kroggDefense.setText(String.valueOf(krogg.getDefense()));
     }
 
     public void runGlen(){
         Glen glen = new Glen();
-        GlenType.setText(glen.getType());
-        GlenHP.setText(String.valueOf(glen.getHP()));
-        GlenSpeed.setText(String.valueOf(glen.getSpeed()));
-        GlenDodge.setText(String.valueOf(glen.getDodge()));
-        GlenDefense.setText(String.valueOf(glen.getDefense()));
+        glenType.setText(glen.getType());
+        glenHP.setText(String.valueOf(glen.getHP()));
+        glenSpeed.setText(String.valueOf(glen.getSpeed()));
+        glenDodge.setText(String.valueOf(glen.getDodge()));
+        glenDefense.setText(String.valueOf(glen.getDefense()));
     }
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
