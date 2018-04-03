@@ -15,7 +15,6 @@ import static sample.model.Battle_Simulation.chooseHero;
 
 public class CharacterChooser {
     public TextField username;
-    public PasswordField password;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -51,8 +50,6 @@ public class CharacterChooser {
     public MenuItem item3;
 
 
-
-
     public static Base.Player userPlayer;
 
     private void setCharacter(Base.Player userPlayer) {
@@ -78,7 +75,7 @@ public class CharacterChooser {
     }
 
     public void New() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("NewGame.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
@@ -93,6 +90,7 @@ public class CharacterChooser {
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 
+    // start battle with Krogg as hero
     public void pickKrogg() throws Exception{
         userPlayer = chooseHero("Krogg");
         setCharacter(userPlayer);
@@ -101,7 +99,7 @@ public class CharacterChooser {
         primaryStage.setTitle("KROGG The Destroyer - Battle");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
-
+    // start battle with Linda as hero
     public void pickLinda() throws Exception{
         userPlayer = chooseHero("Linda");
         Parent root = FXMLLoader.load(getClass().getResource("SinglePlayerFight.fxml"));
@@ -109,7 +107,7 @@ public class CharacterChooser {
         primaryStage.setTitle("KROGG The Destroyer - Battle");
         primaryStage.setScene(new Scene(root, 640, 400));;
     }
-
+    // start battle with Glen as hero
     public void pickGlen() throws Exception {
         userPlayer = chooseHero("Glen");
         Parent root = FXMLLoader.load(getClass().getResource("SinglePlayerFight.fxml"));
@@ -118,9 +116,7 @@ public class CharacterChooser {
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 
-    public void usePotion() {}
-    public void useAttack() {}
-
+    // access information on Linda
     public void runLinda(){
         Linda linda = new Linda();
         lindaType.setText(linda.getType());
@@ -131,6 +127,7 @@ public class CharacterChooser {
 
     }
 
+    // access information on Krogg
     public void runKrogg(){
         Krogg krogg = new Krogg();
         kroggType.setText(krogg.getType());
@@ -140,6 +137,7 @@ public class CharacterChooser {
         kroggDefense.setText(String.valueOf(krogg.getDefense()));
     }
 
+    // access information on Glen
     public void runGlen(){
         Glen glen = new Glen();
         glenType.setText(glen.getType());

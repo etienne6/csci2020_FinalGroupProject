@@ -32,11 +32,6 @@
         </MenuBar>
         <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@NewGame.css" VBox.vgrow="ALWAYS">
             <children>
-                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Label>
                 <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/soundIcon.png" />

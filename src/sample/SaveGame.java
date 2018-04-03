@@ -8,6 +8,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class SaveGame {
+    // use file chosoer and directory chooser to create a save file based on current game stats
+    // file is automatically named for date and time to ensure no overlap/overwrites
     public static void SaveGame(String gameState) {
         String userName = LoginController.getUserPlayer();
         String sep = System.getProperty("file.separator");

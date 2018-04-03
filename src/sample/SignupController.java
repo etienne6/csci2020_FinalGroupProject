@@ -15,7 +15,6 @@ import java.io.*;
 public class SignupController {
     public TextField username;
     public PasswordField password;
-    public PasswordField PasswordConfirm;
     public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
@@ -29,9 +28,7 @@ public class SignupController {
 
     protected String newuserName = "";
     protected String newuserPass = "";
-    protected String newuserPassCheck = "";
     protected final String dataBaseFile = "KroggDatabase.txt";
-    public BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     public void initialize(){
         if (!playing) {
@@ -61,6 +58,7 @@ public class SignupController {
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 
+    // register and add username + password combo to directory
     public void Register(){
         boolean taken = false;
         try{
@@ -79,7 +77,7 @@ public class SignupController {
                 writer.close();
 
                 feedback.setText("Your account now has been saved.");
-                Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("NewGame.fxml"));
                 Stage primaryStage = Main.getPrimaryStage();
                 primaryStage.setTitle("KROGG The Destroyer - Select Mode");
                 primaryStage.setScene(new Scene(root, 640, 400));
@@ -88,7 +86,7 @@ public class SignupController {
         }catch(IOException e){System.out.println(e);}
     }
 
-
+    // check if user name is taken
     public boolean CheckUsername(String user, String pass, boolean register){
         try{
             FileReader fileReader = new FileReader(this.dataBaseFile);

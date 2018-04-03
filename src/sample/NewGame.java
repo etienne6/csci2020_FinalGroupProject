@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 
 public class NewGame {
     public TextField username;
-    public PasswordField password;
-    public Button submitButton;
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -23,7 +21,6 @@ public class NewGame {
     public ImageView soundButtonOff;
     public Button challengeAccepted;
     boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
-
 
     public MenuBar attackBar;
     public Menu attackMenu;
@@ -37,6 +34,7 @@ public class NewGame {
 
 
     public void initialize(){
+        // change music to battle music
         if (!playing) {
             soundButton.setOpacity(0.0);
             soundButtonOff.setOpacity(100.0);
@@ -51,7 +49,7 @@ public class NewGame {
     }
 
     public void New() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("NewGame.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
         primaryStage.setTitle("KROGG The Destroyer - Select Mode");
         primaryStage.setScene(new Scene(root, 640, 400));
@@ -59,12 +57,7 @@ public class NewGame {
     public void Save(){}
     public void Open(){ OpenGame.OpenGame();}
 
-    public void Back() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Mode Select");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
+    // once you are ready for battle, chosoe a character
     public void characterChooser() throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("CharacterChooser.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
@@ -72,8 +65,6 @@ public class NewGame {
         primaryStage.setScene(new Scene(root, 640, 400));
 
     }
-    public void usePotion() {}
-    public void useAttack() {}
 
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);

@@ -18,6 +18,7 @@ import static sample.model.Battle_Simulation.chooseHero;
 import static sample.model.Battle_Simulation.getCurrentBoss;
 
 public class SinglePlayerFight {
+    // declare and initialize variables
     public Button newGameButton;
     public Button loadGameButton;
     public MenuItem newGame;
@@ -95,6 +96,7 @@ public class SinglePlayerFight {
     public static String savedPlayerName;
 
     public void initialize(){
+        // start scene by checking if music should be on
         if (!playing) {
             soundButton.setOpacity(0.0);
             soundButtonOff.setOpacity(100.0);
@@ -102,6 +104,7 @@ public class SinglePlayerFight {
             soundButton.setOpacity(100.0);
             soundButtonOff.setOpacity(0.0);
         }
+        // display battle info
         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
         heroName.setText(userPlayer.getName());
         villainName.setText(currentBoss.getName());
@@ -113,9 +116,11 @@ public class SinglePlayerFight {
             playerPic.setImage(glenPic);
         }
         yourMove.setOpacity(0.0);
+        // get boss and hero information
         Battle_Simulation.run();
         runBoss();
         runPlayer();
+        //set menu items equal to items/moves of chosen hero
         menuMove1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
         menuMove2.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
         menuMove3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
@@ -130,12 +135,14 @@ public class SinglePlayerFight {
         turn(firstPlayer);
     }
 
+    // go back to new game if you want to restart
     public void New() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("SelectMode.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("NewGame.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Select Mode");
+        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
+    // save the current state of the game
     public void Save(){
         String gameState = null;
         gameState = currentPlayerName + "," + userPlayer.getName() + "," + userPlayer.getHP() + "," + userPlayer.getDefense() + "," +
@@ -143,11 +150,13 @@ public class SinglePlayerFight {
                 currentBoss.getHP() + "," + currentBoss.getDefense();
         SaveGame.SaveGame(gameState);
     }
+    // open a saved game (will only work if you are logged into same account as person who saved it)
     public String Open(){
         String [] openedGame = OpenGame.OpenGame();
         setSavedPlayer(openedGame[0]);
         savedPlayerName.equals(getSavedPlayerName());
 
+        // bring saved information to characters in game
         if (savedPlayerName.equals(currentPlayerName)){
             userPlayer = chooseHero(openedGame[1]);
             userPlayer.setHP(Float.valueOf(openedGame[2]));
@@ -156,6 +165,7 @@ public class SinglePlayerFight {
             item2Quantity = Integer.valueOf(openedGame[5]);
             item3Quantity = Integer.valueOf(openedGame[6]);
 
+            // set boss to same state as when saved
             currentBoss = chooseBoss(openedGame[7]);
             if (currentBoss.getName() == "Dragon") {
                 currentBoss = bossArrayList.get(2);
@@ -193,6 +203,7 @@ public class SinglePlayerFight {
                     },
                     5000
             );
+            // alert user if they do not have access to save file
             damageAnnouncer.setText("Sorry, you cannot load this file. You are not logged " +
                     "into the account to which this file belongs. This game will continue...");
             Stage primaryStage = Main.getPrimaryStage();
@@ -201,6 +212,7 @@ public class SinglePlayerFight {
         }
     }
 
+    // reinitialize game if game has successfully loaded
     public void initializedOpenGame(){
         battleInfo.setText("Battle! " + userPlayer.getName() + " vs. " + currentBoss.getName());
         heroName.setText(userPlayer.getName());
@@ -236,6 +248,7 @@ public class SinglePlayerFight {
         item1Power = playerItems.get(0).itemPower();
         item2Power = playerItems.get(1).itemPower();
         item3Power = playerItems.get(2).itemPower();
+        // set menu items to current hero's moves and items, also revert item inventory to time of save
         menuMove1.setText("Attack: '" + move1 + "' - Type: " + move1Type + " - Damage: " + move1Power);
         menuMove1.setText("Attack: '" + move2 + "' - Type: " + move2Type + " - Damage: " + move2Power);
         menuMove3.setText("Attack: '" + move3 + "' - Type: " + move3Type + " - Damage: " + move3Power);
@@ -256,10 +269,10 @@ public class SinglePlayerFight {
         }
         newGameButton.setVisible(false);
         loadGameButton.setVisible(false);
-        String firstPlayer = chooseFirst(userPlayer,currentBoss);
+        chooseFirst(userPlayer,currentBoss);
     }
 
-
+    // if attack chosen from menu, perform attack based on current hero's characteristics
     public void useAttack1() {
         yourMove.setOpacity(0.0);
         String attackAnnouncement = damage(playerMoves.get(0),userPlayer,currentBoss);
@@ -278,6 +291,7 @@ public class SinglePlayerFight {
         turn(chooseFirst(userPlayer,currentBoss));
     }
 
+    // if attack chosen from menu, perform attack based on current hero's characteristics
     public void useAttack2() {
         yourMove.setOpacity(0.0);
         String attackAnnouncement = damage(playerMoves.get(1),userPlayer,currentBoss);
@@ -296,6 +310,7 @@ public class SinglePlayerFight {
         turn(chooseFirst(userPlayer,currentBoss));
     }
 
+    // if attack chosen from menu, perform attack based on current hero's characteristics
     public void useAttack3() {
         yourMove.setOpacity(0.0);
         String attackAnnouncement = damage(playerMoves.get(2),userPlayer,currentBoss);
@@ -313,6 +328,8 @@ public class SinglePlayerFight {
         bossDefense.setText(String.valueOf(currentBoss.getDefense()));
         turn(chooseFirst(userPlayer,currentBoss));
     }
+
+    // if item chosen from menu, use item based on current hero's characteristics and change inventory
     public void useItem1() {
         yourMove.setOpacity(0.0);
         if (item1Quantity > 0) {
@@ -331,13 +348,15 @@ public class SinglePlayerFight {
             playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item1Quantity--;
-            menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+            menuItem1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
                     " - Remaining: " + item1Quantity);
             if (item1Quantity == 0) {
                 menuItem1.setDisable(true);
             }
         }
     }
+
+    // if item chosen from menu, use item based on current hero's characteristics and change inventory
     public void useItem2() {
         yourMove.setOpacity(0.0);
         if (item2Quantity > 0) {
@@ -356,13 +375,15 @@ public class SinglePlayerFight {
             playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item2Quantity--;
-            menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
+            menuItem2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Defense Boost: " + item2Power +
                     " - Remaining: " + item2Quantity);
             if (item2Quantity == 0) {
                 menuItem2.setDisable(true);
             }
         }
     }
+
+    // if item chosen from menu, use item based on current hero's characteristics and change inventory
     public void useItem3() {
         yourMove.setOpacity(0.0);
         if (item3Quantity > 0) {
@@ -381,7 +402,7 @@ public class SinglePlayerFight {
             playerDefense.setText(String.valueOf(userPlayer.getDefense()));
             turn(chooseFirst(userPlayer, currentBoss));
             item3Quantity--;
-            menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+            menuItem3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
                     " - Remaining: " + item3Quantity);
             if (item3Quantity == 0) {
                 menuItem3.setDisable(true);
@@ -389,8 +410,10 @@ public class SinglePlayerFight {
         }
     }
 
+    // check who will perform the next turn
     public void turn(String firstPlayer){
         yourMove.setOpacity(0.0);
+        // if player is dead, give them option to restart or go back to previous save
         if(userPlayer.hasLost()){
             damageAnnouncer.setText("GAME OVER. \nYou fought valiantly, brave warrior. Alas, it was not enough. UOITOPIA will fall to evil... and it's all your fault...");
             moveChooseLabel.setOpacity(0.0);
@@ -400,6 +423,7 @@ public class SinglePlayerFight {
             newGameButton.setVisible(true);
             loadGameButton.setVisible(true);
         }
+        // if boss is dead, go to next boss, if final boss is dead, game over, give option to restart or go back to previous save
         if(currentBoss.hasLost()){
             if (currentBoss.getName()!="Dragon"){
                 bossIsDead();
@@ -407,6 +431,7 @@ public class SinglePlayerFight {
                 dragonIsDead();
             }
         }
+        // if both the user and boss are alive, continue game and pick next move
         if (!currentBoss.hasLost() && !userPlayer.hasLost()) {
             if (firstPlayer == userPlayer.getName()) {
                 yourMove.setText("Your Move!");
@@ -447,6 +472,7 @@ public class SinglePlayerFight {
         }
     }
 
+    // access boss attributes
     public void runBoss(){
         bossHP.setText(String.valueOf(currentBoss.getHP()));
         bossSpeed.setText(String.valueOf(currentBoss.getSpeed()));
@@ -454,12 +480,15 @@ public class SinglePlayerFight {
         bossDefense.setText(String.valueOf(currentBoss.getDefense()));
     }
 
+    // access hero attributes
     public void runPlayer(){
         playerHP.setText(String.valueOf(userPlayer.getHP()));
         playerSpeed.setText(String.valueOf(userPlayer.getSpeed()));
         playerDodge.setText(String.valueOf(userPlayer.getDodge()));
         playerDefense.setText(String.valueOf(userPlayer.getDefense()));
     }
+
+    // if boss is dead, bring on the next one
     public void bossIsDead(){
         damageAnnouncer.setText("You have slain the boss! \nOh no, here comes another one!");
         currentBoss = getCurrentBoss(currentBoss);
@@ -472,12 +501,12 @@ public class SinglePlayerFight {
                         item1Quantity = 1;
                         item2Quantity = 2;
                         item3Quantity = 3;
-                        menuItem1.setText("Item: '" + menuItem1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
+                        menuItem1.setText("Item: '" + item1 + "' - Type: " + item1Type + " - Healing: " + item1Power +
                                 " - Remaining: " + item1Quantity);
-                        menuItem2.setText("Item: '" + menuItem2 + "' - Type: " + item2Type + " - Healing: " + item2Power +
+                        menuItem2.setText("Item: '" + item2 + "' - Type: " + item2Type + " - Healing: " + item2Power +
                                 " - Remaining: " + item2Quantity);
 
-                        menuItem3.setText("Item: '" + menuItem3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
+                        menuItem3.setText("Item: '" + item3 + "' - Type: " + item3Type + " - Healing: " + item3Power +
                                 " - Remaining: " + item3Quantity);
                         menuItem1.setDisable(false);
                         menuItem2.setDisable(false);
@@ -497,6 +526,8 @@ public class SinglePlayerFight {
                 5000
         );
     }
+
+    // if final boss is dead, game over, give option to restart or go back to previous save
     public void dragonIsDead() {
         damageAnnouncer.setText("Huzzah! You have defeated Dragon and his evil minions! \n UOITOPIA will be forever in your debt!");
         moveChooseLabel.setOpacity(0.0);
@@ -505,7 +536,6 @@ public class SinglePlayerFight {
         itemMenu.setDisable(true);
         newGameButton.setVisible(true);
         loadGameButton.setVisible(true);
-
     }
 
     private void setSavedPlayer(String savedPlayerName) {
@@ -514,6 +544,7 @@ public class SinglePlayerFight {
 
     static public String getSavedPlayerName(){ return savedPlayerName;}
 
+    // check sound settings
     public void Sound() {
         boolean playing = Main.mediaPlayer.getStatus().equals(MediaPlayer.Status.PLAYING);
         if (!playing) {

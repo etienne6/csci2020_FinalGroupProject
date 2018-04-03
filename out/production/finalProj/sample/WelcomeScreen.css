@@ -30,12 +30,12 @@
     -fx-background-color: darkgrey ;
 }
 
-#SinglePlayerButton {
+#LogInButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }
 
-#MultiPlayerButton {
+#SignUpButton {
     -fx-background-color: #37ee1a;
     -fx-text-fill: #353535;
 }

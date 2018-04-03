@@ -7,12 +7,10 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
+import sample.network.Client;
+import sample.network.MainServer;
 
-public class Controller {
-    public Label returningUser;
-    public Label newUser;
-    public Button logInButton;
-    public Button signUpButton;
+public class WelcomeScreen {
     public MenuItem newGame;
     public MenuItem openGame;
     public MenuItem saveGame;
@@ -20,19 +18,12 @@ public class Controller {
     public ImageView soundButton;
     public ImageView soundButtonOff;
 
-    // if you are a returning user, you may login with your credentials
-    public void LogInScreen() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    // start client upon entry
+    public void Enter() throws Exception {
+        Client.StartClient();
+        Parent root = FXMLLoader.load(getClass().getResource("Greeting.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Login");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
-
-    // if you are a new user, you may create an account
-    public void SignUpScreen() throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Signup.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Sign Up");
+        primaryStage.setTitle("KROGG The Destroyer - Welcome");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 

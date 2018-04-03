@@ -118,7 +118,7 @@ public class MainServer extends javax.swing.JFrame
         b_users.setText("Online Users");
         b_users.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                System.out.println(Arrays.toString(users.toArray()));
+                b_usersActionPerformed(evt);
             }
         });
 

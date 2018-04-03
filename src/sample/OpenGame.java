@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class OpenGame{
+    // open a saved game by reading in saved stats
     public static String[] OpenGame(){
         String userName = LoginController.getUserPlayer();
         String[] gameStats = null;
@@ -24,8 +25,6 @@ public class OpenGame{
         Stage primaryStage = Main.getPrimaryStage();
         fileChooser.setTitle("Open Game File");
         File file = fileChooser.showOpenDialog(primaryStage.getScene().getWindow());
-
-        Scanner in = new Scanner(System.in);
 
         try {
             BufferedReader br = new BufferedReader(new FileReader(file));

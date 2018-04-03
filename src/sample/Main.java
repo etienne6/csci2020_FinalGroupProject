@@ -7,7 +7,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
-import sample.network.Client;
 
 
 public class Main extends Application {
@@ -25,8 +24,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        // start game with welcome screen, start client, set music to start with program
         setPrimaryStage(primaryStage);
-        Parent root = FXMLLoader.load(getClass().getResource("Greeting.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("WelcomeScreen.fxml"));
 
         Image icon = new Image(getClass().getResourceAsStream("../media/kroggicon.png"));
 
@@ -39,7 +39,6 @@ public class Main extends Application {
         primaryStage.show();
     }
     public static void main(String[] args) {
-
         launch(args);
     }
 }

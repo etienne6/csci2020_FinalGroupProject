@@ -11,10 +11,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MultiPlayerGameSelect">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.WelcomeScreen">
     <children>
-        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@MultiPlayerGameSelect.css" VBox.vgrow="ALWAYS">
+        <MenuBar id="menubar" fx:id="MenuBar" stylesheets="@WelcomeScreen.css" VBox.vgrow="ALWAYS">
             <menus>
                 <Menu fx:id="FileMenu" mnemonicParsing="false" text="File">
                     <items>
@@ -27,26 +28,21 @@
                 </Menu>
             </menus>
         </MenuBar>
-        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@MultiPlayerGameSelect.css" VBox.vgrow="ALWAYS">
+        <AnchorPane id="anchor" maxHeight="-1.0" maxWidth="-1.0" prefHeight="383.0" prefWidth="620.0" stylesheets="@WelcomeScreen.css" VBox.vgrow="ALWAYS">
             <children>
                 <ImageView fitHeight="276.0" fitWidth="479.0" layoutX="81.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/krogg%20logo.png" />
                     </image>
                 </ImageView>
-                <Button id="CoopButton" fx:id="CoopButton" alignment="CENTER" layoutX="271.0" layoutY="296.0" mnemonicParsing="false" onAction="#Coop" prefWidth="100.0" stylesheets="@MultiPlayerGameSelect.css" text="Co-Op" textAlignment="CENTER">
+                <Button id="SignUpButton" fx:id="enterButton" alignment="CENTER" layoutX="291.0" layoutY="285.0" mnemonicParsing="false" onAction="#Enter" prefWidth="60.0" stylesheets="@WelcomeScreen.css" text="Enter" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor></Button>
-                <Button id="VersusButton" fx:id="VersusButton" alignment="CENTER" layoutX="271.0" layoutY="250.0" mnemonicParsing="false" onAction="#Versus" prefWidth="100.0" stylesheets="@MultiPlayerGameSelect.css" text="Versus" textAlignment="CENTER">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor></Button>
-                <Label fx:id="back" layoutX="16.0" layoutY="11.0" onMouseClicked="#Back" text="Back" textFill="#bababa" underline="true">
-                    <cursor>
-                        <Cursor fx:constant="HAND" />
-                    </cursor>
-                </Label>
+                <Label layoutX="81.0" layoutY="249.0" text="Welcome to the adventure! Are you ready to enter the kingdom of UOITOPIA?" textFill="#bababa">
+                    <font>
+                        <Font name="Algerian" size="12.0" />
+                    </font></Label>
                 <ImageView fx:id="soundButton" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/soundIcon.png" />
@@ -55,7 +51,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </ImageView>
-                <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="soundButtonOff" fitHeight="17.0" fitWidth="18.0" layoutX="608.0" layoutY="14.0" onMouseClicked="#Sound" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@../media/soundIconOff.png" />
                     </image>
