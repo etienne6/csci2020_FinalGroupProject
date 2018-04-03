@@ -15,7 +15,8 @@ public class Krogg_Client{
     Socket sock;
     BufferedReader reader;
     PrintWriter writer;
-
+    
+    //will recieve incoming messages from server to client
     public void ListenThread(){
         Thread IncomingReader = new Thread(new IncomingReader());
         IncomingReader.start();
