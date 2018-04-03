@@ -17,7 +17,7 @@ import java.util.Arrays;
 
 import static sample.model.Battle_Simulation.chooseHero;
 
-public class CharacterChooser {
+public class CharacterChooserMultiplayer {
     public TextField Username;
     public PasswordField Password;
     public MenuItem newGame;
@@ -54,16 +54,13 @@ public class CharacterChooser {
     public MenuItem Item2;
     public MenuItem Item3;
 
-
-
-
     public static Base.Player userPlayer;
 
     private void setCharacter(Base.Player userPlayer) {
-        CharacterChooser.userPlayer = userPlayer;
+        this.userPlayer = userPlayer;
     }
 
-    static public Base.Player getUserPlayer(){ return CharacterChooser.userPlayer;}
+    static public Base.Player getUserPlayer(){ return userPlayer;}
 
     public void initialize(){
         if (!playing) {
@@ -90,35 +87,30 @@ public class CharacterChooser {
     public void Save(){}
     public void Open(){ OpenGame.OpenGame();}
 
-    public void Back() throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("NewGame.fxml"));
-        Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - The Adventure Begins");
-        primaryStage.setScene(new Scene(root, 640, 400));
-    }
-
     public void pickKrogg() throws Exception{
         userPlayer = chooseHero("Krogg");
         setCharacter(userPlayer);
-        Parent root = FXMLLoader.load(getClass().getResource("SinglePlayerFight.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("MultiPlayerFight.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Battle");
+        primaryStage.setTitle("KROGG The Destroyer - Multi-Player Battle");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 
     public void pickLinda() throws Exception{
         userPlayer = chooseHero("Linda");
-        Parent root = FXMLLoader.load(getClass().getResource("SinglePlayerFight.fxml"));
+        setCharacter(userPlayer);
+        Parent root = FXMLLoader.load(getClass().getResource("MultiPlayerFight.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Battle");
+        primaryStage.setTitle("KROGG The Destroyer - Multi-Player Battle");
         primaryStage.setScene(new Scene(root, 640, 400));;
     }
 
     public void pickGlen() throws Exception {
         userPlayer = chooseHero("Glen");
-        Parent root = FXMLLoader.load(getClass().getResource("SinglePlayerFight.fxml"));
+        setCharacter(userPlayer);
+        Parent root = FXMLLoader.load(getClass().getResource("MultiPlayerFight.fxml"));
         Stage primaryStage = Main.getPrimaryStage();
-        primaryStage.setTitle("KROGG The Destroyer - Battle");
+        primaryStage.setTitle("KROGG The Destroyer - Multi-Player Battle");
         primaryStage.setScene(new Scene(root, 640, 400));
     }
 

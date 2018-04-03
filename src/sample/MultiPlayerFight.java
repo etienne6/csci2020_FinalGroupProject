@@ -7,10 +7,13 @@ import javafx.scene.control.SeparatorMenuItem;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 import sample.model.*;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import static sample.model.Battle_Simulation.*;
@@ -58,10 +61,21 @@ public class MultiPlayerFight {
     public TextField PlayerDodge;
     public TextField PlayerDefense;
 
+    public TextField teamMate1HP;
+    public TextField teamMate1Defense;
+    public TextField teamMate2HP;
+    public TextField teamMate2Defense;
+    public TextField yourHeroName;
+    public TextField teamMate1;
+    public TextField teamMate2;
+
+
     ArrayList<Base.Move> playerMoves = userPlayer.getMoveList();
     ArrayList<Base.Item> playerItems = userPlayer.getItemList();
     public MenuBar AttackBar;
+    public MenuBar MenuBar;
     public Menu AttackMenu;
+    public Pane Pane;
     public String move1 = playerMoves.get(0).moveName();
     public String move2 = playerMoves.get(1).moveName();
     public String move3 = playerMoves.get(2).moveName();
@@ -93,6 +107,21 @@ public class MultiPlayerFight {
     public Label moveChooseLabel;
     String currentPlayerName = LoginController.getUserPlayer();
     public static String savedPlayerName;
+
+    public String userName;
+    public String actorName;
+    public String actorHP;
+    public String actorDefense;
+    public String impactedName;
+    public String impactedHP;
+    public String impactedDefense;
+    public String action;
+    public String item;
+
+    BufferedReader reader;
+
+    PrintWriter writer;
+
 
     public void initialize(){
         if (!playing) {
@@ -258,6 +287,66 @@ public class MultiPlayerFight {
         loadGameButton.setVisible(false);
         String firstPlayer = chooseFirst(userPlayer,currentBoss);
     }
+
+
+    public class IncomingReader implements Runnable
+    {
+        @Override
+        public void run()
+        {
+            String[] data;
+            String characterName;
+            String stream;
+
+            try
+            {
+                while ((stream = reader.readLine()) != null)
+                {
+                    data = stream.split(":");
+
+                    if (data[0].equals("Trigger"));
+                    {
+                        userName = data[1];
+                        actorName = data[2];
+                        actorHP = data[3];
+                        actorDefense = data[4];
+                        impactedName = data[5];
+                        impactedHP = data[6];
+                        impactedDefense = data[7];
+                        action = data[8];
+                        item = data[9];
+                    }
+                }
+            }catch(Exception ex) { }
+        }
+    }
+    public void ListenThread()
+    {
+        Thread IncomingReader = new Thread(new IncomingReader());
+        IncomingReader.start();
+    }
+
+    public void finishTurn(Base.Player actor, Base.Player impact, Base.Move move, Base.Item itemName){
+        String toPrint = "Trigger:";
+        userName = LoginController.getUserPlayer();
+        actorName = actor.getName();
+        actorHP = Float.toString(actor.getHP());
+        actorDefense = Float.toString(actor.getDefense());
+        impactedName = impact.getName();
+        impactedHP = Float.toString(impact.getHP());
+        impactedDefense = Float.toString(impact.getDefense());
+        action = move.moveName();
+        item = itemName.itemName();
+
+        try {
+                writer.println(toPrint+":"+userName+":"+actorName+":"+actorHP+":"+actorDefense+":"+impactedName+":"+
+                impactedHP+":"+impactedDefense+":"+action+":"+item);
+                writer.flush(); // flushes the buffer
+            } catch (Exception ex) {
+                System.err.println("Message was not sent. \n");
+            }
+
+        }
 
 
     public void useAttack1() {

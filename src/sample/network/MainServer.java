@@ -6,7 +6,7 @@ import java.util.*;
 public class MainServer extends javax.swing.JFrame
 {
     ArrayList<PrintWriter> clientOutputStreams = new ArrayList<>();
-    ArrayList<String> users = new ArrayList<>();
+    public static ArrayList<String> users = new ArrayList<>();
 
     public class ClientConnectionHandler implements Runnable
     {
@@ -118,7 +118,7 @@ public class MainServer extends javax.swing.JFrame
         b_users.setText("Online Users");
         b_users.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                b_usersActionPerformed(evt);
+                System.out.println(Arrays.toString(users.toArray()));
             }
         });
 
