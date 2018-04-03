@@ -1,4 +1,4 @@
-#Krogg The DESTROYER
+# Krogg The DESTROYER
 **The contributors of this project are:**
 
 _Etienne Caronan_ - https://github.com/etienne6 - Battle Simulation
