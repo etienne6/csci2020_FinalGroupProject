@@ -1,13 +1,13 @@
 #Krogg The DESTROYER
 **The contributors of this project are:**
 
-_Etienne Caronan_ 
+_Etienne Caronan_ - https://github.com/etienne6 - Battle Simulation
 
-_Stefan Cross_ 
+_Stefan Cross_ - https://github.com/sheldoncross - Battle Simulation and Refactoring
 
-_Mir Afgan Talpur_ 
+_Mir Afgan Talpur_ - https://github.com/MirAfganTalpur - UI & File I/O
 
-_Rolando Agullano_ 
+_Rolando Agullano_ - https://github.com/agullanojr - Networking and File I/O
 
 
 This is a turn based game application that features 3 - main characters that the player can use: Krogg, Linda, and Glen.
