@@ -1,13 +1,13 @@
 #Krogg The DESTROYER
 **The contributors of this project are:**
 
-_Etienne Caronan_ - 100618998   
+_Etienne Caronan_ 
 
-_Stefan Cross_ - 100592169
+_Stefan Cross_ 
 
-_Mir Afgan Talpur_ - 100486048
+_Mir Afgan Talpur_ 
 
-_Rolando Agullano_ - 100622368
+_Rolando Agullano_ 
 
 
 This is a turn based game application that features 3 - main characters that the player can use: Krogg, Linda, and Glen.
