@@ -2,18 +2,18 @@ import java.io.*;
 import java.net.*;
 import java.util.*;
 
-public class MainServer extends javax.swing.JFrame
+public class server_frame extends javax.swing.JFrame
 {
-   ArrayList<PrintWriter> clientOutputStreams = new ArrayList<>();
-   ArrayList<String> users = new ArrayList<>();
+   ArrayList<PrintWriter> clientOutputStreams;
+   ArrayList<String> users;
 
-   public class ClientConnectionHandler implements Runnable
+   public class ClientHandler implements Runnable
    {
        BufferedReader reader;
        Socket sock;
        PrintWriter client;
 
-       public ClientConnectionHandler(Socket clientSocket, PrintWriter user)
+       public ClientHandler(Socket clientSocket, PrintWriter user)
        {
             client = user;
             try
@@ -24,7 +24,7 @@ public class MainServer extends javax.swing.JFrame
             }
             catch (Exception ex)
             {
-                textArea.append("Unexpected error... \n");
+                ta_chat.append("Unexpected error... \n");
             }
 
        }
@@ -39,12 +39,12 @@ public class MainServer extends javax.swing.JFrame
             {
                 while ((message = reader.readLine()) != null)
                 {
-                    textArea.append("Received: " + message + "\n");
+                    ta_chat.append("Received: " + message + "\n");
                     data = message.split(":");
 
                     for (String token:data)
                     {
-                        textArea.append(token + "\n");
+                        ta_chat.append(token + "\n");
                     }
 
                     if (data[2].equals(connect))
@@ -63,28 +63,30 @@ public class MainServer extends javax.swing.JFrame
                     }
                     else
                     {
-                        textArea.append("No Conditions were met. \n");
+                        ta_chat.append("No Conditions were met. \n");
                     }
                 }
              }
              catch (Exception ex)
              {
-                textArea.append("Lost a connection. \n");
+                ta_chat.append("Lost a connection. \n");
                 ex.printStackTrace();
                 clientOutputStreams.remove(client);
              }
 	}
     }
 
-    public MainServer()
+    public server_frame()
     {
         initComponents();
     }
 
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        textArea = new javax.swing.JTextArea();
+        ta_chat = new javax.swing.JTextArea();
         b_start = new javax.swing.JButton();
         b_end = new javax.swing.JButton();
         b_users = new javax.swing.JButton();
@@ -93,12 +95,12 @@ public class MainServer extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Chat - Server's frame");
-        setName("server");
+        setName("server"); // NOI18N
         setResizable(false);
 
-        textArea.setColumns(20);
-        textArea.setRows(5);
-        jScrollPane1.setViewportView(textArea);
+        ta_chat.setColumns(20);
+        ta_chat.setRows(5);
+        jScrollPane1.setViewportView(ta_chat);
 
         b_start.setText("START");
         b_start.addActionListener(new java.awt.event.ActionListener() {
@@ -128,7 +130,7 @@ public class MainServer extends javax.swing.JFrame
             }
         });
 
-
+      
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -169,9 +171,9 @@ public class MainServer extends javax.swing.JFrame
         );
 
         pack();
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void b_endActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_endActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_endActionPerformed
         try
         {
             Thread.sleep(5000);                 //5000 milliseconds is five second.
@@ -179,31 +181,31 @@ public class MainServer extends javax.swing.JFrame
         catch(InterruptedException ex) {Thread.currentThread().interrupt();}
 
         tellEveryone("Server:is stopping and all users will be disconnected.\n:Chat");
-        textArea.append("Server stopping... \n");
+        ta_chat.append("Server stopping... \n");
 
-        textArea.setText("");
-    }
+        ta_chat.setText("");
+    }//GEN-LAST:event_b_endActionPerformed
 
-    private void b_startActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_startActionPerformed
         Thread starter = new Thread(new ServerStart());
         starter.start();
 
-        textArea.append("Server started...\n");
-    }
+        ta_chat.append("Server started...\n");
+    }//GEN-LAST:event_b_startActionPerformed
 
-    private void b_usersActionPerformed(java.awt.event.ActionEvent evt) {
-        textArea.append("\n Online users : \n");
+    private void b_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_usersActionPerformed
+        ta_chat.append("\n Online users : \n");
         for (String current_user : users)
         {
-            textArea.append(current_user);
-            textArea.append("\n");
+            ta_chat.append(current_user);
+            ta_chat.append("\n");
         }
 
-    }
+    }//GEN-LAST:event_b_usersActionPerformed
 
     private void b_clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b_clearActionPerformed
-        textArea.setText("");
-    }
+        ta_chat.setText("");
+    }//GEN-LAST:event_b_clearActionPerformed
 
     public static void main(String args[])
     {
@@ -211,7 +213,7 @@ public class MainServer extends javax.swing.JFrame
         {
             @Override
             public void run() {
-                new MainServer().setVisible(true);
+                new server_frame().setVisible(true);
             }
         });
     }
@@ -234,14 +236,14 @@ public class MainServer extends javax.swing.JFrame
 				PrintWriter writer = new PrintWriter(clientSock.getOutputStream());
 				clientOutputStreams.add(writer);
 
-				Thread listener = new Thread(new ClientConnectionHandler(clientSock, writer));
+				Thread listener = new Thread(new ClientHandler(clientSock, writer));
 				listener.start();
-				textArea.append("Got a connection. \n");
+				ta_chat.append("Got a connection. \n");
                 }
             }
             catch (Exception ex)
             {
-                textArea.append("Error making a connection. \n");
+                ta_chat.append("Error making a connection. \n");
             }
         }
     }
@@ -249,9 +251,9 @@ public class MainServer extends javax.swing.JFrame
     public void userAdd (String data)
     {
         String message, add = ": :Connect", done = "Server: :Done", name = data;
-        textArea.append("Before " + name + " added. \n");
+        ta_chat.append("Before " + name + " added. \n");
         users.add(name);
-        textArea.append("After " + name + " added. \n");
+        ta_chat.append("After " + name + " added. \n");
         String[] tempList = new String[(users.size())];
         users.toArray(tempList);
 
@@ -288,23 +290,25 @@ public class MainServer extends javax.swing.JFrame
             {
                 PrintWriter writer = (PrintWriter) it.next();
 		writer.println(message);
-		textArea.append("Sending: " + message + "\n");
+		ta_chat.append("Sending: " + message + "\n");
                 writer.flush();
-                textArea.setCaretPosition(textArea.getDocument().getLength());
+                ta_chat.setCaretPosition(ta_chat.getDocument().getLength());
 
             }
             catch (Exception ex)
             {
-		textArea.append("Error telling everyone. \n");
+		ta_chat.append("Error telling everyone. \n");
             }
         }
     }
 
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton b_clear;
     private javax.swing.JButton b_end;
     private javax.swing.JButton b_start;
     private javax.swing.JButton b_users;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lb_name;
-    private javax.swing.JTextArea textArea;
+    private javax.swing.JTextArea ta_chat;
+    // End of variables declaration//GEN-END:variables
 }
